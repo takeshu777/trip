@@ -1,28 +1,99 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
 * Database creation
+<!-- ユーザー情報管理 -->
+#User
+## association
+  has_many :events, dependent: :destroy
+  has_many :likes,  dependent: :destroy
+  has_many :attends,dependent: :destroy
 
-* Database initialization
+## table
+  - t.string :email
+  - t.string :password
+  - t.text :avatar
+  - t.string :f_name
+  - t.string :l_name
+  - t.text :profile
+  - t.integer :gender
+  - t.string :birthday
 
-* How to run the test suite
+<!-- イベント情報管理 -->
+#event
+## association
+  belongs_to :user, :dest
 
-* Services (job queues, cache servers, search engines, etc.)
+  has_many :likes,        dependent: :destroy
+  has_many :attends,      dependent: :destroy
+  has_many :event_photos, dependent: :destroy
 
-* Deployment instructions
+## table
+  - t.string :title
+  - t.date :start_date
+  - t.date :end_date
+  - t.text :summary
+  - t.text :details
+  - t.integer :status <!-- enum role: { public: 0, draft: 1 } -->
+  - t.integer :dest_id
+  - t.integer :user_id
 
-* ...
+
+<!-- お気に入り情報管理 -->
+#like
+## association
+  belongs_to :user, :event
+
+## table
+  - t.integer :event_id
+  - t.integer :user_id
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+<!-- イベント参加者管理 -->
+#attend
+## association
+  belongs_to :user, :event
+
+## table
+  - t.integer :event_id
+  - t.integer :user_id
+
+
+<!-- イベント画像管理 -->
+#event_photo
+## association
+  belongs_to :event
+
+## table
+  - t.string :image
+  - t.integer :role <!-- enum role: { main: 0, sub: 1 } -->
+  - t.string :evnet_id
+
+
+<!-- エリア管理テーブル -->
+#dest
+## association
+  has_many :events
+
+## table
+  - t.string :name
+  - t.integer :class <!-- enum class: { country: 0, region: 1, pref: 2, city: 3 } -->
+
+
+* need gem list
+gem "erb2haml", :group => :development
+
+gem "haml-rails", "~> 0.9"
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'pry-rails'
+
+gem 'jquery-turbolinks'
+
+gem 'devise'
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'rmagick'
+
+gem 'kaminari'
+
+gem 'acts-as-taggable-on', '~> 4.0'
