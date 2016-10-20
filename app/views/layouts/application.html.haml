@@ -8,5 +8,7 @@
     = csrf_meta_tags
   %body
     = render "layouts/header"
+    %p.notice= notice
+    %p.alart= alert
     = yield
     = render "layouts/footer"
