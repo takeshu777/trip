@@ -48,6 +48,8 @@ end
 
 gem "haml-rails", "~> 0.9"
 
+gem "erb2haml", :group => :development
+
 gem 'pry-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
