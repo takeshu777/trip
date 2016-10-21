@@ -1,22 +1,23 @@
-.devise__container
-  %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "off"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off"
-    .actions
-      = f.submit "Sign up"
-  = render "devise/shared/links"
+.signup__container
+  .signup__container-bg
+    .signup__container-main
+      %a.signup__container-logo
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "signup__container-form"}) do |f|
+        = devise_error_messages!
+        %h1.signup__container-form-catchcopy アカウント登録して旅に出よう!
+        .signup__container-form-list
+          = f.text_field :f_name, placeholder: "性", required: :required, class: "signup__container-form-input"
+          %span.signup__container-form-info 苗字をローマ字で入力してください。
+        .signup__container-form-list
+          = f.text_field :l_name, placeholder: "名", required: :required, class: "signup__container-form-input"
+          %span.signup__container-form-info 名前をローマ字で入力してください。
+        .signup__container-form-list
+          = f.email_field :email, placeholder: "メールアドレス(PCメール推奨)", required: :required, class: "signup__container-form-input"
+          %span.signup__container-form-info メールアドレスを入力してください。
+        .signup__container-form-list
+          = f.password_field :password, placeholder: "パスワード", autocomplete: "off", class: "signup__container-form-input"
+        .signup__container-form-list
+          = f.password_field :password_confirmation, placeholder: "パスワード確認", autocomplete: "off", class: "signup__container-form-input"
+        .signup__container-form-btn
+          = f.submit "アカウントを作成",class: "signup__container-form-btn"
+      = render "devise/shared/links"
