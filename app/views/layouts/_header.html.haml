@@ -4,5 +4,9 @@
       = link_to image_tag("https://trippiece-dev.s3.amazonaws.com/static/img/common/logo/wide_s.1a11591b.png",class: "header-logo"),"#"
     = link_to "プロフィール(マイページ)","#"
     = link_to "設定","#"
-    = link_to "ログアウト","#"
+    = link_to "ログアウト", "#{destroy_user_session_path}", method: :delete
     = link_to "企画を作成","#"
+.top__container
+  .top__container-banner
+    .top__container-banner-campaign-main
+    .top__container-banner-campaign-list
