@@ -1,8 +1,4 @@
-.top__container
-  .top__container-banner
-    .top__container-banner-campaign-main
-    .top__container-banner-campaign-list
-
+- if user_signed_in?
   .top__container-events
     .event__container
       .event__container-event
@@ -60,3 +56,5 @@
           .event__container-event-content--attend
     .event__container-event-more
       = link_to "もっとみる","#",{ class: "event__container-event-more-text" }
+- else
+  = render "layouts/welcome"

@@ -1,0 +1,14 @@
+.welcome-container
+  .welcome-container-logo
+  .welcome-container-main
+    %h1.welcome-container-title
+      .welcome-container-title-box
+    %h2.welcome-container-catchcopy
+      どこにもない旅を、みんなでつくる。
+      %br/
+      trippiece <トリッピース>
+    .welcome-container-account
+      = link_to image_tag("register_mail.png", width: "280px"),"#{new_user_registration_path}"
+      .welcome-container-account-signup
+      .welcome-container-account-signin
+        = link_to "すでにユーザーの方はこちら", "#{new_user_session_path}",{class: "welcome-container-account-signin-text"}
