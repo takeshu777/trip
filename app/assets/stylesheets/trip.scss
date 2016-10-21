@@ -17,6 +17,7 @@ body {
   height: 100%;
 }
 
+
 /* -- header style ------------------------------------ */
 
 header {
@@ -45,9 +46,76 @@ header {
     &-img {
       display: block;
       margin: 0;
-      background: url(https://trippiece-dev.s3.amazonaws.com/static/img/common/logo/wide_s.1a11591b.png) 0 center no-repeat;
+      background: url(wide_s.png) 0 center no-repeat;
       background-size: 128px 36px;
       height: 50px;
+    }
+  }
+}
+
+.welcome-container {
+  background: url(img_index_main.jpg) no-repeat;
+  background-size: cover;
+  height: 860px;
+  padding: 20px;
+
+  &-logo {
+    background: url(logo_big.png) left no-repeat;
+    background-size: 200px 57px;
+    width: 500px;
+    height: 57px;
+  }
+
+  &-main {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &-title {
+    width: 510px;
+    margin: 20px auto;
+
+    // height: 158px;
+    &-box {
+      width: 510px;
+      height: 158px;
+      background: url(main_copy_index.png) center no-repeat;
+      background-size: 510px 158px;
+    }
+  }
+
+
+  &-catchcopy {
+    margin: 0 auto 260px;
+    color: #fff;
+    font-size: 20px;
+    // memo
+  }
+
+  &-account {
+    background: rgba(0,0,0,.4);
+    width: 600px;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 0 auto;
+    text-align: center;
+
+    &-signup {
+      // memo
+    }
+
+    &-signin {
+      margin: 20px auto;
+
+      &-text {
+        display: block;
+        width: 300px;
+        padding: 10px 0;
+        text-align: center;
+        border: 1px solid #fff;
+        color: #fff;
+        margin: 20px auto;
+      }
     }
   }
 }
@@ -63,7 +131,7 @@ header {
     height: 472px;
 
     &-campaign-main {
-      background: url(https://s3-ap-northeast-1.amazonaws.com/trippiece/campaign/uyuni/2016/banner_l.jpg) 0 center no-repeat;
+      background: url(login_topbanner.jpg) 0 center no-repeat;
       height: 420px;
       position: relative;
       background-size: cover;
@@ -102,7 +170,7 @@ header {
       width: 298px;
       height: 200px;
       overflow: hidden;
-      background-image: url(https://trippiece.s3.amazonaws.com/file/2016/9/19/8920c247-5c22-4380-86e7-59626a04fd80_l.jpg);
+      background-image: url(event-man-sample.jpg);
       background-size: cover;
       background-position: 0;
       background-repeat: no-repeat;
@@ -182,6 +250,168 @@ header {
       &--attend {
         // memo
       }
+    }
+  }
+}
+
+/* -- Devise sytle------------------------------------ */
+
+/* -- flash_msg ------------------------------------ */
+.notice {
+  margin: 0;
+}
+
+.alert {
+  margin: 0;
+}
+
+/* -- sign_up ------------------------------------ */
+.signup__container {
+    font: 100% sans-serif;
+    font-size: 14px;
+    color: #666;
+    background-color: #f1f1f1;
+
+  &-bg {
+    background: url(world_map.png) center 0 no-repeat;
+    background-size: 120% auto;
+    min-height: 740px;
+  }
+
+  &-main {
+    width: 680px;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  &-logo {
+    display: block;
+    background: url(logo_big.png) center no-repeat;
+    background-size: 340px 96px;
+    margin-bottom: 40px;
+    height: 96px;
+  }
+
+  &-form {
+    background: #fdfdfd;
+    margin-bottom: 40px;
+    width: 640px;
+    padding: 20px;
+
+    &-catchcopy {
+      font-size: 24px;
+      margin: 0 0 40px;
+      font-weight: 400;
+    }
+
+    &-list {
+      margin-bottom: 20px;
+      text-align: left;
+      // memo
+    }
+    &-input {
+      background: #fff;
+      outline: 0;
+      line-height: 1.5;
+      border: 1px solid #ccc;
+      width: 308px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-right: 20px;
+    }
+
+    &-info {
+      color: #999;
+      font-size: 12px;
+    }
+
+    &-btn {
+      display: inline-block;
+      color: #fff;
+      padding: 10px;
+      margin-bottom: 0;
+      font-size: 12px;
+      text-align: center;
+      border: 1px solid transparent;
+      border-radius: 0;
+      margin-top: 20px;
+      width: 160px;
+    }
+  }
+}
+
+.signin__container {
+  font: 100% sans-serif;
+  font-size: 14px;
+  color: #666;
+  background-color: #f1f1f1;
+
+  &-bg {
+    background: url(world_map.png) center 0 no-repeat;
+    background-size: 120% auto;
+    min-height: 740px;
+  }
+
+  &-main {
+    width: 680px;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  &-logo {
+    display: block;
+    background: url(logo_big.png) center no-repeat;
+    background-size: 340px 96px;
+    margin-bottom: 40px;
+    height: 96px;
+  }
+
+  &-form {
+    width: 640px;
+    padding: 20px;
+
+    &-list {
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    &-input {
+      background: #fff;
+      margin-right: 10px;
+      width: 258px;
+      height: 28px;
+      padding: 2px 5px;
+
+      &-last {
+        background: #fff;
+        width: 258px;
+        height: 28px;
+        padding: 2px 5px;
+        margin: 0;
+      }
+
+      &-forgot {
+        margin: 0 0 20px 106px;
+        &-text {
+          color: #fcb753;
+          text-decoration: none;
+          border: 0;
+        }
+      }
+    }
+
+    &-btn {
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 0;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 0;
+    margin-top: 20px;
+    width: 160px;
     }
   }
 }
