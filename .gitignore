@@ -17,3 +17,6 @@
 
 #assets
 /app/assets/images/*
+
+#assets
+/public/uploads/*
