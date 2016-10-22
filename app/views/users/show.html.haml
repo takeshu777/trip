@@ -1,0 +1,66 @@
+.user__container
+  .user__container-profile
+    .user__container-profile-cover
+      = image_tag("profile_cover.jpg",class: "user__container-profile-cover-img")
+    .user__container-profile-infos-upper
+      .user__container-profile-infos-avatar
+        - if @user.avatar.present?
+          = image_tag("#{@user.avatar}",class: "user__container-profile-infos-avatar-img")
+        - else
+          = image_tag("avatar_sample.jpg",class: "user__container-profile-infos-avatar-img")
+      .user__container-profile-infos-fullname takeshu
+      .user__container-profile-infos-statuses
+        .user__container-profile-infos-statuses-status
+          .user__container-profile-infos-statuses-status-sum
+            .user__container-profile-infos-statuses-status-text 0
+          .user__container-profile-infos-statuses-status-label 参加した企画
+        .user__container-profile-infos-statuses-status
+          .user__container-profile-infos-statuses-status-sum
+            .user__container-profile-infos-statuses-status-text 0
+          .user__container-profile-infos-statuses-status-label 申込済の企画
+        .user__container-profile-infos-statuses-status
+          .user__container-profile-infos-statuses-status-sum
+            .user__container-profile-infos-statuses-status-text 0
+          .user__container-profile-infos-statuses-status-label お気に入り企画
+        .user__container-profile-infos-statuses-status
+          .user__container-profile-infos-statuses-status-sum
+            .user__container-profile-infos-statuses-status-text 0
+          .user__container-profile-infos-statuses-status-label 作成した企画
+    .user__container-profile-infos-lower
+      .user__container-profile-infos-lower-list
+        %h2.user__container-profile-infos-lower-title 性別
+        %p.user__container-profile-infos-lower-desc
+          %span.user__container-profile-infos-lower-desc-span
+            - if @user.gender.present?
+              = @user.gender
+            - else
+              未設定
+        %h2.user__container-profile-infos-lower-title 誕生日
+        %p.user__container-profile-infos-lower-desc
+          %span.user__container-profile-infos-lower-desc-span
+            - if @user.birthday.present?
+              = @user.date
+            - else
+              未設定
+        %h2.user__container-profile-infos-lower-title 自己紹介
+        %p.user__container-profile-infos-lower-desc
+          %span.user__container-profile-infos-lower-desc-span
+            - if @user.profile.present?
+              = @user.profile
+            - else
+              未設定
+  .user__container-mylist
+    .user__container-mylist-tabs
+      %ul.user__container-mylist-ul
+        %li.user__container-mylist-li-active
+          %a.li.user__container-mylist-text 参加済
+        %li.user__container-mylist-li
+          %a.li.user__container-mylist-text 申込中
+        %li.user__container-mylist-li
+          %a.li.user__container-mylist-text お気に入り
+        %li.user__container-mylist-li
+          %a.li.user__container-mylist-text 作成
+    .user__container-mylist-events
+      .user__container-mylist-events-box
+        .user__container-mylist-events-detail
+          .user__container-mylist-events-contents 企画はありません。
