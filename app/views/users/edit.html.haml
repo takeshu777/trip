@@ -20,7 +20,10 @@
               .useredit__container-form-avatar-box
                 %h3.useredit__container-form-title プロフィール写真
                 .useredit__container-form-avatar-imgbox
-                  = image_tag("avatar_sample.jpg",class: "useredit__container-form-avatar-imgbox-img")
+                  - if @user.avatar.present?
+                    = image_tag(current_user.avatar,class: "useredit__container-form-avatar-imgbox-img")
+                  - else
+                    = image_tag("avatar_sample.jpg",class: "useredit__container-form-avatar-imgbox-img")
                 .useredit__container-form-avatar-text
                   顔写真は旅行者がお互いを知るためにとても重要な要素です。あなたのことがはっきりわかる、最高のプロフィール写真を選びましょう！
                 .useredit__container-form-avatar-file
