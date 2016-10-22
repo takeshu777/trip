@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :events do
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 
 end
