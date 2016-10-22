@@ -1,5 +1,4 @@
 /*-- mixin define ---------------------------------- */
-
 @mixin clearfix() {
   &:after { content: ''; display: block; clear: both; }
 }
@@ -19,7 +18,6 @@ body {
 
 
 /* -- header style ------------------------------------ */
-
 header {
   background-color: #f4eed5;
   position: fixed;
@@ -53,6 +51,7 @@ header {
   }
 }
 
+/* -- 未サインイン時のTOP ------------------------------------ */
 .welcome-container {
   background: url(img_index_main.jpg) no-repeat;
   background-size: cover;
@@ -83,7 +82,6 @@ header {
       background-size: 510px 158px;
     }
   }
-
 
   &-catchcopy {
     margin: 0 auto 260px;
@@ -154,7 +152,6 @@ header {
 /* -- event__container style ------------------------------------ */
 .event__container {
   @include clearfix();
-  // memo
   &-event {
     position: relative;
     width: 298px;
@@ -164,7 +161,7 @@ header {
     border: 1px solid #ccc;
     border-bottom: 5px solid #ccc;
     background: #fdfdfd;
-    // memo
+
     &-image {
       display: block;
       width: 298px;
@@ -174,7 +171,6 @@ header {
       background-size: cover;
       background-position: 0;
       background-repeat: no-repeat;
-      // memo
     }
 
     &-status {
@@ -188,9 +184,7 @@ header {
       top: 12px;
       right: 0;
       font-size: 12px;
-      // memo
     }
-
 
     &-more {
       text-align: center;
@@ -227,7 +221,6 @@ header {
         width: 30px;
         margin-right: 10px;
         float: left;
-        // memo
       }
 
       &--title {
@@ -244,18 +237,15 @@ header {
         padding: 5px 0 7px;
         color: #ccc;
         font-size: 12px;
-        // memo
       }
 
       &--attend {
-        // memo
       }
     }
   }
 }
 
 /* -- Devise sytle------------------------------------ */
-
 /* -- flash_msg ------------------------------------ */
 .notice {
   margin: 0;
@@ -307,7 +297,6 @@ header {
     &-list {
       margin-bottom: 20px;
       text-align: left;
-      // memo
     }
     &-input {
       background: #fff;
@@ -340,6 +329,7 @@ header {
   }
 }
 
+/* -- sign_up ------------------------------------ */
 .signin__container {
   font: 100% sans-serif;
   font-size: 14px;
@@ -415,6 +405,170 @@ header {
     }
   }
 }
+
+/* -- profile(show) page style ------------------------------------ */
+.user__container {
+  min-height: 100%;
+  &-profile {
+    width: 960px;
+    border: 1px solid #ccc;
+    background: #fdfdfd;
+    margin: 100px auto 20px;
+
+    &-cover {
+      height: 280px;
+      border-bottom: 1px solid #ccc;
+
+      &-img {
+        border: 0;
+        width: 960px;
+        height: 283px;
+      }
+    }
+
+    &-infos {
+
+      &-upper{
+        position: relative;
+      }
+
+      &-avatar {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 100px;
+        border: 1px solid #fff;
+        margin: -80px auto 0;
+        &-img {
+          border: 0;
+          width: 100px;
+        }
+      }
+
+      &-fullname {
+        font-size: 26px;
+        font-weight: 400;
+        text-align: center;
+        margin: 10px auto 0;
+      }
+
+      &-statuses {
+        @include clearfix();
+        margin: 20px auto;
+        width: 480px;
+
+        &-status {
+          width: 100px;
+          margin: 0 10px;
+          float: left;
+
+          &-sum {
+            width: 100px;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 10px;
+
+            &-text {
+              color: #666;
+              border: 0;
+            }
+          }
+
+          &-label {
+            color: #999;
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+      }
+
+      &-lower {
+        @include clearfix();
+
+        &-list {
+          padding: 20px;
+          border-top: 1px solid #ccc;
+        }
+
+        &-title {
+          font-size: 26px;
+          font-weight: 400;
+          color: #999;
+          margin: 0;
+        }
+
+        &-desc {
+          margin: 0 0 10px;
+
+          &-span {
+
+          }
+        }
+      }
+    }
+  }
+  &-mylist {
+    zoom: 1;
+    width: 960px;
+    margin: 0 auto;
+    @include clearfix();
+
+    &-tabs{
+      width: 720px;
+      height: 60px;
+      margin-left: 1px;
+    }
+
+    &-ul {
+      list-style: none;
+      padding: 0;
+
+    }
+
+    &-li {
+      float: left;
+      display: block;
+      width: 25%;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+      line-height: 60px;
+      text-align: center;
+      margin: -1px;
+    }
+
+    &-li-active {
+      float: left;
+      display: block;
+      width: 25%;
+      border: 1px solid #ccc;
+      background: white;
+      line-height: 60px;
+      text-align: center;
+      margin: -1px;
+    }
+
+    &-text {
+      color: #666;
+    }
+
+    &-events {
+      background: #fdfdfd;
+      border: 1px solid #ccc;
+
+      &-box {
+      }
+
+      &-detail {
+        padding: 10px;
+      }
+
+      &-contents {
+        padding-left: 12px;
+      }
+    }
+  }
+}
+
 
 /* -- footer style ------------------------------------ */
 footer {
