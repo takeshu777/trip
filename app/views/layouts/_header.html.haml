@@ -3,6 +3,6 @@
     %h1.header-logo
       = link_to image_tag("https://trippiece-dev.s3.amazonaws.com/static/img/common/logo/wide_s.1a11591b.png",class: "header-logo"),root_path
     = link_to "プロフィール(マイページ)",user_path(current_user.id)
-    = link_to "設定","#"
+    = link_to "設定",edit_user_path(current_user.id)
     = link_to "ログアウト", "#{destroy_user_session_path}", method: :delete
     = link_to "企画を作成","#"
