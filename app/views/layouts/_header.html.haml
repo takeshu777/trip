@@ -2,13 +2,10 @@
   .header-container
     %h1.header-logo
       = link_to image_tag("wide_s.png",class: "header-logo"),root_path
-    = link_to "プロフィール", user_path(current_user.id)
-    = link_to "設定", edit_user_path(current_user.id)
-    = link_to "ログアウト", "#{destroy_user_session_path}", method: :delete
     %nav.header-nav
       %ul.header-nav-menu-ul
         %li.header-nav-menu-li
-          %ul.header-nav-menu-dropdown-ul
+          %ul.header-nav-menu-dropdown-ul.display-none
             %li.header-nav-menu-dropdown-li
               = link_to "プロフィール", user_path(current_user.id), class: "header-nav-menu-dropdown-li-text"
             %li.header-nav-menu-dropdown-li
@@ -17,8 +14,8 @@
               = link_to "ログアウト", "#{destroy_user_session_path}", method: :delete, class: "header-nav-menu-dropdown-li-text"
           .header-nav-avatar
             - if current_user.avatar.present?
-              = link_to image_tag(current_user.avatar, class: "header-nav-avatar-img")
+              = link_to image_tag(current_user.avatar, class: "header-nav-avatar-img")," javascript:void(0)",id: "js-navbar-dropdown"
             - else
-              = link_to image_tag("avatar_sample.jpg", class: "header-nav-avatar-img")
+              = link_to image_tag("avatar_sample.jpg", class: "header-nav-avatar-img"),id: "js-navbar-dropdown"
           %span.header-nav-avatar-span ▼
       = link_to "企画を作成", new_event_path, class: "header-nav-event"
