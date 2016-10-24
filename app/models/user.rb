@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  enum gender: { male: 0, female: 1 }
+
 end
