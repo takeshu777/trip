@@ -4,7 +4,10 @@
 }
 
 
-/*-- Navbar style ---------------------------------- */
+/*-- javascript style ---------------------------------- */
+.display-none {
+  display: none;
+}
 
 
 /*-- Body style ---------------------------------- */
@@ -98,8 +101,6 @@ header {
       }
 
       &-dropdown-ul {
-        display: none;
-          // 上記、Javascriptで調整
         box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
         float: left;
         background: #fdfdfd;
@@ -718,17 +719,21 @@ header {
     }
 
     &-li {
-      background: #f1f1f1;
       margin: 0 -15px;
-      border-right: 4px solid #f6625b;
       padding: 10px 0 10px 15px;
       font-size: 18px;
-      &-li-text {
+      &-active {
+        background: #f1f1f1;
+        border-right: 4px solid #f6625b;
+      }
+
+      &-text {
         color: #666;
         text-decoration: none;
         // border: 0;
       }
     }
+
   }
   &-main {
     @include clearfix();
