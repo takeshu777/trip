@@ -2,12 +2,12 @@
   .useredit__container-box
     .useredit__container-menu
       %ul.useredit__container-menu-ul
+        %li.useredit__container-menu-li.useredit__container-menu-li-active
+          = link_to "プロフィール設定","javascript:void(0)",class: "useredit__container-menu-li-text"
         %li.useredit__container-menu-li
-          %a.useredit__container-menu-li-text プロフィール設定
+          = link_to "アカウント設定","javascript:void(0)",class: "useredit__container-menu-li-text"
         %li.useredit__container-menu-li
-          %a.useredit__container-menu-li-text アカウント設定
-        %li.useredit__container-menu-li
-          %a.useredit__container-menu-li-text パスワード設定
+          = link_to "パスワード設定","javascript:void(0)",class: "useredit__container-menu-li-text"
     .useredit__container-main
       .useredit__container-main-box
       = form_for(current_user, html: {class: "useredit__container-form"}) do |f|
@@ -30,10 +30,10 @@
                   = f.file_field :avatar,id: "avatar_image"
             %h3.useredit__container-form-title 自己紹介
             = f.text_field :profile, placeholder: "好きにいれてね。", class: "useredit__container-form-text_profile"
-          .useredit__container-form-list-account
+          .useredit__container-form-list-account.display-none
             %h3.useredit__container-form-title メールアドレス
             = f.email_field :email, placeholder: "メールアドレス", required: :required, class: "useredit__container-form-text"
-          .useredit__container-form-list-password
+          .useredit__container-form-list-password.display-none
             %h3.useredit__container-form-title パスワード
             = f.password_field :password, placeholder: "パスワード(変更する場合のみ)", autocomplete: "off",class: "useredit__container-form-text"
             = f.password_field :password_confirmation, placeholder: "パスワードを再入力(変更する場合のみ)", autocomplete: "off", class: "useredit__container-form-text"
