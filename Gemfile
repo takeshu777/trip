@@ -61,3 +61,6 @@ gem 'jquery-turbolinks'
 gem 'devise'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'enum'
+
