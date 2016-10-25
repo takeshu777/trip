@@ -31,6 +31,7 @@
   - t.date :end_date
   - t.text :summary
   - t.text :details
+  - t.string :dest
   - t.integer :status <!-- enum role: { public: 0, draft: 1 } -->
   - t.integer :dest_id
   - t.integer :user_id
