@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def index
+    @events = Event.order('id DESC')
   end
 
   def new
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
     elsif params[:draft].present?
       @event_status = { status: 1 }
     end
-    params.require(:event).permit(:title, :start_date, :end_date, :summary, :details, :status, :image, :dest).merge(user_id: current_user.id).merge(@event_status)
+    params.require(:event).permit(:title, :start_date, :end_date, :apply_start_date, :apply_end_date, :summary, :details, :status, :image, :dest).merge(user_id: current_user.id).merge(@event_status)
   end
 
 end
