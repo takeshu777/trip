@@ -8,7 +8,8 @@
           = image_tag("#{@user.avatar}",class: "user__container-profile-infos-avatar-img")
         - else
           = image_tag("avatar_sample.jpg",class: "user__container-profile-infos-avatar-img")
-      .user__container-profile-infos-fullname takeshu
+      .user__container-profile-infos-fullname
+        = @user.fullname
       .user__container-profile-infos-statuses
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum
