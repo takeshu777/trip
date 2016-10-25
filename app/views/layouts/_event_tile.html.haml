@@ -1,0 +1,20 @@
+- if Time.now.between?(event.apply_start_date,event.apply_end_date )
+  .event__container-event-open
+    = link_to "",event_path(event.id), class: "event__container-event-image", style: "background-image: url(#{event.image});"
+    .event__container-event-status
+      申込み受付中
+    .event__container-event-content
+      = link_to image_tag(event.user.avatar, class: "event__container-event-content--avatar"), user_path(event.user.id)
+      = link_to "#{event.title}", event_path(event.id), class: "event__container-event-content--title"
+      = link_to "#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content--schedule"
+      .event__container-event-content--attend
+- else
+  .event__container-event-close
+    = link_to "",event_path(event.id), class: "event__container-event-image", style: "background-image: url(#{event.image});"
+    .event__container-event-status
+      申込み受付前
+    .event__container-event-content
+      = link_to image_tag(event.user.avatar, class: "event__container-event-content--avatar"), user_path(event.user.id)
+      = link_to "#{event.title}", event_path(event.id), class: "event__container-event-content--title"
+      = link_to "#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content--schedule"
+      .event__container-event-content--attend
