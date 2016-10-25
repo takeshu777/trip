@@ -20,3 +20,6 @@
 
 #assets
 /public/uploads/*
+
+#carrierwave_default_image
+/public/fallback/*
