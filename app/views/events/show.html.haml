@@ -1,3 +1,5 @@
+- unless user_signed_in?
+  = render partial: "layouts/header_no_login_event_show"
 .eventshow__container
   .eventshow__container-box
     %article.eventshow__container-article
@@ -34,6 +36,13 @@
               .eventshow__container-columns
                 .eventshow__container-columns-item
                   %h4.eventshow__container-columns-title
+                    %span.eventshow__container-columns-span 申込み受付期間
+                  %span.eventshow__container-columns-content
+                    = @event.apply_start_date
+                    から
+                    = @event.apply_end_date
+                .eventshow__container-columns-item
+                  %h4.eventshow__container-columns-title
                     %span.eventshow__container-columns-span 日程
                   %span.eventshow__container-columns-content
                     = @event.start_date
@@ -44,10 +53,6 @@
                     %span.eventshow__container-columns-span 行き先
                   %span.eventshow__container-columns-content
                     = @event.dest
-                .eventshow__container-columns-item
-                  %h4.eventshow__container-columns-title
-                    %span.eventshow__container-columns-span その他
-                  %span.eventshow__container-columns-content ほげほげ
               .eventshow__container-details
                 = @event.details
       %section.eventshow__container-side
@@ -60,14 +65,24 @@
                     企画のステータス
                   %br/
                   %br/
-                  %span.eventshow__container-side-status-span
-                    申込受付前
-              .eventshow__container-side-attend
-                = link_to("javascript:void(0)", class: "eventshow__container-side-attend-btn") do
-                  %span.eventshow__container-side-attend-span
-                    申し込む
-              .eventshow__container-side-fav
-                = link_to("javascript:void(0)", class: "eventshow__container-side-fav-btn") do
-                  %span.eventshow__container-side-fav-span
-                    %i.eventshow__container-side-fav-ico
-                    お気に入り
+                  - if Time.now.between?(@event.apply_start_date,@event.apply_end_date )
+                    %span.eventshow__container-side-status-span
+                      申込受付前
+                  - else
+                    %span.eventshow__container-side-status-span
+                      申込受付中！
+              - if user_signed_in?
+                .eventshow__container-side-attend
+                  = link_to("javascript:void(0)", class: "eventshow__container-side-attend-btn") do
+                    %span.eventshow__container-side-attend-span
+                      申し込む
+                .eventshow__container-side-fav
+                  = link_to("javascript:void(0)", class: "eventshow__container-side-fav-btn") do
+                    %span.eventshow__container-side-fav-span
+                      %i.eventshow__container-side-fav-ico
+                      お気に入り
+              - else
+                .eventshow__container-side-regist
+                  = link_to("javascript:void(0)", class: "eventshow__container-side-regist-btn") do
+                    %span.eventshow__container-side-regist-span
+                      参加するにはこちら（無料登録）

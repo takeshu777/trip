@@ -36,7 +36,7 @@
               = f.radio_button(:gender, "female" , :checked => @user.gender == "female" )
               女性
             %h3.useredit__container-form-title 誕生日
-            = raw sprintf(f.date_select(:birthday, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), default: nil , date_separator:'%s' ),'年 ', '月 ') + '日'
+            = raw sprintf(f.date_select(:birthday, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
             %h3.useredit__container-form-title 自己紹介
             = f.text_area :profile, placeholder: "好きにいれてね。", class: "useredit__container-form-text_profile"
           .useredit__container-form-list-account.display-none
