@@ -287,8 +287,28 @@ header {
     margin: 0 30px 30px 0;
     float: left;
     border: 1px solid #ccc;
-    border-bottom: 5px solid #ccc;
     background: #fdfdfd;
+    border-bottom: 5px solid #ccc;
+    &-open {
+      position: relative;
+      width: 298px;
+      height: 288px;
+      margin: 0 30px 30px 0;
+      float: left;
+      border: 1px solid #ccc;
+      background: #fdfdfd;
+      border-bottom: 5px solid #8bcd7a;
+    }
+    &-close {
+      position: relative;
+      width: 298px;
+      height: 288px;
+      margin: 0 30px 30px 0;
+      float: left;
+      border: 1px solid #ccc;
+      background: #fdfdfd;
+      border-bottom: 5px solid #fcb753;
+    }
 
     &-image {
       display: block;
@@ -345,10 +365,11 @@ header {
       position: relative;
 
       &--avatar {
-        display: block;
         width: 30px;
-        margin-right: 10px;
-        float: left;
+        height: 30px;
+        overflow: hidden;
+        border: 0 solid #fff;
+        border-radius: 30px;
       }
 
       &--title {
@@ -1099,7 +1120,7 @@ header {
   }
 
   &-img {
-    background-image: url(https://trippiece-dev.s3.amazonaws.com/file/2015/10/9/8e4b5650-1ba5-4414-a725-d134e6c10f11_l.jpg);
+    background-image: url(events_sample.jpg);
     position: relative;
     background-size: cover;
     height: 480px;
@@ -1431,7 +1452,7 @@ header {
       }
     }
     &-label {
-      margin-bottom: 128px;
+      margin-bottom: 250px;
       position: relative;
 
       &-box {
@@ -1858,6 +1879,42 @@ header {
         background-color: #fdfdfd;
         padding: 10px;
         text-align: center;
+      }
+    }
+    &-regist {
+      text-align: center;
+      &-btn {
+        display: inline-block;
+        cursor: pointer;
+        background-color: #f6625b;
+        color: #fff;
+        padding: 10px 0 11px;
+        border: 1px solid transparent;
+        border-radius: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        margin-bottom: 10px;
+        height: auto;
+        font-size: 18px;
+        line-height: 1.5;
+        vertical-align: middle;
+        background-image: none;
+        -ms-user-select: none;
+        width: 100%;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        // memo
+      }
+      &-span {
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        // memo
       }
     }
     &-status {
