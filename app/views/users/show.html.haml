@@ -25,7 +25,8 @@
           .user__container-profile-infos-statuses-status-label お気に入り企画
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum
-            .user__container-profile-infos-statuses-status-text 0
+            .user__container-profile-infos-statuses-status-text
+              = @user.events.count
           .user__container-profile-infos-statuses-status-label 作成した企画
     .user__container-profile-infos-lower
       .user__container-profile-infos-lower-list
