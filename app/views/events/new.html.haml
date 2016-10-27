@@ -19,7 +19,7 @@
                 .eventnew__container-img-msgbox
                   .eventnew__container-img-btnbox
                     アップロードする
-                    = f.file_field :image, class:"eventnew__container-img-btn"
+                    = f.file_field :image, class:"eventnew__container-img-btn", id: "js-event-image"
               .eventnew__container-infobar
                 .eventnew__container-producer
                   .eventnew__container-producer-avatar
@@ -67,22 +67,22 @@
                       %td.eventnew__container-schedule-td
                         %span.eventnew__container-schedule-td-span 開始日
                         .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:apply_start_date, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
+                          = raw sprintf(f.date_select(:apply_start_date, use_month_numbers: true, start_year: (Time.now.year) , default: Time.now , date_separator:'%s' ),'年 ', '月 ') + '日'
                         %br
                         %span.eventnew__container-schedule-td-span 終了日
                         .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:apply_end_date, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
+                          = raw sprintf(f.date_select(:apply_end_date, use_month_numbers: true, start_year: (Time.now.year) ,default: Time.now + 2.week , date_separator:'%s' ),'年 ', '月 ') + '日'
                     %tr.eventnew__container-schedule-tr
                       %th.eventnew__container-schedule-th
                         日程
                       %td.eventnew__container-schedule-td
                         %span.eventnew__container-schedule-td-span 開始日
                         .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:start_date, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
+                          = raw sprintf(f.date_select(:start_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
                         %br
                         %span.eventnew__container-schedule-td-span 終了日
                         .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
+                          = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
                     %tr.eventnew__container-schedule-tr
                       %th.eventnew__container-schedule-th
                         行き先
