@@ -19,7 +19,6 @@ body {
   height: 100%;
 }
 
-
 /* -- header style ------------------------------------ */
 header {
   background-color: #f4eed5;
@@ -913,10 +912,129 @@ header {
 
 /* -- event-new style ------------------------------------ */
 .eventnew__container {
+  &-main {
     width: 960px;
     margin: 182px auto 0;
+  }
   &-box {
-    // memo
+    width: 960px;
+  }
+
+  &-header {
+    width: 100%;
+    position: fixed;
+    background: #fdfdfd;
+    border-bottom: 1px solid #ccc;
+    height: 80px;
+    top: 51px;
+    z-index: 990;
+    &-menu {
+      @include clearfix();
+      zoom: 1;
+      width: 960px;
+      margin: auto;
+      &:before {
+        height: 0;
+        content: "\0020";
+        display: block;
+        visibility: hidden;
+      }
+      // memo
+    }
+    &-columns {
+      float: left;
+      position: relative;
+      @include clearfix();
+      &:before {
+        height: 0;
+        content: "\0020";
+        display: block;
+        visibility: hidden;
+      }
+      // memo
+      &-status {
+        float: left;
+        text-align: center;
+        border-bottom: 5px solid #fcb753;
+        height: 76px;
+        display: table;
+        width: 170px;
+        &-text {
+            color: #666;
+            vertical-align: middle;
+            display: table-cell;
+        }
+        &-span {
+          font-size: 20px;
+          color: #8bcd7a;
+        }
+      }
+      &-action {
+        padding-top: 5px;
+        height: 80px;
+        color: #666;
+        float: left;
+        text-align: center;
+        padding: 0 20px;
+        border-left: 1px solid #ccc;
+        // memo
+        &-open {
+          height: 70px;
+          margin: 4px 3px 5px 3px;
+          padding: 0;
+          float: left;
+          background-color: #fcb753;
+          color: #fff;
+          border: 1px solid transparent;
+          padding: 6px 12px;
+          vertical-align: middle;
+          background-image: none;
+          display: block;
+          width: 140px;
+          text-align: center;
+          // memo
+        }
+        &-close {
+          height: 70px;
+          margin-top: 4px;
+          margin: 4px 3px 5px 3px;
+          padding: 0;
+          float: left;
+          background-color: #fcb753;
+          color: #fff;
+          border: 1px solid transparent;
+          padding: 6px 12px;
+          vertical-align: middle;
+          background-image: none;
+          display: block;
+          width: 140px;
+          text-align: center;
+        }
+        &-delete {
+          &-text {
+            color: #fff;
+            vertical-align: middle;
+            display: table-cell;
+          }
+          &-box {
+            display: table;
+            height: 70px;
+            margin-top: 4px;
+            margin: 4px 3px 5px 3px;
+            padding: 0;
+            float: left;
+            background-color: #fcb753;
+            color: #fff;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            vertical-align: middle;
+            background-image: none;
+            width: 140px;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 
   &-form {
@@ -1080,6 +1198,7 @@ header {
       width: 210px;
       margin-left: 20px;
       float: left;
+      @include clearfix();
       &-osbox {
         position: relative;
       }
@@ -1697,7 +1816,7 @@ header {
     position: absolute;
     top: 0;
     z-index: 10;
-    background-image: url(https://trippiece.s3.amazonaws.com/file/2016/10/16/3420a2ae-dcc5-4ea1-9a5f-69d759ff4c7d_l.jpg);
+    background-image: url(pylamid.jpg);
     }
   }
 
@@ -2004,7 +2123,7 @@ header {
         vertical-align: bottom;
         margin-right: 15px;
         &:before {
-          content: url(https://trippiece-dev.s3.amazonaws.com/static/img/common/icon/gray/icon_plans_star@2x.075f93c7.png);
+          content: url(icon_plans_star.png);
           display: inline-block;
           font-size: 0;
           line-height: 0;
@@ -2018,6 +2137,59 @@ header {
           transform-origin: 0 0;
         }
       }
+    }
+  }
+  &-tab {
+    @include clearfix();
+    border-bottom: 1px solid #ccc;
+    height: 42px;
+    margin-bottom: 20px;
+    &:before {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "\0020";
+    }
+    &-edit {
+      background-color: #999;
+      color: #fff;
+      border: 1px solid transparent;
+      border-radius: 0;
+      user-select: none;
+      display: inline-block;
+      width: auto;
+      height: auto;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-weight: 400;
+      vertical-align: middle;
+      background-image: none;
+      float: right;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      white-space: nowrap;
+    }
+    &-apply {
+      border: 1px solid #ccc;
+      border-radius: 0;
+      user-select: none;
+      margin-right: 10px;
+      background-color: #fff;
+      color: #666;
+      display: inline-block;
+      width: auto;
+      height: auto;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-weight: 400;
+      vertical-align: middle;
+      background-image: none;
+      float: right;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      white-space: nowrap;
     }
   }
 }
