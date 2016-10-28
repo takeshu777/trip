@@ -64,3 +64,4 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'enum'
 
+gem 'redcarpet'
