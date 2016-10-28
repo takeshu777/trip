@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     find_user
+    @events = @user.events.order('id DESC')
   end
 
   def edit

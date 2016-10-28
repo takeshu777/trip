@@ -54,15 +54,15 @@
   .user__container-mylist
     .user__container-mylist-tabs
       %ul.user__container-mylist-ul
-        %li.user__container-mylist-li-active
-          %a.li.user__container-mylist-text 参加済
+        %li.user__container-mylist-li.user__container-mylist-li-active
+          = link_to "参加済",  users_mylist_path(@user.id, list_name: "attended"), remote: true, class: "user__container-mylist-text"
         %li.user__container-mylist-li
-          %a.li.user__container-mylist-text 申込中
+          = link_to "申込中",  users_mylist_path(@user.id, list_name: "apply"), remote: true, class: "user__container-mylist-text"
         %li.user__container-mylist-li
-          %a.li.user__container-mylist-text お気に入り
+          = link_to "お気に入り", users_mylist_path(@user.id, list_name: "fav"), remote: true, class: "user__container-mylist-text"
         %li.user__container-mylist-li
-          %a.li.user__container-mylist-text 作成
+          = link_to "作成",  users_mylist_path(@user.id, list_name: "producer"), remote: true, class: "user__container-mylist-text"
     .user__container-mylist-events
       .user__container-mylist-events-box
-        .user__container-mylist-events-detail
-          .user__container-mylist-events-contents 企画はありません。
+        .user__container-mylist-events-contents
+          = render partial: 'layouts/event_tile', collection: @events, as: :event
