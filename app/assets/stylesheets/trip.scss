@@ -292,7 +292,7 @@ header {
       position: relative;
       width: 298px;
       height: 288px;
-      margin: 0 30px 30px 0;
+      margin: 0 15px 30px 0;
       float: left;
       border: 1px solid #ccc;
       background: #fdfdfd;
@@ -308,7 +308,6 @@ header {
       background: #fdfdfd;
       border-bottom: 5px solid #fcb753;
     }
-
     &-image {
       display: block;
       width: 298px;
@@ -685,14 +684,7 @@ header {
     }
 
     &-li-active {
-      float: left;
-      display: block;
-      width: 25%;
-      border: 1px solid #ccc;
       background: white;
-      line-height: 60px;
-      text-align: center;
-      margin: -1px;
     }
 
     &-text {
@@ -702,16 +694,13 @@ header {
     &-events {
       background: #fdfdfd;
       border: 1px solid #ccc;
-
+      @include clearfix();
       &-box {
-      }
-
-      &-detail {
-        padding: 10px;
+        margin-top: 10px;
       }
 
       &-contents {
-        padding-left: 12px;
+        margin-left: 10px ;
       }
     }
   }
