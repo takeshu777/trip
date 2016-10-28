@@ -47,14 +47,15 @@
   - t.integer :user_id
 
 
-<!-- イベント参加者管理 -->
+<!-- イベント申込み者管理 -->
 #attend
 ## association
   belongs_to :user, :event
 
 ## table
-  - t.integer :event_id
-  - t.integer :user_id
+  - t.references :event
+  - t.references :user
+  - t.text :comment
 
 
 <!-- イベント画像管理 -->
