@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   resources :events do
   end
 
-  resources :users, only: [:show, :edit, :update]
+  namespace :users do
+    resources :mylists, only: [:show]
+  end
+
+
+  resources :users, only: [:show, :edit, :update] do
+  end
 
 end
