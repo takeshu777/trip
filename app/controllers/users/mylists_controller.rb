@@ -1,9 +1,9 @@
 class Users::MylistsController < ApplicationController
+  before_action :find_user_events, only: [:show]
 
   def show
-    @user = User.find(params[:id])
     if params[:list_name] == "attended"
-      @events = @user.events.order('id DESC')
+      @events = @user_events.where("end_date < ?", Time.now)
     elsif params[:list_name] == "apply"
       @events = @user.events.order('id DESC')
     elsif params[:list_name] == "fav"
@@ -13,4 +13,10 @@ class Users::MylistsController < ApplicationController
     end
   end
 
+  private
+
+  def find_user_events
+    @user = User.find(params[:id])
+    @user_events = @user.events.order('id DESC')
+  end
 end
