@@ -1,5 +1,5 @@
 .eventnew__container
-  .eventnew__container-box
+  .eventnew__container-main
     = form_for(@event, html: {class: "eventnew__container-form"}) do |f|
       .eventnew__container-form-box
         %p.eventnew__container-form-comment
@@ -32,20 +32,18 @@
                 .eventnew__container-info
                   .eventnew__container-fav
                     %i.eventnew__container-fav-ico
-                      ico
                     %span.eventnew__container-fav-sum 0
                   .eventnew__container-attend
                     %i.eventnew__container-attend-ico
-                      ico
                     %span.eventnew__container-attend-sum 0
               .eventnew__container-summary
                 = f.text_area :summary, class: "eventnew__container-summary-text", placeholder: "例）2〜3月に転職するタイミングで、憧れのウユニ塩湖に行きたいと思っています！南米に一人で行くのは不安なので、一緒に行ける旅仲間を募集しています。一緒に、ウユニ塩湖の絶景に感動して、写真を撮って遊びましょう！"
-                .eventnew__container-hashtag
-                  .eventnew__container-hashtag-desc
-                    ハッシュタグを追加
-                  %a.eventnew__container-hashtag-tag #アラサー歓迎
-                  %a.eventnew__container-hashtag-tag #20代歓迎
-                  %a.eventnew__container-hashtag-tag #40代以上歓迎
+                / .eventnew__container-hashtag
+                /   .eventnew__container-hashtag-desc
+                /     ハッシュタグを追加
+                /   %a.eventnew__container-hashtag-tag #アラサー歓迎
+                /   %a.eventnew__container-hashtag-tag #20代歓迎
+                /   %a.eventnew__container-hashtag-tag #40代以上歓迎
                 %p.eventnew__container-summary-countchar
           .eventnew__container-basic-side
             .eventnew__container-basic-side-box
@@ -91,9 +89,15 @@
                 .eventnew__container-details-headline
                   = link_to "編集(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-edit"
                   = link_to "プレビュー(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-prev"
+                .eventnew__container-details-md-box
+                  .eventnew__container-details-md-headline
+                    = link_to "見出しを挿入する","javascript:void(0)", class:"eventnew__container-details-md-headline-text"
                 .eventnew__container-details-body
                   .eventnew__container-details-body-box
                     = f.text_area :details, class: "eventnew__container-details-body-text"
+                .eventnew__container-details-markdown
+                  .eventnew__container-details-markdown-prev
+                    = markdown("## hogehoge")
           .eventnew__container-section-desc-side
             .eventnew__container-section-desc-side-box
               .eventnew__container-schedule-label
