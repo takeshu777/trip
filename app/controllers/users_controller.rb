@@ -38,11 +38,11 @@ class UsersController < ApplicationController
   end
 
   def update_params
-    params.require(:user).permit(:email, :f_name, :l_name, :profile, :avatar, :birthday, :gender)
+    params.require(:user).permit(:email, :f_name, :l_name, :profile, :avatar, :birthday, :gender, :address_pref, :address_details, :tel)
   end
 
   def update_params_with_password
-    params.require(:user).permit(:email, :f_name, :l_name, :profile, :avatar, :birthday, :gender, :password , :password_confirmation)
+    params.require(:user).permit(:email, :f_name, :l_name, :profile, :avatar, :birthday, :gender, :password , :password_confirmation, :address_pref, :address_details, :tel)
   end
 
 end

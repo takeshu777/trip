@@ -5,6 +5,8 @@
         %li.useredit__container-menu-li.useredit__container-menu-li-active
           = link_to "プロフィール設定","javascript:void(0)",class: "useredit__container-menu-li-text"
         %li.useredit__container-menu-li
+          = link_to "個人情報","javascript:void(0)",class: "useredit__container-menu-li-text"
+        %li.useredit__container-menu-li
           = link_to "アカウント設定","javascript:void(0)",class: "useredit__container-menu-li-text"
         %li.useredit__container-menu-li
           = link_to "パスワード設定","javascript:void(0)",class: "useredit__container-menu-li-text"
@@ -39,6 +41,13 @@
             = raw sprintf(f.date_select(:birthday, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
             %h3.useredit__container-form-title 自己紹介
             = f.text_area :profile, placeholder: "好きにいれてね。", class: "useredit__container-form-text_profile"
+          .useredit__container-form-list-private.display-none
+            %h3.useredit__container-form-title 住所（都道府県）
+            = f.text_field :address_pref, class: "useredit__container-form-text"
+            %h3.useredit__container-form-title 住所（市区町村）
+            = f.text_field :address_details, class: "useredit__container-form-text"
+            %h3.useredit__container-form-title Tel
+            = f.text_field :tel, class: "useredit__container-form-text"
           .useredit__container-form-list-account.display-none
             %h3.useredit__container-form-title メールアドレス
             = f.email_field :email, placeholder: "メールアドレス", required: :required, class: "useredit__container-form-text"

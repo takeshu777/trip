@@ -12,6 +12,8 @@ $(function () {
     // 項目の表示
     if (ev.target.text == "プロフィール設定") {
       $(".useredit__container-form-list-profile").removeClass("display-none");
+    } else if (ev.target.text == "個人情報") {
+      $(".useredit__container-form-list-private").removeClass("display-none");
     } else if (ev.target.text == "アカウント設定") {
       $(".useredit__container-form-list-account").removeClass("display-none");
     } else if (ev.target.text == "パスワード設定") {
