@@ -1,0 +1,15 @@
+/* -- footer style ------------------------------------ */
+footer {
+  margin: 100px auto auto;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  min-height: 80px;
+  text-align: center;
+}
+
+.footer {
+  &-menu {
+    width: 960px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,152 @@
+/* -- profile(show) page style ------------------------------------ */
+.user__container {
+  min-height: 100%;
+  &-profile {
+    width: 960px;
+    border: 1px solid #ccc;
+    background: #fdfdfd;
+    margin: 100px auto 20px;
+
+    &-cover {
+      height: 280px;
+      border-bottom: 1px solid #ccc;
+
+      &-img {
+        border: 0;
+        width: 960px;
+        height: 283px;
+      }
+    }
+
+    &-infos {
+
+      &-upper{
+        position: relative;
+      }
+
+      &-avatar {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 100px;
+        border: 1px solid #fff;
+        margin: -80px auto 0;
+        &-img {
+          border: 0;
+          width: 100px;
+        }
+      }
+
+      &-fullname {
+        font-size: 26px;
+        font-weight: 400;
+        text-align: center;
+        margin: 10px auto 0;
+      }
+
+      &-statuses {
+        @include clearfix();
+        margin: 20px auto;
+        width: 480px;
+
+        &-status {
+          width: 100px;
+          margin: 0 10px;
+          float: left;
+
+          &-sum {
+            width: 100px;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 10px;
+
+            &-text {
+              color: #666;
+              border: 0;
+            }
+          }
+
+          &-label {
+            color: #999;
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+      }
+
+      &-lower {
+        @include clearfix();
+
+        &-list {
+          padding: 20px;
+          border-top: 1px solid #ccc;
+        }
+
+        &-title {
+          font-size: 26px;
+          font-weight: 400;
+          color: #999;
+          margin: 0;
+        }
+
+        &-desc {
+          margin: 0 0 10px;
+
+          &-span {
+
+          }
+        }
+      }
+    }
+  }
+  &-mylist {
+    zoom: 1;
+    width: 960px;
+    margin: 0 auto;
+    @include clearfix();
+
+    &-tabs{
+      width: 720px;
+      height: 60px;
+      margin-left: 1px;
+    }
+
+    &-ul {
+      list-style: none;
+      padding: 0;
+
+    }
+
+    &-li {
+      float: left;
+      display: block;
+      width: 25%;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+      line-height: 60px;
+      text-align: center;
+      margin: -1px;
+    }
+
+    &-li-active {
+      background: white;
+    }
+
+    &-text {
+      color: #666;
+    }
+
+    &-events {
+      background: #fdfdfd;
+      border: 1px solid #ccc;
+      @include clearfix();
+      &-box {
+        margin-top: 10px;
+      }
+
+      &-contents {
+        margin-left: 10px ;
+      }
+    }
+  }
+}

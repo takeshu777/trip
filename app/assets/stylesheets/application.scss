@@ -1,4 +1,9 @@
 @import "reset";
+@import "mixin/*";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "trip";
+@import "modules/js_style/*";
+@import "modules/base/*";
+@import "modules/devise_controller/*";
+@import "modules/events_controller/*";
+@import "modules/users_controller/*";

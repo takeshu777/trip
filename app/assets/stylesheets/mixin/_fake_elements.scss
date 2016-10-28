@@ -1,0 +1,16 @@
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin before_block() {
+  &:before {
+    display: block;
+    height: 0;
+    content: "\0020";
+    visibility: hidden;
+  }
+}
