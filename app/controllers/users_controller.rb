@@ -4,7 +4,12 @@ class UsersController < ApplicationController
 
   def show
     find_user
-    @events = @user.events.order('id DESC')
+    @user_attend_list = @user.attends
+    @events = []
+    @user_attend_list.each do |attend_event|
+      @event = Event.find(attend_event.event_id)
+      @events << @event if @event.end_date < Time.now
+    end
   end
 
   def edit

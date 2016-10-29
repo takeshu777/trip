@@ -3,11 +3,21 @@ class Users::MylistsController < ApplicationController
 
   def show
     if params[:list_name] == "attended"
-      @events = @user_events.where("end_date < ?", Time.now)
+      @user_attend_list = @user.attends
+      @events = []
+      @user_attend_list.each do |attend_event|
+        @event = Event.find(attend_event.event_id)
+        @events << @event if @event.end_date < Time.now
+      end
     elsif params[:list_name] == "apply"
-      @events = @user.events.order('id DESC')
+      @user_attend_list = @user.attends
+      @events = []
+      @user_attend_list.each do |attend_event|
+        @event = Event.find(attend_event.event_id)
+        @events << @event if @event.start_date > Time.now
+      end
     elsif params[:list_name] == "fav"
-      @events = @user.events.order('id DESC')
+
     elsif params[:list_name] == "producer"
       @events = @user.events.order('id DESC')
     end
@@ -17,6 +27,5 @@ class Users::MylistsController < ApplicationController
 
   def find_user_events
     @user = User.find(params[:id])
-    @user_events = @user.events.order('id DESC')
   end
 end

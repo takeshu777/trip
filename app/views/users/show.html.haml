@@ -13,12 +13,14 @@
       .user__container-profile-infos-statuses
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum
-            .user__container-profile-infos-statuses-status-text 0
+            .user__container-profile-infos-statuses-status-text
+              = @events.count
           .user__container-profile-infos-statuses-status-label 参加した企画
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum
-            .user__container-profile-infos-statuses-status-text 0
-          .user__container-profile-infos-statuses-status-label 申込済の企画
+            .user__container-profile-infos-statuses-status-text
+              = @user.attends_count - @events.count
+          .user__container-profile-infos-statuses-status-label 申込中の企画
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum
             .user__container-profile-infos-statuses-status-text 0
