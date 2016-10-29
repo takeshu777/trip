@@ -4,14 +4,15 @@ Rails.application.routes.draw do
   root 'events#index'
 
   resources :events do
+    scope module: :events do
+      resources :attends, only: [:new, :create, :destroy]
+    end
   end
+
+  resources :users, only: [:show, :edit, :update]
 
   namespace :users do
     resources :mylists, only: [:show]
-  end
-
-
-  resources :users, only: [:show, :edit, :update] do
   end
 
 end
