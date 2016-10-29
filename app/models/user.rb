@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   enum gender: { male: 0, female: 1 }
 
   has_many :events
-
+  has_many :attends
 
   def fullname
     return "#{f_name} #{l_name} "
