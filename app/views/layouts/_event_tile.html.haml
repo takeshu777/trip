@@ -6,15 +6,19 @@
     .event__container-event-content
       = link_to image_tag(event.user.avatar, class: "event__container-event-content--avatar"), user_path(event.user.id)
       = link_to "#{event.title}", event_path(event.id), class: "event__container-event-content--title"
-      = link_to "#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content--schedule"
+      = link_to "開催#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content--schedule"
       .event__container-event-content--attend
 - else
   .event__container-event-close
     = link_to "",event_path(event.id), class: "event__container-event-image", style: "background-image: url(#{event.image});"
     .event__container-event-status
-      申込み受付前
+      - if event.end_date < Time.now
+        企画終了
+      - else
+        申込み受付前
     .event__container-event-content
       = link_to image_tag(event.user.avatar, class: "event__container-event-content--avatar"), user_path(event.user.id)
       = link_to "#{event.title}", event_path(event.id), class: "event__container-event-content--title"
-      = link_to "#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content--schedule"
+      = link_to "開催#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content--schedule"
       .event__container-event-content--attend
+
