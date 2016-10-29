@@ -31,7 +31,8 @@
                   %span.eventshow__container-fav-sum 0
                 .eventshow__container-attend
                   %i.eventshow__container-attend-ico
-                  %span.eventshow__container-attend-sum 0
+                  %span.eventshow__container-attend-sum
+                    = @event.attends.count
             .eventshow__container-summary
               %p.eventshow__container-summary-text
                 = @event.summary
@@ -57,6 +58,15 @@
                     %span.eventshow__container-columns-span 行き先
                   %span.eventshow__container-columns-content
                     = @event.dest
+              %h4.eventshow__container-columns-title
+                %span.eventshow__container-columns-span 予定金額
+              %span.eventshow__container-columns-content
+                = "#{(@event.price).to_s(:delimited)}"
+                円
+              %h4.eventshow__container-columns-details
+                %span.eventshow__container-columns-span
+                  %br/
+                  詳細
               .eventshow__container-details
                 = @event.details
       %section.eventshow__container-side
@@ -69,17 +79,31 @@
                     企画のステータス
                   %br/
                   %br/
-                  - if Time.now.between?(@event.apply_start_date,@event.apply_end_date )
+                  - if @event.end_date < Time.now
                     %span.eventshow__container-side-status-span
-                      申込受付前
-                  - else
+                      終了しました。
+                  - elsif Time.now.between?(@event.apply_start_date,@event.apply_end_date )
                     %span.eventshow__container-side-status-span
                       申込受付中！
+                  - else
+                    %span.eventshow__container-side-status-span
+                      申込受付期間
+                    %p.eventshow__container-side-status-term
+                      %br/
+                      = @event.apply_start_date
+                      から
+                      = @event.apply_end_date
               - if user_signed_in?
                 .eventshow__container-side-attend
-                  = link_to("javascript:void(0)", class: "eventshow__container-side-attend-btn") do
-                    %span.eventshow__container-side-attend-span
-                      申し込む
+                - if Time.now.between?(@event.apply_start_date,@event.apply_end_date )
+                  - if current_user.attends.find_by(event_id: @event.id)
+                    %a.eventshow__container-side-attend-btn
+                      %span.eventshow__container-side-attend-span
+                        申し込み済み
+                  - else
+                    = link_to(new_event_attend_path(@event.id), class: "eventshow__container-side-attend-btn") do
+                      %span.eventshow__container-side-attend-span
+                        申し込む
                 .eventshow__container-side-fav
                   = link_to("javascript:void(0)", class: "eventshow__container-side-fav-btn") do
                     %span.eventshow__container-side-fav-span

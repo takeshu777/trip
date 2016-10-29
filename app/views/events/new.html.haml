@@ -85,7 +85,12 @@
                       %th.eventnew__container-schedule-th
                         行き先
                       %td.eventnew__container-schedule-td
-                        = f.text_field :dest, class: "button.eventnew__container-dest-input"
+                        = f.text_field :dest, class: "eventnew__container-dest-input"
+                    %tr.eventnew__container-schedule-tr
+                      %th.eventnew__container-schedule-th
+                        予定金額
+                      %td.eventnew__container-schedule-td
+                        = f.text_field :price, class: "eventnew__container-price-input"
               .eventnew__container-details-headline
                 = link_to "編集(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-edit"
                 = link_to "プレビュー(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-prev"
@@ -106,6 +111,9 @@
               .eventnew__container-dest-label
                 .eventnew__container-dest-label-box
                   行き先
+              .eventnew__container-dest-label
+                .eventnew__container-dest-label-box
+                  予定金額
               .eventnew__container-details-label
                 .eventnew__container-details-label-box
                   詳細
