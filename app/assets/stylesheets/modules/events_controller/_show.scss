@@ -25,6 +25,10 @@
     }
   }
 
+  &-details {
+    margin: 0 0 20px;
+  }
+
   &-main {
     width: 100%;
     margin: 0 auto;
@@ -127,6 +131,8 @@
         line-height: 0;
         margin-left: 0;
         margin-top: 0;
+        transform: scale(.5);
+        transform-origin: 0 0;
       }
     }
     &-sum {
@@ -151,8 +157,9 @@
         content: url(join_icon.png);
         display: inline-block;
         margin-top: 0;
-        transform: scale(.5);
         line-height: 0;
+        transform: scale(.5);
+        transform-origin: 0 0;
       }
     }
 
@@ -263,7 +270,6 @@
       &-box {
         text-align: center;
         font-size: 28px;
-        font-weight: 400;
         color: #fcb753;
       }
 
@@ -274,8 +280,11 @@
 
       &-span {
         font-size: 28px;
-        font-weight: 400;
         color: #fcb753;
+      }
+      &-term {
+        font-size: 16px;
+        color: #666;
       }
     }
 
