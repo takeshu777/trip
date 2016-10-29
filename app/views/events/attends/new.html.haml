@@ -1,0 +1,38 @@
+.attendnew__container
+  = form_for @attend, url: event_attends_path do |f|
+    %section.attendnew__container-cover
+      .attendnew__container-cover-img{style: "background-image: url(#{@event.image})"}
+      .attendnew__container-cover-title
+        Tech::Campにいこう！！！！
+    %section.attendnew__container-notice
+      %p.attendnew__container-notice-text
+        以下の申込みフォームに必要事項をご記入の上、確認ページへお進みください。の項目はtrippieceのみ、の項目はtrippieceと担当旅行会社のみ、の項目はtrippieceと企画者のみ、の項目はtrippieceと担当旅行会社、企画者に公開されます。
+    .attendnew__container-step1
+      %section.attendnew__container-plan
+        .attendnew__container-plan-left
+          %section.attendnew__container-schedule
+            %h5.attendnew__container-schedule-headline
+              日程
+            %span.attendnew__container-schedule-desc
+              = @event.start_date
+              から
+              = @event.end_date
+          %section.attendnew__container-price
+            %h5.attendnew__container-price-headline
+              金額
+            %span.attendnew__container-price-desc
+              = "#{(@event.price).to_s(:delimited)}"
+              円
+        .attendnew__container-plan-right
+          %section.attendnew__container-comment
+            %h5.attendnew__container-comment-headline
+              一言どうぞ
+            %p.attendnew__container-comment-notice
+              こちらの意気込みは旅のメンバー一覧に表示されます。
+            = f.text_area :comment, class:"attendnew__container-comment-textbox"
+      %button.attendnew__container-step1-btn
+        申込み者情報の入力へ
+    .attendnew__container-step2
+      %section.attendnew__container-private
+        %p.attendnew__container-private-notice
+      = f.submit "保存する", class: "useredit__container-form-list-submit-btn"
