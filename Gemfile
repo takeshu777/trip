@@ -67,3 +67,5 @@ gem 'enum'
 gem 'redcarpet'
 
 gem 'jquery-ui-rails'
+
+gem 'kaminari'
