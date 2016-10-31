@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     resources :mylists, only: [:show]
   end
 
+  resources :search, only: [:index]
+
 end
