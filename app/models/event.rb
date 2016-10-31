@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
 
   mount_uploader :image, AvatarUploader
 
+  validates :title, presence: true
+
   enum status: { open: 0, draft: 1 }
 
 end
