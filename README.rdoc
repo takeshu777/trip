@@ -38,13 +38,13 @@
 
 
 <!-- お気に入り情報管理 -->
-#like
+#favorite
 ## association
   belongs_to :user, :event
 
 ## table
-  - t.integer :event_id
-  - t.integer :user_id
+  - t.references :event
+  - t.references :user
 
 
 <!-- イベント申込み者管理 -->
