@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :attends
+  has_many :favorites
 
   def fullname
     return "#{f_name} #{l_name} "

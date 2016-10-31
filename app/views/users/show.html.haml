@@ -23,7 +23,8 @@
           .user__container-profile-infos-statuses-status-label 申込中の企画
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum
-            .user__container-profile-infos-statuses-status-text 0
+            .user__container-profile-infos-statuses-status-text
+              = @user.favorites_count
           .user__container-profile-infos-statuses-status-label お気に入り企画
         .user__container-profile-infos-statuses-status
           .user__container-profile-infos-statuses-status-sum

@@ -17,7 +17,11 @@ class Users::MylistsController < ApplicationController
         @events << @event if @event.start_date > Time.now
       end
     elsif params[:list_name] == "fav"
-
+      @user_fav_list = @user.favorites
+      @events = []
+      @user_fav_list.each do |fav_event|
+        @events << Event.find(fav_event.event_id)
+      end
     elsif params[:list_name] == "producer"
       @events = @user.events.order('id DESC')
     end
