@@ -125,7 +125,7 @@
       width: 34px;
       height: 32px;
       &:before {
-        content: url(fav_icon.png);
+        content: url(icon_plans_star.png);
         display: inline-block;
         font-size: 0;
         line-height: 0;
@@ -340,7 +340,7 @@
         white-space: nowrap;
       }
 
-      &-ico {
+      &-ico-on {
         overflow: hidden;
         display: inline-block;
         position: relative;
@@ -349,7 +349,7 @@
         vertical-align: bottom;
         margin-right: 15px;
         &:before {
-          content: url(icon_plans_star.png);
+          content: url(fav_icon_on.png);
           display: inline-block;
           font-size: 0;
           line-height: 0;
@@ -359,6 +359,26 @@
           transform-origin: 0 0;
         }
       }
+      &-ico-off {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        width: 32px;
+        height: 30px;
+        vertical-align: bottom;
+        margin-right: 15px;
+        &:before {
+          content: url(fav_icon_off.png);
+          display: inline-block;
+          font-size: 0;
+          line-height: 0;
+          margin-left: 0;
+          margin-top: 0;
+          transform: scale(.5);
+          transform-origin: 0 0;
+        }
+      }
+
     }
   }
 
