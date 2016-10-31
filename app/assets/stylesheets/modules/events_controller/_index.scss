@@ -179,7 +179,7 @@
       padding: 15px;
       position: relative;
 
-      &--avatar {
+      &-avatar {
         width: 30px;
         height: 30px;
         overflow: hidden;
@@ -187,7 +187,7 @@
         border-radius: 30px;
       }
 
-      &--title {
+      &-title {
         display: block;
         float: right;
         width: 228px;
@@ -195,11 +195,33 @@
         overflow: hidden;
       }
 
-      &--schedule {
+      &-schedule {
         display: inline-block;
         padding: 5px 0 7px;
         color: #ccc;
         font-size: 12px;
+      }
+      &-attend {
+        color: #ccc;
+        padding: 5px 0 7px;
+        float: right;
+        &-ico {
+          overflow: hidden;
+          display: inline-block;
+          position: relative;
+          width: 10px;
+          height: 14px;
+          &:before {
+            content: url(join_icon_bg_black.png);
+            display: inline-block;
+            font-size: 0;
+            transform: scale(.5);
+            transform-origin: 0 0;
+            line-height: 0;
+            margin-left: 0;
+            margin-top: 0;
+          }
+        }
       }
     }
   }
