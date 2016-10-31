@@ -1,0 +1,2 @@
+$(".eventshow__container-side-fav").html("<%= j(render partial: 'layouts/favorite', locals: { event: @event }) %>");
+$(".eventshow__container-fav-sum").html("<%= @event.favorites_count %>");
