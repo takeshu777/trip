@@ -1,9 +1,9 @@
 .signup__container
+  = devise_error_messages!
   .signup__container-bg
     .signup__container-main
       %a.signup__container-logo
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "signup__container-form"}) do |f|
-        = devise_error_messages!
         %h1.signup__container-form-catchcopy アカウント登録して旅に出よう!
         .signup__container-form-list
           = f.text_field :f_name, placeholder: "性", required: :required, class: "signup__container-form-input"

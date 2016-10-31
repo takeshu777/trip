@@ -21,13 +21,13 @@ class UsersController < ApplicationController
     if params[:user][:password] == ""
       @user.update(update_params)
       if @user.errors.present?
-        flash[error] = @user.errors.full_messages
+        flash[:error] = @user.errors.full_messages
         redirect_to :back and return
       end
     else
       @user.update(update_params_with_password)
       if @user.errors.present?
-        flash[error] = @user.errors.full_messages
+        flash[:error] = @user.errors.full_messages
         redirect_to :back and return
       end
       redirect_to '/users/sign_in' and return

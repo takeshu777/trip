@@ -1,9 +1,9 @@
 .signin__container
+  = render 'layouts/messages'
   .signin__container-bg
     .signin__container-main
       %a.signin__container-logo
       = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "signin__container-form"}) do |f|
-        / = devise_error_messages!
         .signin__container-form-list
           = f.email_field :email, placeholder: "メールアドレス", required: :required, class: "signin__container-form-input", autofocus: true
           = f.password_field :password, placeholder: "パスワード", autocomplete: "off", class: "signin__container-form-input-last"
