@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events do
     scope module: :events do
       resources :attends, only: [:new, :create, :destroy]
+      resources :favorites, only: [:create, :destroy]
     end
   end
 
