@@ -3,7 +3,7 @@
     %section.attendnew__container-cover
       .attendnew__container-cover-img{style: "background-image: url(#{@event.image})"}
       .attendnew__container-cover-title
-        Tech::Campにいこう！！！！
+        = @event.title
     %section.attendnew__container-notice
       %p.attendnew__container-notice-text
         以下の申込みフォームに必要事項をご記入の上、確認ページへお進みください。の項目はtrippieceのみ、の項目はtrippieceと担当旅行会社のみ、の項目はtrippieceと企画者のみ、の項目はtrippieceと担当旅行会社、企画者に公開されます。
@@ -29,10 +29,43 @@
               一言どうぞ
             %p.attendnew__container-comment-notice
               こちらの意気込みは旅のメンバー一覧に表示されます。
-            = f.text_area :comment, class:"attendnew__container-comment-textbox"
-      %button.attendnew__container-step1-btn
-        申込み者情報の入力へ
-    .attendnew__container-step2
-      %section.attendnew__container-private
-        %p.attendnew__container-private-notice
-      = f.submit "保存する", class: "useredit__container-form-list-submit-btn"
+            = f.text_area :comment, placeholder: "コメントは必ずご記入ください。", class:"attendnew__container-comment-textbox"
+      = link_to "申込み者情報の入力へ", "javascript:void(0)", class: "attendnew__container-step1-btn"
+    .attendnew__container-step2.display-none
+      .attendnew__container-plan
+        .attendnew__container-plan-left
+          %section.attendnew__container-private
+            %p.attendnew__container-private-notice
+              こちらで入力した情報はアカウントに保存され、次回以降の申込時に自動で入力されます。
+            = fields_for current_user do |u|
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title 名字
+                = u.text_field :f_name, placeholder: "性", required: :required, class: "attendnew__container-form-text"
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title 名前
+                = u.text_field :l_name, placeholder: "名", required: :required, class: "attendnew__container-form-text"
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title 性別
+                %label
+                  = u.radio_button(:gender, "male" , :checked => current_user.gender == "male" )
+                  男性
+                %label
+                  = u.radio_button(:gender, "female" , :checked => current_user.gender == "female" )
+                  女性
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title 誕生日
+                = raw sprintf(u.date_select(:birthday, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title 住所（都道府県）
+                = u.text_field :address_pref, class: "attendnew__container-form-text"
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title 住所（市区町村）
+                = u.text_field :address_details, class: "attendnew__container-form-text"
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title Tel
+                = u.text_field :tel, class: "attendnew__container-form-text"
+              .attendnew__container-form-item
+                %h5.attendnew__container-form-title メールアドレス
+                = current_user.email
+      = f.submit "保存する", class: "attendnew__container-form-btn-submit"
+      = link_to "前に戻る", "javascript:void(0)", class: "attendnew__container-form-btn-back"
