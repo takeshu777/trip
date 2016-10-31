@@ -106,10 +106,7 @@
                       %span.eventshow__container-side-attend-span
                         申し込む
                 .eventshow__container-side-fav
-                  = link_to("javascript:void(0)", class: "eventshow__container-side-fav-btn") do
-                    %span.eventshow__container-side-fav-span
-                      %i.eventshow__container-side-fav-ico
-                      お気に入り
+                  = render partial: "layouts/favorite", locals: { event: @event }
               - else
                 .eventshow__container-side-regist
                   = link_to("javascript:void(0)", class: "eventshow__container-side-regist-btn") do
