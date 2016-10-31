@@ -28,11 +28,12 @@
               .eventshow__container-info
                 .eventshow__container-fav
                   %i.eventshow__container-fav-ico
-                  %span.eventshow__container-fav-sum 0
+                  %span.eventshow__container-fav-sum
+                    = @event.favorites_count
                 .eventshow__container-attend
                   %i.eventshow__container-attend-ico
                   %span.eventshow__container-attend-sum
-                    = @event.attends.count
+                    = @event.attends_count
             .eventshow__container-summary
               %p.eventshow__container-summary-text
                 = @event.summary

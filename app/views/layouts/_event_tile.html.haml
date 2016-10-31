@@ -9,7 +9,7 @@
       = link_to "開催#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content-schedule"
       %span.event__container-event-content-attend
         %i.event__container-event-content-attend-ico
-        = event.attends.count
+        = event.attends_count
 - else
   .event__container-event-close
     = link_to "",event_path(event.id), class: "event__container-event-image", style: "background-image: url(#{event.image});"
@@ -24,4 +24,4 @@
       = link_to "開催#{event.start_date} から #{event.end_date}", event_path(event.id), class: "event__container-event-content-schedule"
       %span.event__container-event-content-attend
         %i.event__container-event-content-attend-ico
-        = event.attends.count
+        = event.attends_count
