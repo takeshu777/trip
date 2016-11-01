@@ -69,3 +69,5 @@
       .user__container-mylist-events-box
         .user__container-mylist-events-contents
           = render partial: 'layouts/event_tile', collection: @events, as: :event
+        .user__container-mylist-events-contents-paginate
+          = paginate @events, :remote => true

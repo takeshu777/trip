@@ -1,1 +1,2 @@
 $(".user__container-mylist-events-contents").html("<%= j(render partial: 'layouts/event_tile', collection: @events, as: :event) %>");
+$(".user__container-mylist-events-contents-paginate").html("<%= j(paginate @events, :remote => true) %>");

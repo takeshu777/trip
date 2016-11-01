@@ -25,6 +25,7 @@ class Users::MylistsController < ApplicationController
     elsif params[:list_name] == "producer"
       @events = @user.events.order('id DESC')
     end
+    @events = Kaminari.paginate_array(@events).page(params[:page])
   end
 
   private

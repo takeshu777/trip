@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       @event = Event.find(attend_event.event_id)
       @events << @event if @event.end_date < Time.now
     end
+    @events = Kaminari.paginate_array(@events).page(params[:page])
   end
 
   def edit
