@@ -3,6 +3,18 @@
     %h1.header-logo
       = link_to image_tag("wide_s.png",class: "header-logo"),root_path
     %nav.header-nav
+      .header-nav-search
+        = form_tag(search_path, method: :post, class: "header-nav-search-form") do
+          = text_field_tag :text, "", class: "header-nav-search-input", placeholder: "旅を探そう！"
+          .header-nav-search-box.display-none
+            .header-nav-search-date
+              %label.header-nav-search-date-label
+                開催日
+              = text_field_tag 'start_date', "", class: "header-nav-search-date-start-input", placeholder: "年/月/日"
+              %span
+                から
+              = text_field_tag 'end_date',"" ,class: "header-nav-search-date-end-input", placeholder: "年/月/日"
+            = submit_tag "検索", class: "header-nav-search-btn"
       %ul.header-nav-menu-ul
         %li.header-nav-menu-li
           %ul.header-nav-menu-dropdown-ul.display-none
