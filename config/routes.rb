@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :mylists, only: [:show]
   end
 
-  resources :search, only: [:index]
+  post 'search', to: 'search#index'
+  get 'search', to: 'search#index'
 
 end
