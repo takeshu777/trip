@@ -1,9 +1,7 @@
 $(function() {
   // ユーザーメニュードロップダウンメニューの表示
-  $("#js-navbar-dropdown").focus(function(){
-    $(".header-nav-menu-dropdown-ul").show();
-  }).blur(function(){
-    $(".header-nav-menu-dropdown-ul").hide();
+  $("#js-navbar-dropdown").on('click', function(){
+    $(".header-nav-menu-dropdown-ul").toggleClass("display-none");
   });
 
   // 検索条件の表示
