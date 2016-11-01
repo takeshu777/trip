@@ -4,10 +4,24 @@
       .top__container-banner-campaign-main
       .top__container-banner-campaign-list
   .top__container-events
+    .event__container-headline
+      企画リスト
+    .event__container-nav
+      .event__container-sort
+        %span.event__container-sort-now
+          = @sort_now
+          %span
+            ▼
+        .event__container-sort-dropdown
+          %ul.event__container-sort-dropdown-items.display-none
+            %li.event__container-sort-dropdown-item
+              = link_to "新着順", events_path(sort: "new")
+            %li.event__container-sort-dropdown-item
+              = link_to "開催日", events_path(sort: "start_date")
     .event__container
       = render partial: "layouts/event_tile", collection: @events, as: :event
     .event__container-event-more
-      = link_to "もっとみる","#",{ class: "event__container-event-more-text" }
+      = link_to_next_page @events, 'もっとみる', :remote => true, class: "event__container-event-more-btn"
 - else
   = render "layouts/welcome"
   .top__container-events
