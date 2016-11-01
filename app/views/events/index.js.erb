@@ -1,0 +1,2 @@
+$(".event__container").append("<%= j(render partial: 'layouts/event_tile', collection: @events, as: :event) %>");
+$(".event__container-event-more").html("<%= j(link_to_next_page @events, 'もっとみる', :remote => true,class: "event__container-event-more-btn") %>");
