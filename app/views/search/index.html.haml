@@ -1,0 +1,8 @@
+.eventsearch__container
+  .eventsearch__container-box
+    %section.eventsearch__container-section
+      %h2.eventsearch__container-condition
+        検索条件 = @search_condition
+      = render partial: 'layouts/event_rectangle', collection: @events, as: :event
+      .eventsearch__container-pagenate
+        = paginate @events

@@ -1,0 +1,33 @@
+- if Time.now.between?(event.apply_start_date,event.apply_end_date )
+  .eventsearch__container-event
+    .eventsearch__container-event-imgbox
+      = link_to "",event_path(event.id), class: "eventsearch__container-event-imgbox-link", style: "background-image: url(#{event.image});"
+      .eventsearch__container-event-status
+        %span.eventsearch__container-event-status-span
+          申込み受付中
+    .eventsearch__container-event-content
+      = link_to "#{event.title}", event_path(event.id), class: "eventsearch__container-event-content-title"
+      .eventsearch__container-event-content-summary
+        = event.summary
+      .eventsearch__container-event-content-producer
+        = link_to "主催者: #{event.user.fullname}", user_path(event.user.id), class: "eventsearch__container-event-content-producer-text"
+      .eventsearch__container-event-content-schedule
+        = "開催: #{event.start_date} から #{event.end_date}"
+- else
+  .eventsearch__container-event
+    .eventsearch__container-event-imgbox
+      = link_to "",event_path(event.id), class: "eventsearch__container-event-imgbox-link", style: "background-image: url(#{event.image});"
+      .eventsearch__container-event-status
+        %span.eventsearch__container-event-status-span
+          - if event.end_date < Time.now
+            企画終了
+          - else
+            申込み受付前
+    .eventsearch__container-event-content
+      = link_to "#{event.title}", event_path(event.id), class: "eventsearch__container-event-content-title"
+      .eventsearch__container-event-content-summary
+        = event.summary
+      .eventsearch__container-event-content-producer
+        = link_to "主催者#{event.user.fullname}", user_path(event.user.id), class: "eventsearch__container-event-content-producer-text"
+      .eventsearch__container-event-content-schedule
+        = "開催#{event.start_date} から #{event.end_date}"

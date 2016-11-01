@@ -1,0 +1,112 @@
+/* -- search page style ------------------------------------ */
+.eventsearch__container{
+  margin: 100px auto auto;
+
+  &-box {
+      @include clearfix();
+      @include before_block();
+      width: 960px;
+      margin: 0 auto;
+  }
+
+  &-section {
+    // memo
+  }
+
+  &-condition {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 20px;
+    color: #999;
+  }
+
+  &-event {
+    width: 958px;
+    height: 178px;
+    background: #fdfdfd;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    @include clearfix();
+    @include before_block();
+
+    &-imgbox {
+      float: left;
+      width: 300px;
+      height: 178px;
+      position: relative;
+      &-link {
+        display: block;
+        width: 300px;
+        height: 176px;
+        overflow: hidden;
+        background-image: url(event-man-sample.jpg);
+        background-size: cover;
+        background-position: 0;
+        background-repeat: no-repeat;
+      }
+    }
+    &-status {
+      width: 120px;
+      height: 30px;
+      background: rgba(0,0,0,.4);
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      position: absolute;
+      top: 12px;
+      right: 0;
+      font-size: 12px;
+      &-span {
+        color: #fff;
+        line-height: 30px;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+
+    &-content {
+      float: left;
+      width: 618px;
+      padding: 20px;
+
+      &-title {
+        font-size: 16px;
+        height: 50px;
+        display: block;
+        color: #666;
+        line-height: 20px;
+      }
+
+      &-summary {
+        font-size: 12px;
+        height: 52px;
+        overflow: hidden;
+        color: #999;
+      }
+
+      &-producer {
+        overflow: auto;
+        // memo
+        &-text {
+          // memo
+        }
+      }
+
+      &-schedule {
+        font-size: 14px;
+      }
+    }
+  }
+
+
+  &-pagenate {
+    text-align: center;
+    margin: 10px auto 70px;
+    display: block;
+    background: #fdfdfd;
+    width: 300px;
+    padding: 10px 0;
+    border-radius: 4px;
+  }
+}
