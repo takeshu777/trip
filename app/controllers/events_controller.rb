@@ -1,7 +1,27 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.order('id DESC')
+    respond_to do |format|
+      format.html {
+        if params[:sort].blank?
+          @events = Event.order('id DESC').page(params[:page])
+          @sort_now = "新着順"
+        elsif params[:sort] == "new"
+          @events = Event.order('id DESC').page(params[:page])
+          @sort_now = "新着順"
+        else
+          @events = Event.order('start_date').page(params[:page])
+          @sort_now = "開催日"
+        end
+      }
+      format.js {
+        if params[:sort] == "new"
+          @events = Event.order('id DESC').page(params[:page])
+        else
+          @events = Event.order('start_date').page(params[:page])
+        end
+      }
+    end
   end
 
   def new
