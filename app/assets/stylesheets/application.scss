@@ -1,6 +1,7 @@
 @import "reset";
 @import "mixin/*";
 @import "jquery-ui";
+@import "jquery/jquery-ui.css";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "modules/js_style/*";
@@ -9,4 +10,6 @@
 @import "modules/events_controller/*";
 @import "modules/events_controller/attends_controller/*";
 @import "modules/users_controller/*";
+@import "modules/search_controller/*";
+@import "modules/kaminari/*";
 @import "custom";
