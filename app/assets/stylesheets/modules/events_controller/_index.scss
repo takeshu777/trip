@@ -93,7 +93,7 @@
   }
 
   &-events {
-    width: 990px;
+    width: 960px;
     margin: 0 auto;
   }
 }
@@ -172,6 +172,22 @@
         border-radius: 0;
         width: 140px;
       }
+      &-btn {
+        background-color: #fcb753;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 0;
+        height: auto;
+        padding: 6px 12px;
+        font-size: 12px;
+        vertical-align: middle;
+        background-image: none;
+        display: block;
+        width: 170px;
+        margin: 0 auto 10px;
+        text-align: center;
+        font-weight: 400;
+      }
     }
 
     &-content {
@@ -224,5 +240,56 @@
         }
       }
     }
+  }
+  &-nav {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+  }
+
+  &-sort {
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #ccc;
+    position: relative;
+    float: right;
+    padding: 8px 20px;
+    color: #333;
+    margin: 0 40px 0 5px;
+    box-shadow: 0 2px 0 1px #fff inset;
+    min-width: 80px;
+
+    &-now {
+    font-size: 13px;
+    color: #333;
+    }
+
+    &-dropdown {
+      display: table;
+      table-layout: fixed;
+      z-index: 1;
+      background-color: #fff;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      border: 1px solid #ccc;
+
+      &-items {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      &-item {
+      padding: 12px 20px;
+      font-size: 13px;
+      color: #666;
+      }
+    }
+  }
+  &-headline {
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+    margin: 15px 0;
   }
 }
