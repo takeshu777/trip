@@ -1,11 +1,22 @@
 - if user_signed_in?
   .top__container
     .top__container-banner
-      .top__container-banner-campaign-main
-      .top__container-banner-campaign-list
+      .top__container-banner-box
+        - @nav_event_list.each do |ev|
+          = link_to(event_path(ev.id),class: "top__container-banner-campaign-main") do
+            .top__container-banner-campaign-main-img{style: "background-image:url(#{asset_path ev.image});"}
+              .top__container-banner-campaign-main-title
+                = ev.title
+  .top__container-nav
+    .top__container-banner-campaign-list
+      - @nav_event_list.each do |ev|
+        .top__container-banner-campaign-sub{style: "background-image:url(#{asset_path ev.image});"}
+          = link_to "#{ev.title}", "javascript:void(0)", class: "top__container-banner-campaign-sub-title"
+    .top__container-banner-campaign-list-text
+      締め切り間近の企画
   .top__container-events
     .event__container-headline
-      企画リスト
+      企画一覧
     .event__container-nav
       .event__container-sort
         %span.event__container-sort-now
