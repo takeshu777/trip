@@ -70,25 +70,110 @@
 
 
 /* -- top__container style ------------------------------------ */
+/* slick custom */
+
+.slick-track {
+  height: 100%;
+}
+
+.slick-list {
+  height: 100%;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #fcb753;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+}
+
+
+.slick-next:before {
+    content: '>';
+}
+
+.slick-prev:before {
+    content: '<';
+}
+
+.slick-prev {
+  left: -45px;
+}
+
+.slick-next {
+  right: -45px;
+}
+
+/* top__container main */
 .top__container {
   margin-top: 50px;
   @include clearfix();
 
+  &-nav {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #ccc;
+  }
+
   &-banner {
     margin: 0;
-    height: 472px;
-
-    &-campaign-main {
-      background: url(login_topbanner.jpg) 0 center no-repeat;
-      height: 420px;
-      position: relative;
-      background-size: cover;
+    height: 420px;
+    &-box {
+      height: 100%;
     }
 
-    &-campaign-list {
-      width: 960px;
-      margin: auto;
-      height: 52px;
+    &-campaign {
+      &-main {
+        width: 100%;
+        height: 420px;
+        &-img {
+          background-size: cover;
+          color: white;
+          height: 100%;
+        }
+
+        &-title {
+          font-size: 36px;
+          font-weight: 700;
+          color: white;
+          margin: 0 auto;
+          width: 960px;
+          padding-top: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      &-sub{
+        background-size: cover;
+        height: 52px;
+        text-align: center;
+        margin: 0 3px;
+        border: 1px;
+        &-title {
+          background: rgba(255, 255, 255, 0.35);
+          color: white;
+          position: relative;
+          top: 27%;
+          display: block;
+          font-size: 18px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          // font-weight: bold;
+        }
+      }
+      &-list {
+        width: 960px;
+        margin: auto;
+        height: 52px;
+        background-color: white;
+        &-text {
+          text-align: center;
+          font-size: 20px;
+          padding: 10px 0;
+        }
+      }
     }
   }
 
