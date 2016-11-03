@@ -1,0 +1,2 @@
+$(".eventshow__modal-comments-render").append("<%= j(render partial: 'layouts/event_apply_comments', collection: @event_attend_list, as: :user) %>");
+$(".event__container-event-more").html("<%= j(link_to_next_page @event_attend_list, 'もっとみる', :remote => true, class: 'event__container-event-more-btn') %>");
