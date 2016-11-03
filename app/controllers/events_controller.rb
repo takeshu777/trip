@@ -6,6 +6,7 @@ class EventsController < ApplicationController
         if params[:sort].blank?
           @events = Event.order('id DESC').page(params[:page])
           @sort_now = "新着順"
+          @nav_event_list = Event.apply_end_date_between(Time.now,"").order(:apply_end_date).limit(5)
         elsif params[:sort] == "new"
           @events = Event.order('id DESC').page(params[:page])
           @sort_now = "新着順"
