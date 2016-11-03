@@ -9,7 +9,7 @@
       %section.eventshow__container-tab
         - if @event.user.id == current_user.id
           = link_to "企画を管理・編集", edit_event_path(@event.id), class: "eventshow__container-tab-edit"
-        = link_to "申込者一覧" , "#", class: "eventshow__container-tab-apply"
+        = link_to "申込者一覧" , event_path(@event.id), :remote => true, class: "eventshow__container-tab-apply"
       %section.eventshow__container-main
         .eventshow__container-main-box
           .eventshow__container-basic
@@ -70,6 +70,25 @@
                   詳細
               .eventshow__container-details
                 = @event.details
+      .eventshow__modal.display-none
+        .eventshow__modal-main
+          .eventshow__modal-header
+            .eventshow__modal-headline
+              %span.eventshow__modal-headline-text
+                申込み中のユーザー
+          %section.eventshow__modal-body
+            .eventshow__modal-sum
+              .eventshow__modal-sum-box
+                .eventshow__modal-sum-value
+                  = @event.attends_count
+                .eventshow__modal-sum-label
+                  参加者数
+            .eventshow__modal-desc
+              %span.eventshow__modal-desc-text
+                = "----- 参加者一覧 -----"
+            .eventshow__modal-comments-render
+          .event__container-event-more
+          = link_to "とじる", "javascript:void(0)", class: "eventshow__modal-close"
       %section.eventshow__container-side
         .eventshow__container-side-box
           .eventshow__container-side-form
