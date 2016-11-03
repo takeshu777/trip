@@ -27,4 +27,27 @@ class Event < ActiveRecord::Base
     end
   }
 
+  # 申込み日のスタート日の検索
+  scope :apply_start_date_between, -> from, to {
+    if from.present? && to.present?
+      where(apply_start_date: from..to)
+    elsif from.present?
+      where('apply_start_date >= ?', from)
+    elsif to.present?
+      where('apply_start_date <= ?', to)
+    end
+  }
+
+  # 申込み日の終わりの検索
+  scope :apply_end_date_between, -> from, to {
+    if from.present? && to.present?
+      where(apply_end_date: from..to)
+    elsif from.present?
+      where('apply_end_date >= ?', from)
+    elsif to.present?
+      where('apply_end_date <= ?', to)
+    end
+  }
+
+
 end
