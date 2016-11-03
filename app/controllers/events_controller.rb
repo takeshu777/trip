@@ -42,7 +42,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    find_event_id
+    respond_to do |format|
+      format.html {
+        find_event_id
+      }
+      format.js {
+        @event_attend_list = Event.find(params[:id]).attends.page(params[:page])
+      }
+    end
   end
 
   def edit
@@ -93,7 +100,7 @@ class EventsController < ApplicationController
   end
 
   def find_event_id
-    @event = Event.find(params[:id])
+    @event = Event.includes(:user).find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "企画が見つかりませんでした。"
     redirect_to root_path
