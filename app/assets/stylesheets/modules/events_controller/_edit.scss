@@ -1,5 +1,4 @@
 /* -- event-edit style ------------------------------------ */
-
 .eventedit__container-details-markdown-prev p img {
   width: 100%;
 }
@@ -9,6 +8,7 @@
     width: 960px;
     margin: 0 auto;
   }
+
   &-box {
     width: 960px;
     margin: 182px auto 0;
@@ -22,6 +22,7 @@
     height: 80px;
     top: 51px;
     z-index: 990;
+
     &-menu {
       @include clearfix();
       zoom: 1;
@@ -29,11 +30,13 @@
       margin: auto;
       @include before_block();
     }
+
     &-columns {
       float: left;
       position: relative;
       @include clearfix();
       @include before_block();
+
       &-status {
         float: left;
         text-align: center;
@@ -41,15 +44,18 @@
         height: 80px;
         display: table;
         width: 170px;
+
         &-text {
             vertical-align: middle;
             display: table-cell;
         }
+
         &-span {
           font-size: 20px;
           color: #8bcd7a;
         }
       }
+
       &-action {
         padding-top: 5px;
         height: 80px;
@@ -73,8 +79,8 @@
           display: block;
           width: 140px;
           text-align: center;
-
         }
+
         &-close {
           height: 70px;
           margin-top: 4px;
@@ -91,12 +97,14 @@
           width: 140px;
           text-align: center;
         }
+
         &-delete {
           &-text {
             color: #fff;
             vertical-align: middle;
             display: table-cell;
           }
+
           &-box {
             display: table;
             height: 70px;
@@ -122,14 +130,11 @@
     display: block;
     margin-top: 0em;
 
-    &-box {
-      // memo
-    }
     &-comment {
       margin-bottom: 50px;
       width: 640px;
-      // memo
     }
+
     &-submit {
       width: 640px;
       margin-top: 50px;
@@ -139,6 +144,7 @@
         color: #999;
         text-align: justify;
       }
+
       &-btn-public {
         background-color: #fcb753;
         color: #fff;
@@ -155,6 +161,7 @@
         text-align: center;
         font-weight: 400;
       }
+
       &-btn-draft {
         background-color: white;
         border: 1px solid transparent;
@@ -174,11 +181,11 @@
   }
 
   &-section {
-    // memo
     &-title {
       @include clearfix();
       margin-bottom: 20px;
     }
+
     &-basic {
       margin-bottom: 20px;
       @include clearfix();
@@ -188,27 +195,33 @@
         visibility: hidden;
         content: "\0020";
       }
+
       &-main {
         width: 640px;
         float: left;
+
         &-box {
           border: 1px solid #ccc;
           background: #fdfdfd;
         }
       }
     }
+
     &-desc {
       margin-bottom: 20px;
       @include clearfix();
+
       &-main {
         width: 640px;
         float: left;
+
         &-box {
           border: 1px solid #ccc;
           background: #fdfdfd;
           padding: 20px;
         }
       }
+
       &-side {
         &:before {
           content: "";
@@ -221,12 +234,11 @@
           left: -9px;
           top: 9px;
         }
-        // memo
+
         &-box {
         width: 210px;
         margin-left: 20px;
         float: left;
-          // memo
         }
       }
     }
@@ -245,12 +257,11 @@
         left: -9px;
         top: 9px;
       }
-      // memo
+
       &-box {
       width: 210px;
       margin-left: 20px;
       float: left;
-        // memo
       }
     }
   }
@@ -279,6 +290,7 @@
       width: 210px;
       margin-left: 20px;
       float: left;
+
       @include clearfix();
       &-osbox {
         position: relative;
@@ -361,12 +373,12 @@
       width: 100%;
       opacity: 0;
       position: absolute;
-
     }
 
     &-label {
       margin-bottom: 450px;
       position: relative;
+
       &-box {
         box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
         background: #fdfdfd;
@@ -463,6 +475,7 @@
   &-fav {
     display: inline-block;
     margin-right: 40px;
+
     &-ico {
       overflow: hidden;
       display: inline-block;
@@ -492,6 +505,7 @@
 
   &-attend {
     display: inline-block;
+
     &-ico {
       overflow: hidden;
       position: relative;
@@ -691,9 +705,11 @@
       width: 100%;
       font-size: 20px;
     }
+
     &-label {
       margin-bottom: 20px;
       position: relative;
+
       &-box {
         box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
         background: #fdfdfd;
@@ -736,9 +752,11 @@
       width: 100%;
       font-size: 20px;
     }
+
     &-label {
       margin-bottom: 15px;
       position: relative;
+
       &-box {
         box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
         background: #fdfdfd;
@@ -771,11 +789,11 @@
       }
     }
   }
+
   &-details {
     &-md {
       &-fileup {
           padding-right: 10px;
-          border-right: 1px solid #ccc;
           font-weight: 700;
           display: block;
           color: #666;
@@ -785,6 +803,7 @@
             color: #ccc;
             text-decoration: none;
           }
+
         &-input {
           top: 0px;
           bottom: 0px;
@@ -793,25 +812,26 @@
           width: 100%;
           opacity: 0;
           position: absolute;
-          // memo
         }
       }
+
       &-box {
         margin-bottom: 20px;
         border-bottom: 1px solid #ccc;
         padding-bottom: 10px;
         font-size: 12px;
       }
+
       &-headline {
         &-text {
           padding-right: 10px;
-          border-right: 1px solid #ccc;
           font-weight: 700;
           display: block;
           color: #666;
           margin-bottom: 10px;
         }
       }
+
       &-file {
         display: block;
         width: 100%;
@@ -821,18 +841,14 @@
         color: #666;
         padding: 0 20px;
         @include clearfix();
-        // &-name {
-        //   display: inline-block;
-        //   width: 100px;
-        //   height: 50px;
-        // }
+
         &-img {
           display: block;
-          // width: 100px;
           height: 50px;
           float: left;
           margin-right: 5px;
         }
+
         &-btn {
           &-insert {
             display: table;
@@ -847,6 +863,7 @@
               display: table-cell;
             }
           }
+
           &-delete {
             display: table;
             text-align: center;
@@ -860,11 +877,25 @@
               display: table-cell;
             }
           }
+
+          &-name {
+            display: table;
+            width: 100px;
+            height: 50px;
+            float: left;
+            margin-right: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            &-text {
+              vertical-align: middle;
+              display: table-cell;
+            }
+          }
         }
-
-
       }
     }
+
     &-headline {
       margin: 40px 0 -1px;
       border: 1px solid #ccc;

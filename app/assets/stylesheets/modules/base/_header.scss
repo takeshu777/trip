@@ -106,6 +106,7 @@ header {
         border: 1px solid #ccc;
         box-sizing: content-box;
       }
+
       &-btn {
       display: inline-block;
       height: auto;
@@ -120,6 +121,7 @@ header {
       border-radius: 0;
       margin: 10px 0;
       }
+
       &-box {
         background: #fff;
         position: absolute;
@@ -129,13 +131,14 @@ header {
         padding: 20px;
         border: 1px solid #ccc;
       }
+
       &-date {
-        // memo
         &-label {
           width: 100%;
           display: inline-block;
           color: #999;
         }
+
         &-start-input {
           padding: 2px 5px;
           margin-left: 0px;
@@ -143,6 +146,7 @@ header {
           padding-right: 26px;
           width: 127.2px;
         }
+
         &-end-input {
           margin-left: 0px;
           margin-right: 0px;
@@ -159,7 +163,6 @@ header {
       }
     }
     &-menu {
-
       &-ul {
         height: 50px;
         float: left;
@@ -193,8 +196,6 @@ header {
       &-dropdown-li {
         margin-bottom: 20px;
         list-style-type: none;
-        &-text {
-        }
       }
     }
 
@@ -208,16 +209,19 @@ header {
       position: relative;
       top: -8px;
       margin-right: 5px;
+      background: white;
 
       &-a {
         color: #fcb753;
         border: 0;
       }
+
       &-img {
         border: 0;
         width: 30px;
       }
     }
+
     &-event {
       display: inline-block;
       height: auto;

@@ -9,10 +9,6 @@
       margin: 0 auto;
   }
 
-  &-section {
-    // memo
-  }
-
   &-condition {
     font-size: 18px;
     font-weight: 400;
@@ -34,6 +30,7 @@
       width: 300px;
       height: 178px;
       position: relative;
+
       &-link {
         display: block;
         width: 300px;
@@ -45,6 +42,7 @@
         background-repeat: no-repeat;
       }
     }
+
     &-status {
       width: 120px;
       height: 30px;
@@ -56,6 +54,7 @@
       top: 12px;
       right: 0;
       font-size: 12px;
+
       &-span {
         color: #fff;
         line-height: 30px;
@@ -86,10 +85,6 @@
 
       &-producer {
         overflow: auto;
-        // memo
-        &-text {
-          // memo
-        }
       }
 
       &-schedule {

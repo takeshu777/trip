@@ -1,17 +1,17 @@
 /* -- event-new style ------------------------------------ */
 .eventnew__container {
   margin: 100px auto auto;
+
   &-form {
     background: #fdfdfd;
     border: 1px solid #ccc;
     width: 960px;
     margin: 0 auto;
-    &-box {
-      // memo
-    }
+
     &-submit {
       margin: 50px auto;
       text-align: center;
+
       &-btn {
         height: auto;
         background-color: #fcb753;
@@ -26,6 +26,7 @@
       }
     }
   }
+
   &-desc {
     text-align: center;
     padding: 60px 0;
@@ -34,54 +35,51 @@
       font-size: 30px;
       color: #999;
     }
-    &-img {
-      // memo
-    }
   }
+
   &-basic {
     padding: 50px 80px;
     margin-bottom: 20px;
     @include before_block();
     @include clearfix();
+
     &-schedule {
       margin-bottom: 50px;
       @include clearfix();
+
       &-span {
         display: inline-block;
         color: #999;
         margin-right: 20px;
       }
+
       &-date {
         display: inline-block;
         margin-bottom: 10px;
       }
     }
+
     &-main {
       width: 390px;
       float: left;
       margin-right: 110px;
     }
+
     &-headline {
       font-size: 18px;
       font-weight: 400;
       color: #999;
       margin: 0 0 5px 0;
     }
-    &-date {
-      // memo
-    }
+
     &-tips {
       width: 280px;
       float: left;
       color: #999;
     }
+
     &-text {
       font-size: 18px;
-    }
-    &-dest {
-      &-input {
-        // memo
-      }
     }
   }
 }

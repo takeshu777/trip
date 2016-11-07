@@ -1,7 +1,9 @@
+/* -- event-new style ------------------------------------ */
 .attendnew__container {
   margin: 100px auto auto;
   width: 960px;
   @include before_block();
+
   &-cover {
     margin: 0;
     padding: 0;
@@ -56,10 +58,11 @@
       text-align: center;
     }
   }
+
   &-step2 {
     @include before_block();
     @include clearfix();
-    // memo
+
     &-left {
       @include before_block();
       @include clearfix();
@@ -71,17 +74,19 @@
 
   &-plan {
     @include clearfix();
-    // memo
+
     &-left {
     float: left;
     width: 520px;
     margin-right: 20px;
     }
+
     &-right {
       float: left;
       @include clearfix();
     }
   }
+
   &-schedule {
     margin: 0 0 20px;
     border: 1px solid #ccc;
@@ -89,16 +94,15 @@
     background: #fdfdfd;
     @include before_block();
     @include clearfix();
+
     &-headline {
       font-size: 18px;
       font-weight: 400;
       color: #666;
       margin-bottom: 5px;
     }
-    &-desc {
-      // memo
-    }
   }
+
   &-price {
     margin: 0 0 20px;
     border: 1px solid #ccc;
@@ -112,10 +116,8 @@
       color: #666;
       margin-bottom: 5px;
     }
-    &-desc {
-      // memo
-    }
   }
+
   &-comment {
     margin: 0 0 20px;
     border: 1px solid #ccc;
@@ -123,15 +125,14 @@
     background: #fdfdfd;
     @include before_block();
     @include clearfix();
+
     &-headline {
       font-size: 18px;
       font-weight: 400;
       color: #666;
       margin-bottom: 5px;
     }
-    &-desc {
-      // memo
-    }
+
     &-textbox {
       padding: 4px;
       width: 100%;
@@ -139,12 +140,14 @@
       box-sizing: border-box;
     }
   }
+
   &-private {
     margin: 0 0 20px;
     border: 1px solid #ccc;
     padding: 20px;
     background: #fdfdfd;
     @include before_block();
+
     &-notice {
       font-size: 12px;
       margin: 0 0 10px;
@@ -153,23 +156,18 @@
   }
 
   &-form {
-    // memo
     &-item {
       margin-bottom: 20px;
     }
+
     &-title {
       font-size: 18px;
       font-weight: 400;
       color: #666;
       margin-bottom: 5px;
-
-      &-text {
-        // memo
-      }
     }
 
     &-btn {
-
       &-submit {
         background-color: #fcb753;
         color: #fff;
@@ -199,7 +197,6 @@
         width: 170px;
         margin: 0 auto 10px;
         text-align: center;
-        // memo
       }
     }
   }

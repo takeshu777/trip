@@ -1,6 +1,7 @@
 /* -- profile(show) page style ------------------------------------ */
 .user__container {
   min-height: 100%;
+
   &-profile {
     width: 960px;
     border: 1px solid #ccc;
@@ -19,7 +20,6 @@
     }
 
     &-infos {
-
       &-upper{
         position: relative;
       }
@@ -31,6 +31,8 @@
         border-radius: 100px;
         border: 1px solid #fff;
         margin: -80px auto 0;
+        background: white;
+
         &-img {
           border: 0;
           width: 100px;
@@ -91,14 +93,11 @@
 
         &-desc {
           margin: 0 0 10px;
-
-          &-span {
-
-          }
         }
       }
     }
   }
+
   &-mylist {
     zoom: 1;
     width: 960px;
