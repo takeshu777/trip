@@ -1,0 +1,6 @@
+%li.eventedit__container-details-md-file
+  %img.eventedit__container-details-md-file-img{src: "#{image.photo}", value: "#{image.photo.file.identifier}"}
+  .eventedit__container-details-md-file-btn-insert
+    = link_to "画像を挿入", "javascript:void(0)", class: "eventedit__container-details-md-file-btn-insert-text"
+  .eventedit__container-details-md-file-btn-delete
+    = link_to "画像を削除", event_details_image_path(event.id, image.id), remote: true, method: :delete, class: "eventedit__container-details-md-file-btn-delete-text"
