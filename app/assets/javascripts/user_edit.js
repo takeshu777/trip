@@ -1,5 +1,18 @@
 $(function () {
-  //event_lister
+
+  /* avatar画像のプレビュー */
+  $("#avatar_image").on('change', function(ev) {
+    debugger;
+    var reader = new FileReader();
+    var target = ev.target;
+    var file = target.files[0];
+    reader.readAsDataURL(file);
+    reader.addEventListener('load', function(reader){
+      $(".useredit__container-form-avatar-imgbox-img").attr("src", reader.target.result );
+    });
+  });
+
+  /* 項目切り替え */
   $(".useredit__container-menu-li-text").on('click', function(ev) {
     // 選択項目のハイライトリセット
     $(".useredit__container-menu-li").removeClass("useredit__container-menu-li-active");
