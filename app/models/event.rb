@@ -4,10 +4,9 @@ class Event < ActiveRecord::Base
 
   has_many :attends
   has_many :favorites
+  has_many :details_images, dependent: :destroy
 
   mount_uploader :image, AvatarUploader
-
-  validates :title, presence: true
 
   enum status: { open: 0, draft: 1 }
 
