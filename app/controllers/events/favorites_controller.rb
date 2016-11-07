@@ -1,5 +1,7 @@
 class Events::FavoritesController < ApplicationController
 
+  before_action :authenticate_user!, only: [:create, :destroy]
+
   def create
     Favorite.create(create_params)
     @event = Event.find(params[:event_id])

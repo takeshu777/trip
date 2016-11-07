@@ -1,5 +1,7 @@
 class Events::AttendsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new,:create]
+
   def new
     @attend = Attend.new
     find_event_id

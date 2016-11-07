@@ -1,15 +1,17 @@
 class Events::DetailsImagesController < ApplicationController
 
+  before_action :authenticate_user!, only: [:create, :destroy]
+
   def create
     respond_to do |format|
       format.js {
         @images = DetailsImage.new(create_params)
         if @images.save
-          @file_msg = "success"
+          @file_msg = "画像アップロード完了"
           @event = Event.find(params[:event_id])
         else
           @event = Event.find(params[:event_id])
-          @file_msg = "failure"
+          @file_msg = "画像のアップロード失敗"
         end
       }
     end
