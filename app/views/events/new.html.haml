@@ -1,124 +1,36 @@
 .eventnew__container
-  .eventnew__container-main
-    = form_for(@event, html: {class: "eventnew__container-form"}) do |f|
-      .eventnew__container-form-box
-        %p.eventnew__container-form-comment
-          まずはざっくりと企画の基本情報を入力してみましょう。後から編集もできるので、詳細が決まったらどんどん編集して、企画ページを充実させていきましょう！
-        %section.eventnew__container-section-title
-          .eventnew__container-title-box
-            = f.text_field :title, placeholder: "北海道・東北へ行こう！", class: "eventnew__container-title-input"
-            %p.eventnew__container-title-desc
-          .eventnew__container-title-label
-            .eventnew__container-title-label-osbox
-              .eventnew__container-title-label-isbox
-                タイトル
-        %section.eventnew__container-section-basic
-          .eventnew__container-section-basic-main
-            .eventnew__container-section-basic-main-box
-              .eventnew__container-img
-                .eventnew__container-img-msgbox
-                  .eventnew__container-img-btnbox
-                    アップロードする
-                    = f.file_field :image, class:"eventnew__container-img-btn", id: "js-event-image"
-              .eventnew__container-infobar
-                .eventnew__container-producer
-                  .eventnew__container-producer-avatar
-                    - if current_user.avatar.present?
-                      = image_tag "#{current_user.avatar}", class: "eventnew__container-producer-avatar-img"
-                    - else
-                      = image_tag "avatar_sample.jpg", class: "eventnew__container-producer-avatar-img"
-                  %span.eventnew__container-producer-avatar-span
-                    = current_user.fullname
-                .eventnew__container-info
-                  .eventnew__container-fav
-                    %i.eventnew__container-fav-ico
-                    %span.eventnew__container-fav-sum 0
-                  .eventnew__container-attend
-                    %i.eventnew__container-attend-ico
-                    %span.eventnew__container-attend-sum 0
-              .eventnew__container-summary
-                = f.text_area :summary, class: "eventnew__container-summary-text", placeholder: "例）2〜3月に転職するタイミングで、憧れのウユニ塩湖に行きたいと思っています！南米に一人で行くのは不安なので、一緒に行ける旅仲間を募集しています。一緒に、ウユニ塩湖の絶景に感動して、写真を撮って遊びましょう！"
-                / .eventnew__container-hashtag
-                /   .eventnew__container-hashtag-desc
-                /     ハッシュタグを追加
-                /   %a.eventnew__container-hashtag-tag #アラサー歓迎
-                /   %a.eventnew__container-hashtag-tag #20代歓迎
-                /   %a.eventnew__container-hashtag-tag #40代以上歓迎
-                %p.eventnew__container-summary-countchar
-          .eventnew__container-basic-side
-            .eventnew__container-basic-side-box
-              .eventnew__container-img-label
-                .eventnew__container-img-label-box
-                  企画の画像
-              .eventnew__container-summary-label
-                .eventnew__container-summary-label-box
-                  旅への想い
-        %section.eventnew__container-section-desc
-          .eventnew__container-section-desc-main
-            .eventnew__container-section-desc-main-box
-              .eventnew__container-schedule
-                %table.eventnew__container-schedule-table
-                  %tbody.eventnew__container-schedule-tbody
-                    %tr.eventnew__container-schedule-tr
-                      %th.eventnew__container-schedule-th
-                        参加受付期間
-                      %td.eventnew__container-schedule-td
-                        %span.eventnew__container-schedule-td-span 開始日
-                        .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:apply_start_date, use_month_numbers: true, start_year: (Time.now.year) , default: Time.now , date_separator:'%s' ),'年 ', '月 ') + '日'
-                        %br
-                        %span.eventnew__container-schedule-td-span 終了日
-                        .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:apply_end_date, use_month_numbers: true, start_year: (Time.now.year) ,default: Time.now + 2.week , date_separator:'%s' ),'年 ', '月 ') + '日'
-                    %tr.eventnew__container-schedule-tr
-                      %th.eventnew__container-schedule-th
-                        日程
-                      %td.eventnew__container-schedule-td
-                        %span.eventnew__container-schedule-td-span 開始日
-                        .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:start_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
-                        %br
-                        %span.eventnew__container-schedule-td-span 終了日
-                        .eventnew__container-schedule-td-date
-                          = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
-                    %tr.eventnew__container-schedule-tr
-                      %th.eventnew__container-schedule-th
-                        行き先
-                      %td.eventnew__container-schedule-td
-                        = f.text_field :dest, class: "eventnew__container-dest-input"
-                    %tr.eventnew__container-schedule-tr
-                      %th.eventnew__container-schedule-th
-                        予定金額
-                      %td.eventnew__container-schedule-td
-                        = f.text_field :price, class: "eventnew__container-price-input"
-              .eventnew__container-details-headline
-                = link_to "編集(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-edit"
-                = link_to "プレビュー(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-prev"
-              .eventnew__container-details-body
-                .eventnew__container-details-md-box
-                  .eventnew__container-details-md-headline
-                    = link_to "見出しを挿入する","javascript:void(0)", class:"eventnew__container-details-md-headline-text"
-                .eventnew__container-details-body-box
-                  = f.text_area :details, class: "eventnew__container-details-body-text"
-              .eventnew__container-details-markdown
-                .eventnew__container-details-markdown-prev
-                  hoeg
-          .eventnew__container-section-desc-side
-            .eventnew__container-section-desc-side-box
-              .eventnew__container-schedule-label
-                .eventnew__container-schedule-label-box
-                  日程
-              .eventnew__container-dest-label
-                .eventnew__container-dest-label-box
-                  行き先
-              .eventnew__container-dest-label
-                .eventnew__container-dest-label-box
-                  予定金額
-              .eventnew__container-details-label
-                .eventnew__container-details-label-box
-                  詳細
-      .eventnew__container-form-submit
-        %p.eventnew__container-form-submit-text
-          保存するとこの企画が全体公開となります。公開しない場合は「下書き保存する」ボタンをクリックしてください。
-        = f.submit "公開", name: "open", class: "eventnew__container-form-submit-btn-public"
-        = f.submit "下書き保存", name: "draft", class: "eventnew__container-form-submit-btn-draft"
+  = form_for(@event, html: {class: "eventnew__container-form"}) do |f|
+    .eventnew__container-desc
+      .eventnew__container-desc-text
+        企画を作成する
+      = image_tag "form_step.png", class: "eventnew__container-desc-img"
+    .eventnew__container-basic
+      .eventnew__container-basic-schedule
+        .eventnew__container-basic-main
+          %h1.eventnew__container-basic-headline
+            %span.eventnew__container-basic-headline-text
+          .eventnew__container-basic-date
+            %h1.eventnew__container-basic-headline
+              日程
+            .eventnew__container-basic-schedule
+              %span.eventnew__container-basic-schedule-span 開始日
+              .eventnew__container-basic-schedule-date
+                = raw sprintf(f.date_select(:start_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
+              %br
+              %span.eventnew__container-basic-schedule-span 終了日
+              .eventnew__container-basic-schedule-date
+                = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
+        .eventnew__container-basic-tips
+          .eventnew__container-basic-text
+            開催期間を入力してください。不明の場合は暫定の日にちとしてください。
+      .eventnew__container-basic-dest
+        .eventnew__container-basic-main
+          %h1.eventnew__container-basic-headline
+            行き先
+          .eventnew__container-basic-date
+            = f.text_field :dest, class: "eventedit__container-dest-input"
+      .eventnew__container-basic-tips
+        .eventnew__container-basic-text
+          行き先を設定しましょう。
+    .eventnew__container-form-submit
+      = f.submit "詳細入力画面へ", name: "draft", class: "eventnew__container-form-submit-btn"

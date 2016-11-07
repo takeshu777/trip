@@ -6,10 +6,11 @@
       .eventshow__container-title
         %h1.eventshow__container-title-text
           = @event.title
-      %section.eventshow__container-tab
-        - if @event.user.id == current_user.id
-          = link_to "企画を管理・編集", edit_event_path(@event.id), class: "eventshow__container-tab-edit"
-        = link_to "申込者一覧" , event_path(@event.id), :remote => true, class: "eventshow__container-tab-apply"
+      - if user_signed_in?
+        %section.eventshow__container-tab
+          - if @event.user.id == current_user.id
+            = link_to "企画を管理・編集", edit_event_path(@event.id), class: "eventshow__container-tab-edit"
+          = link_to "申込者一覧" , event_path(@event.id), :remote => true, class: "eventshow__container-tab-apply"
       %section.eventshow__container-main
         .eventshow__container-main-box
           .eventshow__container-basic
@@ -69,7 +70,7 @@
                   %br/
                   詳細
               .eventshow__container-details
-                = @event.details
+                = markdown(@event.details)
       .eventshow__modal.display-none
         .eventshow__modal-main
           .eventshow__modal-header

@@ -1,143 +1,149 @@
-.eventnew__container
-  = form_for(@event, html: {class: "eventnew__container-form"}) do |f|
-    .eventnew__container-header
-      .eventnew__container-header-menu
-        .eventnew__container-header-columns
-          .eventnew__container-header-columns-status
-            %a.eventnew__container-header-columns-status-text
+.eventedit__container
+  = form_for(@event, html: {class: "eventedit__container-form"}) do |f|
+    .eventedit__container-header
+      .eventedit__container-header-menu
+        .eventedit__container-header-columns
+          .eventedit__container-header-columns-status
+            %a.eventedit__container-header-columns-status-text
               現在のステータス
               %br/
               - if @event.status == "open"
-                %span.eventnew__container-header-columns-status-span
+                %span.eventedit__container-header-columns-status-span
                   企画公開中！
               - else
-                %span.eventnew__container-header-columns-status-span
+                %span.eventedit__container-header-columns-status-span
                   下書き保存中
-          .eventnew__container-header-columns-action
-            = f.submit "更新", name: "open", class: "eventnew__container-header-columns-action-open"
-            = f.submit "下書き保存", name: "draft", class: "eventnew__container-header-columns-action-close"
-            .eventnew__container-header-columns-action-delete-box
-              = link_to "企画を削除する", event_path(@event.id), method: :delete, class: "eventnew__container-header-columns-action-delete-text"
-    .eventnew__container-main
-      .eventnew__container-box
-        .eventnew__container-form-box
-          %p.eventnew__container-form-comment
+          .eventedit__container-header-columns-action
+            = f.submit "更新", name: "open", class: "eventedit__container-header-columns-action-open"
+            = f.submit "下書き保存", name: "draft", class: "eventedit__container-header-columns-action-close"
+            .eventedit__container-header-columns-action-delete-box
+              = link_to "企画を削除する", event_path(@event.id), method: :delete, class: "eventedit__container-header-columns-action-delete-text"
+    .eventedit__container-main
+      .eventedit__container-box
+        .eventedit__container-form-box
+          %p.eventedit__container-form-comment
             まずはざっくりと企画の基本情報を入力してみましょう。後から編集もできるので、詳細が決まったらどんどん編集して、企画ページを充実させていきましょう！
-          %section.eventnew__container-section-title
-            .eventnew__container-title-box
-              = f.text_field :title, placeholder: "北海道・東北へ行こう！", class: "eventnew__container-title-input"
-              %p.eventnew__container-title-desc
-            .eventnew__container-title-label
-              .eventnew__container-title-label-osbox
-                .eventnew__container-title-label-isbox
+          %section.eventedit__container-section-title
+            .eventedit__container-title-box
+              = f.text_field :title, placeholder: "北海道・東北へ行こう！", class: "eventedit__container-title-input"
+              %p.eventedit__container-title-desc
+            .eventedit__container-title-label
+              .eventedit__container-title-label-osbox
+                .eventedit__container-title-label-isbox
                   タイトル
-          %section.eventnew__container-section-basic
-            .eventnew__container-section-basic-main
-              .eventnew__container-section-basic-main-box
-                .eventnew__container-img{style: "background-image: url(#{@event.image})"}
-                  .eventnew__container-img-msgbox
-                    .eventnew__container-img-btnbox
+          %section.eventedit__container-section-basic
+            .eventedit__container-section-basic-main
+              .eventedit__container-section-basic-main-box
+                .eventedit__container-img{style: "background-image: url(#{@event.image})"}
+                  .eventedit__container-img-msgbox
+                    .eventedit__container-img-btnbox
                       アップロードする
-                      = f.file_field :image, class:"eventnew__container-img-btn", id: "js-event-image"
-                .eventnew__container-infobar
-                  .eventnew__container-producer
-                    .eventnew__container-producer-avatar
+                      = f.file_field :image, class:"eventedit__container-img-btn", id: "js-event-image"
+                .eventedit__container-infobar
+                  .eventedit__container-producer
+                    .eventedit__container-producer-avatar
                       - if current_user.avatar.present?
-                        = image_tag "#{current_user.avatar}", class: "eventnew__container-producer-avatar-img"
+                        = image_tag "#{current_user.avatar}", class: "eventedit__container-producer-avatar-img"
                       - else
-                        = image_tag "avatar_sample.jpg", class: "eventnew__container-producer-avatar-img"
-                    %span.eventnew__container-producer-avatar-span
+                        = image_tag "avatar_sample.jpg", class: "eventedit__container-producer-avatar-img"
+                    %span.eventedit__container-producer-avatar-span
                       = current_user.fullname
-                  .eventnew__container-info
-                    .eventnew__container-fav
-                      %i.eventnew__container-fav-ico
-                      %span.eventnew__container-fav-sum 0
-                    .eventnew__container-attend
-                      %i.eventnew__container-attend-ico
-                      %span.eventnew__container-attend-sum 0
-                .eventnew__container-summary
-                  = f.text_area :summary, class: "eventnew__container-summary-text", placeholder: "例）2〜3月に転職するタイミングで、憧れのウユニ塩湖に行きたいと思っています！南米に一人で行くのは不安なので、一緒に行ける旅仲間を募集しています。一緒に、ウユニ塩湖の絶景に感動して、写真を撮って遊びましょう！"
-                  / .eventnew__container-hashtag
-                  /   .eventnew__container-hashtag-desc
+                  .eventedit__container-info
+                    .eventedit__container-fav
+                      %i.eventedit__container-fav-ico
+                      %span.eventedit__container-fav-sum 0
+                    .eventedit__container-attend
+                      %i.eventedit__container-attend-ico
+                      %span.eventedit__container-attend-sum 0
+                .eventedit__container-summary
+                  = f.text_area :summary, class: "eventedit__container-summary-text", placeholder: "例）2〜3月に転職するタイミングで、憧れのウユニ塩湖に行きたいと思っています！南米に一人で行くのは不安なので、一緒に行ける旅仲間を募集しています。一緒に、ウユニ塩湖の絶景に感動して、写真を撮って遊びましょう！"
+                  / .eventedit__container-hashtag
+                  /   .eventedit__container-hashtag-desc
                   /     ハッシュタグを追加
-                  /   %a.eventnew__container-hashtag-tag #アラサー歓迎
-                  /   %a.eventnew__container-hashtag-tag #20代歓迎
-                  /   %a.eventnew__container-hashtag-tag #40代以上歓迎
-                  %p.eventnew__container-summary-countchar
-            .eventnew__container-basic-side
-              .eventnew__container-basic-side-box
-                .eventnew__container-img-label
-                  .eventnew__container-img-label-box
+                  /   %a.eventedit__container-hashtag-tag #アラサー歓迎
+                  /   %a.eventedit__container-hashtag-tag #20代歓迎
+                  /   %a.eventedit__container-hashtag-tag #40代以上歓迎
+                  %p.eventedit__container-summary-countchar
+            .eventedit__container-basic-side
+              .eventedit__container-basic-side-box
+                .eventedit__container-img-label
+                  .eventedit__container-img-label-box
                     企画の画像
-                .eventnew__container-summary-label
-                  .eventnew__container-summary-label-box
+                .eventedit__container-summary-label
+                  .eventedit__container-summary-label-box
                     旅への想い
-          %section.eventnew__container-section-desc
-            .eventnew__container-section-desc-main
-              .eventnew__container-section-desc-main-box
-                .eventnew__container-schedule
-                  %table.eventnew__container-schedule-table
-                    %tbody.eventnew__container-schedule-tbody
-                      %tr.eventnew__container-schedule-tr
-                        %th.eventnew__container-schedule-th
+          %section.eventedit__container-section-desc
+            .eventedit__container-section-desc-main
+              .eventedit__container-section-desc-main-box
+                .eventedit__container-schedule
+                  %table.eventedit__container-schedule-table
+                    %tbody.eventedit__container-schedule-tbody
+                      %tr.eventedit__container-schedule-tr
+                        %th.eventedit__container-schedule-th
                           参加受付期間
-                        %td.eventnew__container-schedule-td
-                          %span.eventnew__container-schedule-td-span 開始日
-                          .eventnew__container-schedule-td-date
+                        %td.eventedit__container-schedule-td
+                          %span.eventedit__container-schedule-td-span 開始日
+                          .eventedit__container-schedule-td-date
                             = raw sprintf(f.date_select(:apply_start_date, use_month_numbers: true, start_year: (Time.now.year) , default: Time.now , date_separator:'%s' ),'年 ', '月 ') + '日'
                           %br
-                          %span.eventnew__container-schedule-td-span 終了日
-                          .eventnew__container-schedule-td-date
+                          %span.eventedit__container-schedule-td-span 終了日
+                          .eventedit__container-schedule-td-date
                             = raw sprintf(f.date_select(:apply_end_date, use_month_numbers: true, start_year: (Time.now.year) ,default: Time.now + 2.week , date_separator:'%s' ),'年 ', '月 ') + '日'
-                      %tr.eventnew__container-schedule-tr
-                        %th.eventnew__container-schedule-th
+                      %tr.eventedit__container-schedule-tr
+                        %th.eventedit__container-schedule-th
                           日程
-                        %td.eventnew__container-schedule-td
-                          %span.eventnew__container-schedule-td-span 開始日
-                          .eventnew__container-schedule-td-date
+                        %td.eventedit__container-schedule-td
+                          %span.eventedit__container-schedule-td-span 開始日
+                          .eventedit__container-schedule-td-date
                             = raw sprintf(f.date_select(:start_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
                           %br
-                          %span.eventnew__container-schedule-td-span 終了日
-                          .eventnew__container-schedule-td-date
+                          %span.eventedit__container-schedule-td-span 終了日
+                          .eventedit__container-schedule-td-date
                             = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
-                      %tr.eventnew__container-schedule-tr
-                        %th.eventnew__container-schedule-th
+                      %tr.eventedit__container-schedule-tr
+                        %th.eventedit__container-schedule-th
                           行き先
-                        %td.eventnew__container-schedule-td
-                          = f.text_field :dest, class: "eventnew__container-dest-input"
-                      %tr.eventnew__container-schedule-tr
-                        %th.eventnew__container-schedule-th
+                        %td.eventedit__container-schedule-td
+                          = f.text_field :dest, class: "eventedit__container-dest-input"
+                      %tr.eventedit__container-schedule-tr
+                        %th.eventedit__container-schedule-th
                           予定金額
-                        %td.eventnew__container-schedule-td
-                          = f.text_field :price, class: "eventnew__container-price-input"
-                  .eventnew__container-details-headline
-                    = link_to "編集(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-edit"
-                    = link_to "プレビュー(工事中)","javascript:void(0)", class: "eventnew__container-details-headline-switch-prev"
-                  .eventnew__container-details-body
-                    .eventnew__container-details-md-box
-                      .eventnew__container-details-md-headline
-                        = link_to "見出しを挿入する","javascript:void(0)", class:"eventnew__container-details-md-headline-text"
-                    .eventnew__container-details-body-box
-                      = f.text_area :details, class: "eventnew__container-details-body-text"
-                .eventnew__container-details-markdown
-                  .eventnew__container-details-markdown-prev
+                        %td.eventedit__container-schedule-td
+                          = f.text_field :price, class: "eventedit__container-price-input"
+                  .eventedit__container-details-headline
+                    = link_to "編集(工事中)","javascript:void(0)", class: "eventedit__container-details-headline-switch-edit"
+                    = link_to "プレビュー(工事中)","javascript:void(0)", class: "eventedit__container-details-headline-switch-prev"
+                  .eventedit__container-details-body
+                    .eventedit__container-details-md-box
+                      .eventedit__container-details-md-headline
+                        = link_to "見出しを挿入する","javascript:void(0)", class:"eventedit__container-details-md-headline-text"
+                        %span.eventedit__container-details-md-fileup
+                          挿入する画像をアップロード
+                          = file_field_tag :photo, id: "js-form-file" ,class: "eventedit__container-details-md-fileup-input"
+                        = hidden_field_tag :event_id, @event.id , id: "js-form-event_id"
+                        %ul.eventedit__container-details-md-files
+                          = render partial: "layouts/event_summary_image", locals: { event: @event }, collection: @event.details_images, as: :image
+                    .eventedit__container-details-body-box
+                      = f.text_area :details, class: "eventedit__container-details-body-text"
+                .eventedit__container-details-markdown
+                  .eventedit__container-details-markdown-prev
                     = markdown(@event.details)
-            .eventnew__container-section-desc-side
-              .eventnew__container-section-desc-side-box
-                .eventnew__container-schedule-label
-                  .eventnew__container-schedule-label-box
+            .eventedit__container-section-desc-side
+              .eventedit__container-section-desc-side-box
+                .eventedit__container-schedule-label
+                  .eventedit__container-schedule-label-box
                     日程
-                .eventnew__container-dest-label
-                  .eventnew__container-dest-label-box
+                .eventedit__container-dest-label
+                  .eventedit__container-dest-label-box
                     行き先
-                .eventnew__container-price-label
-                  .eventnew__container-price-label-box
+                .eventedit__container-price-label
+                  .eventedit__container-price-label-box
                     予定金額
-                .eventnew__container-details-label
-                  .eventnew__container-details-label-box
+                .eventedit__container-details-label
+                  .eventedit__container-details-label-box
                     詳細
-        .eventnew__container-form-submit
-          %p.eventnew__container-form-submit-text
+        .eventedit__container-form-submit
+          %p.eventedit__container-form-submit-text
             保存するとこの企画が全体公開となります。公開しない場合は「下書き保存する」ボタンをクリックしてください。
-          = f.submit "更新", name: "open", class: "eventnew__container-form-submit-btn-public"
-          = f.submit "下書き保存", name: "draft", class: "eventnew__container-form-submit-btn-draft"
+          = f.submit "更新", name: "open", class: "eventedit__container-form-submit-btn-public"
+          = f.submit "下書き保存", name: "draft", class: "eventedit__container-form-submit-btn-draft"
