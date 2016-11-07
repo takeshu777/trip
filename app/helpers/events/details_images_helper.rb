@@ -1,0 +1,2 @@
+module Events::DetailsImagesHelper
+end
