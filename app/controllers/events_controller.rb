@@ -4,22 +4,22 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html {
         if params[:sort].blank?
-          @events = Event.order('id DESC').page(params[:page])
+          @events = Event.order('id DESC').open.page(params[:page])
           @sort_now = "新着順"
           @nav_event_list = Event.apply_end_date_between(Time.now,"").order(:apply_end_date).limit(5)
         elsif params[:sort] == "new"
-          @events = Event.order('id DESC').page(params[:page])
+          @events = Event.order('id DESC').open.page(params[:page])
           @sort_now = "新着順"
         else
-          @events = Event.order('start_date').page(params[:page])
+          @events = Event.order('start_date').open.page(params[:page])
           @sort_now = "開催日"
         end
       }
       format.js {
         if params[:sort] == "new"
-          @events = Event.order('id DESC').page(params[:page])
+          @events = Event.order('id DESC').open.page(params[:page])
         else
-          @events = Event.order('start_date').page(params[:page])
+          @events = Event.order('start_date').open.page(params[:page])
         end
       }
     end
@@ -32,13 +32,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(create_params)
     if @event.save
-      flash[:notice] = "企画が公開されました" if @event.status == 0
-      flash[:notice] = "企画を下書き保存しました" if @event.status == 1
+      redirect_to controller: 'events', action: 'edit', id: @event.id
     else
       flash[:error] = @event.errors.full_messages
       redirect_to :back and return
     end
-    redirect_to root_path
   end
 
   def show
@@ -54,6 +52,7 @@ class EventsController < ApplicationController
 
   def edit
     find_event_id
+    @details_images = DetailsImage.new
   end
 
   def update
@@ -82,12 +81,8 @@ class EventsController < ApplicationController
   private
 
   def create_params
-    if params[:open].present?
-      @event_status = { status: 0 }
-    elsif params[:draft].present?
-      @event_status = { status: 1 }
-    end
-    params.require(:event).permit(:title, :start_date, :end_date, :apply_start_date, :apply_end_date, :summary, :details, :status, :image, :dest, :price).merge(user_id: current_user.id).merge(@event_status)
+    @event_status = { status: 1 }
+    params.require(:event).permit(:start_date, :end_date, :dest).merge(user_id: current_user.id).merge(@event_status)
   end
 
   def update_params
