@@ -1,5 +1,5 @@
 $(function() {
-  // メイン画像のアップローダー
+  /* メイン画像のアップローダー */
   $("#js-event-image").on('change', function(ev) {
     var reader = new FileReader();
     var target = ev.target;
@@ -10,6 +10,7 @@ $(function() {
     });
   });
 
+  /* 詳細項目でのajaxでの画像アップロード*/
   $("#js-form-file").on('change', function(){
     var $file = $(this);
     var formData = new FormData();
