@@ -79,17 +79,26 @@ $(function() {
     var imageName = imgObj.attr("value");
 
     // 挿入文字列の設定
-    var insertText = "!" + "[" + imageName + "]" + "(" + imageUrl + ") \n";
+    var deleteText = "!" + "[" + imageName + "]" + "(" + imageUrl + ")";
 
     // テキストエリアのobj取得
     var originalText = $(".eventedit__container-details-body-text").val();
 
-    var newText = originalText.replace(insertText, "");
+    var newText = originalText.split(deleteText).join("");
 
     $(".eventedit__container-details-body-text").val(newText);
-
   });
 
 
+  /*switch view between edit and preview */
+  $(".eventedit__container-details-headline-switch-prev").on('click', function(){
+    $(".eventedit__container-details-body").addClass("display-none");
+    $(".eventedit__container-details-markdown").removeClass("display-none");
+  });
+
+  $(".eventedit__container-details-headline-switch-edit").on('click', function(){
+    $(".eventedit__container-details-markdown").addClass("display-none");
+    $(".eventedit__container-details-body").removeClass("display-none");
+  });
 
 });
