@@ -14,7 +14,7 @@
                 %span.eventedit__container-header-columns-status-span
                   下書き保存中
           .eventedit__container-header-columns-action
-            = f.submit "更新", name: "open", class: "eventedit__container-header-columns-action-open"
+            = f.submit "公開", name: "open", class: "eventedit__container-header-columns-action-open"
             = f.submit "下書き保存", name: "draft", class: "eventedit__container-header-columns-action-close"
             .eventedit__container-header-columns-action-delete-box
               = link_to "企画を削除する", event_path(@event.id), method: :delete, class: "eventedit__container-header-columns-action-delete-text"
@@ -25,7 +25,7 @@
             まずはざっくりと企画の基本情報を入力してみましょう。後から編集もできるので、詳細が決まったらどんどん編集して、企画ページを充実させていきましょう！
           %section.eventedit__container-section-title
             .eventedit__container-title-box
-              = f.text_field :title, placeholder: "北海道・東北へ行こう！", class: "eventedit__container-title-input"
+              = f.text_field :title, placeholder: "北海道・東北へ行こう！", class: "eventedit__container-title-input", required: :required
               %p.eventedit__container-title-desc
             .eventedit__container-title-label
               .eventedit__container-title-label-osbox
@@ -56,7 +56,7 @@
                       %i.eventedit__container-attend-ico
                       %span.eventedit__container-attend-sum 0
                 .eventedit__container-summary
-                  = f.text_area :summary, class: "eventedit__container-summary-text", placeholder: "例）2〜3月に転職するタイミングで、憧れのウユニ塩湖に行きたいと思っています！南米に一人で行くのは不安なので、一緒に行ける旅仲間を募集しています。一緒に、ウユニ塩湖の絶景に感動して、写真を撮って遊びましょう！"
+                  = f.text_area :summary, class: "eventedit__container-summary-text", placeholder: "例）2〜3月に転職するタイミングで、憧れのウユニ塩湖に行きたいと思っています！南米に一人で行くのは不安なので、一緒に行ける旅仲間を募集しています。一緒に、ウユニ塩湖の絶景に感動して、写真を撮って遊びましょう！", required: :required
                   / .eventedit__container-hashtag
                   /   .eventedit__container-hashtag-desc
                   /     ハッシュタグを追加
@@ -104,15 +104,15 @@
                         %th.eventedit__container-schedule-th
                           行き先
                         %td.eventedit__container-schedule-td
-                          = f.text_field :dest, class: "eventedit__container-dest-input"
+                          = f.text_field :dest, class: "eventedit__container-dest-input", required: :required
                       %tr.eventedit__container-schedule-tr
                         %th.eventedit__container-schedule-th
                           予定金額
                         %td.eventedit__container-schedule-td
                           = f.text_field :price, class: "eventedit__container-price-input"
                   .eventedit__container-details-headline
-                    = link_to "編集(工事中)","javascript:void(0)", class: "eventedit__container-details-headline-switch-edit"
-                    = link_to "プレビュー(工事中)","javascript:void(0)", class: "eventedit__container-details-headline-switch-prev"
+                    = link_to "編集","javascript:void(0)", class: "eventedit__container-details-headline-switch-edit"
+                    = link_to "プレビュー","javascript:void(0)", class: "eventedit__container-details-headline-switch-prev"
                   .eventedit__container-details-body
                     .eventedit__container-details-md-box
                       .eventedit__container-details-md-headline
@@ -125,7 +125,7 @@
                           = render partial: "layouts/event_summary_image", locals: { event: @event }, collection: @event.details_images, as: :image
                     .eventedit__container-details-body-box
                       = f.text_area :details, class: "eventedit__container-details-body-text"
-                .eventedit__container-details-markdown
+                .eventedit__container-details-markdown.display-none
                   .eventedit__container-details-markdown-prev
                     = markdown(@event.details)
             .eventedit__container-section-desc-side
@@ -145,5 +145,5 @@
         .eventedit__container-form-submit
           %p.eventedit__container-form-submit-text
             保存するとこの企画が全体公開となります。公開しない場合は「下書き保存する」ボタンをクリックしてください。
-          = f.submit "更新", name: "open", class: "eventedit__container-form-submit-btn-public"
+          = f.submit "公開", name: "open", class: "eventedit__container-form-submit-btn-public"
           = f.submit "下書き保存", name: "draft", class: "eventedit__container-form-submit-btn-draft"

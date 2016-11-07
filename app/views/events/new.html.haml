@@ -11,6 +11,24 @@
             %span.eventnew__container-basic-headline-text
           .eventnew__container-basic-date
             %h1.eventnew__container-basic-headline
+              参加受付期間
+            .eventnew__container-basic-schedule
+              %span.eventnew__container-basic-schedule-span 開始日
+              .eventnew__container-basic-schedule-date
+                = raw sprintf(f.date_select(:apply_start_date, use_month_numbers: true, start_year: (Time.now.year) , default: Time.now , date_separator:'%s' ),'年 ', '月 ') + '日'
+              %br
+              %span.eventnew__container-basic-schedule-span 終了日
+              .eventnew__container-basic-schedule-date
+                = raw sprintf(f.date_select(:apply_end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 2.week , date_separator:'%s' ),'年 ', '月 ') + '日'
+        .eventnew__container-basic-tips
+          .eventnew__container-basic-text
+            参加を受け付ける期間を入力してください。
+      .eventnew__container-basic-schedule
+        .eventnew__container-basic-main
+          %h1.eventnew__container-basic-headline
+            %span.eventnew__container-basic-headline-text
+          .eventnew__container-basic-date
+            %h1.eventnew__container-basic-headline
               日程
             .eventnew__container-basic-schedule
               %span.eventnew__container-basic-schedule-span 開始日
@@ -19,7 +37,7 @@
               %br
               %span.eventnew__container-basic-schedule-span 終了日
               .eventnew__container-basic-schedule-date
-                = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month , date_separator:'%s' ),'年 ', '月 ') + '日'
+                = raw sprintf(f.date_select(:end_date, use_month_numbers: true, start_year: (Time.now.year), default: Time.now + 1.month + 1.day , date_separator:'%s' ),'年 ', '月 ') + '日'
         .eventnew__container-basic-tips
           .eventnew__container-basic-text
             開催期間を入力してください。不明の場合は暫定の日にちとしてください。
@@ -28,7 +46,7 @@
           %h1.eventnew__container-basic-headline
             行き先
           .eventnew__container-basic-date
-            = f.text_field :dest, class: "eventedit__container-dest-input"
+            = f.text_field :dest, class: "eventedit__container-dest-input", required: :required
       .eventnew__container-basic-tips
         .eventnew__container-basic-text
           行き先を設定しましょう。

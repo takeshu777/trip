@@ -32,7 +32,10 @@
     .event__container
       = render partial: "layouts/event_tile", collection: @events, as: :event
     .event__container-event-more
-      = link_to_next_page @events, 'もっとみる', :remote => true, class: "event__container-event-more-btn"
+      - if @sort_now == "新着順"
+        = link_to_next_page @events, 'もっとみる', :param_name => :new , :remote => true, class: "event__container-event-more-btn"
+      - elsif @sort_now == "開催日"
+        = link_to_next_page @events, 'もっとみる', :param_name => :start_date , :remote => true, class: "event__container-event-more-btn"
 - else
   = render "layouts/welcome"
   .top__container-events

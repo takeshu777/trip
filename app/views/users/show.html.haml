@@ -4,10 +4,7 @@
       = image_tag("profile_cover.jpg",class: "user__container-profile-cover-img")
     .user__container-profile-infos-upper
       .user__container-profile-infos-avatar
-        - if @user.avatar.present?
-          = image_tag("#{@user.avatar}",class: "user__container-profile-infos-avatar-img")
-        - else
-          = image_tag("avatar_sample.jpg",class: "user__container-profile-infos-avatar-img")
+        = image_tag("#{@user.avatar}",class: "user__container-profile-infos-avatar-img")
       .user__container-profile-infos-fullname
         = @user.fullname
       .user__container-profile-infos-statuses

@@ -29,7 +29,7 @@
               一言どうぞ
             %p.attendnew__container-comment-notice
               こちらの意気込みは旅のメンバー一覧に表示されます。
-            = f.text_area :comment, placeholder: "コメントは必ずご記入ください。", class:"attendnew__container-comment-textbox"
+            = f.text_area :comment, placeholder: "コメントは必ずご記入ください。", class:"attendnew__container-comment-textbox", required: :required
       = link_to "申込み者情報の入力へ", "javascript:void(0)", class: "attendnew__container-step1-btn"
     .attendnew__container-step2.display-none
       .attendnew__container-plan
@@ -40,30 +40,30 @@
             = fields_for current_user do |u|
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title 名字
-                = u.text_field :f_name, placeholder: "性", required: :required, class: "attendnew__container-form-text"
+                = u.text_field :f_name, placeholder: "性", required: :required, class: "attendnew__container-form-text", required: :required
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title 名前
-                = u.text_field :l_name, placeholder: "名", required: :required, class: "attendnew__container-form-text"
+                = u.text_field :l_name, placeholder: "名", required: :required, class: "attendnew__container-form-text", required: :required
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title 性別
                 %label
-                  = u.radio_button(:gender, "male" , :checked => current_user.gender == "male" )
+                  = u.radio_button(:gender, "male" , :checked => current_user.gender == "male" , required: :required)
                   男性
                 %label
                   = u.radio_button(:gender, "female" , :checked => current_user.gender == "female" )
                   女性
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title 誕生日
-                = raw sprintf(u.date_select(:birthday, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), include_blank: true , date_separator:'%s' ),'年 ', '月 ') + '日'
+                = raw sprintf(u.date_select(:birthday, use_month_numbers: true, start_year: 1916, end_year:(Time.now.year), date_separator:'%s' ),'年 ', '月 ') + '日'
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title 住所（都道府県）
-                = u.text_field :address_pref, class: "attendnew__container-form-text"
+                = u.text_field :address_pref, class: "attendnew__container-form-text", required: :required
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title 住所（市区町村）
-                = u.text_field :address_details, class: "attendnew__container-form-text"
+                = u.text_field :address_details, class: "attendnew__container-form-text", required: :required
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title Tel
-                = u.text_field :tel, class: "attendnew__container-form-text"
+                = u.text_field :tel, class: "attendnew__container-form-text", required: :required
               .attendnew__container-form-item
                 %h5.attendnew__container-form-title メールアドレス
                 = current_user.email
