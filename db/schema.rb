@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107032959) do
+ActiveRecord::Schema.define(version: 20161108083114) do
 
   create_table "attends", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 20161107032959) do
   create_table "favorites", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
     t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "reading",    limit: 255
+    t.string   "latitude",   limit: 255
+    t.string   "longitude",  limit: 255
+    t.string   "class",      limit: 255
+    t.integer  "layer",      limit: 4
+    t.integer  "code",       limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
