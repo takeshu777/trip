@@ -22,12 +22,29 @@ $(function() {
         processData: false,
         contentType: false,
     }).done(function( data, textStatus, jqXHR) {
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
+      // console.log(data);
+      // console.log(textStatus);
+      // console.log(jqXHR);
       $("#js-form-file").val("");
-      window.alert("success!!!");
       $.getScript("/assets/events_Edit_markdown.js");
+      swal({
+          title: "画像アップロード完了",
+          type: "success",
+          confirmButtonText: "閉じる",
+          confirmButtonColor : "#fcb753;",
+        });
+    }).fail(function ( data, textStatus, jqXHR) {
+      // console.log(data);
+      // console.log(textStatus);
+      // console.log(jqXHR);
+      $("#js-form-file").val("");
+      $.getScript("/assets/events_Edit_markdown.js");
+      swal({
+          title: "画像アップロード失敗",
+          type: "error",
+          confirmButtonText: "閉じる",
+          confirmButtonColor : "#fcb753;"
+        });
     });
   });
 });
