@@ -45,8 +45,13 @@
         .eventnew__container-basic-main
           %h1.eventnew__container-basic-headline
             行き先
-          .eventnew__container-basic-date
-            = f.text_field :dest, class: "eventedit__container-dest-input", required: :required
+          .eventnew__container-basic-dest
+            %span.eventnew__container-basic-dest-text
+              設定されていません。
+            %button.eventnew__container-basic-dest-btn
+              設定する
+            = f.hidden_field :dest, value: "", id: "js-dest-value"
+      = render partial: 'layouts/event_dest_search'
       .eventnew__container-basic-tips
         .eventnew__container-basic-text
           行き先を設定しましょう。

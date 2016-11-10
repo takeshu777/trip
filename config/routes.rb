@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   post 'search', to: 'search#index'
   get 'search', to: 'search#index'
 
+  resources :places, only: [:index]
+
 end

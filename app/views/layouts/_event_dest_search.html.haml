@@ -1,0 +1,18 @@
+.eventnew__modal.display-none
+  .eventnew__modal-main
+    .eventnew__modal-header
+      .eventnew__modal-headline
+        %span.eventnew__modal-headline-text
+          開催地の検索
+    %section.eventnew__modal-body
+      .eventnew__modal-search
+        = text_field_tag :keyword, "", class: "eventnew__modal-search-input", placeholder: "県や国名を入力"
+        %br/
+        %br/
+        候補地が表示されたらクリックして選択します。
+      .eventnew__modal-desc
+        %span.eventnew__modal-desc-text
+          = "----- 候補地一覧 -----"
+      .eventnew__modal-search
+        %ul.eventnew__modal-search-list
+    = link_to "とじる", "javascript:void(0)", class: "eventnew__modal-close"

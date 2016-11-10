@@ -76,6 +76,7 @@
             .eventedit__container-section-desc-main
               .eventedit__container-section-desc-main-box
                 .eventedit__container-schedule
+                  #js-event-dest-map
                   %table.eventedit__container-schedule-table
                     %tbody.eventedit__container-schedule-tbody
                       %tr.eventedit__container-schedule-tr
@@ -104,7 +105,13 @@
                         %th.eventedit__container-schedule-th
                           行き先
                         %td.eventedit__container-schedule-td
-                          = f.text_field :dest, class: "eventedit__container-dest-input", required: :required
+                          .eventnew__container-basic-dest
+                            %span.eventnew__container-basic-dest-text#js-event-dest-text
+                              = @event.dest
+                            %button.eventnew__container-basic-dest-btn
+                              設定する
+                            = f.hidden_field :dest, value: "#{@event.dest}", id: "js-dest-value"
+                      = render partial: 'layouts/event_dest_search'
                       %tr.eventedit__container-schedule-tr
                         %th.eventedit__container-schedule-th
                           予定金額
