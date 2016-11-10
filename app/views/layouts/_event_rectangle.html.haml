@@ -6,7 +6,7 @@
         %span.eventsearch__container-event-status-span
           申込み受付中
     .eventsearch__container-event-content
-      = link_to "#{event.title}", event_path(event.id), class: "eventsearch__container-event-content-title"
+      = link_to "#{event.title}", event_path(event.id), class: "eventsearch__container-event-content-title", "data-dest": "#{event.dest}"
       .eventsearch__container-event-content-summary
         = event.summary
       .eventsearch__container-event-content-producer
