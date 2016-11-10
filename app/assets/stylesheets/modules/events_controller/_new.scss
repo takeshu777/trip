@@ -81,5 +81,124 @@
     &-text {
       font-size: 18px;
     }
+    &-dest {
+
+      &-text {
+        margin-right: 10px;
+      }
+
+      &-btn {
+      }
+    }
+  }
+}
+
+
+/* modal design */
+.eventnew__modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  overflow: scroll;
+
+  &-main {
+    z-index: 2000;
+    width: 480px;
+    background: #fdfdfd;
+    margin: 5% auto;
+    padding: 30px 60px;
+    border-radius: 8px;
+    position: relative;
+    @include before_block();
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #999;
+  }
+
+  &-headline {
+    margin: 0 0 30px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    color: #999;
+    line-height: 36px;
+
+    &-text {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 400;
+      color: #999;
+      line-height: 36px;
+    }
+  }
+
+  &-search {
+    zoom: 1;
+    width: 100%;
+    margin: 0 auto 50px;
+    text-align: center;
+    @include before_block();
+    @include clearfix();
+
+    &-input {
+      text-align: center;
+      margin: 0 auto;
+      height: 45px;
+      width: 250px;
+      font-size: 18px;
+    }
+
+    &-list {
+      font-size: 16px;
+      list-style: none;
+    }
+  }
+
+  &-desc {
+    width: 280px;
+    text-align: center;
+    color: #999;
+    margin: 0 auto 20px;
+    @include before_block();
+
+    &-text {
+      display: block;
+      width: 160px;
+      background: #fdfdfd;
+      margin: -10px auto 0;
+    }
+  }
+
+  &-places {
+    margin-bottom: 20px;
+    @include before_block();
+    @include clearfix();
+  }
+
+  &-close {
+    overflow: hidden;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    &:before {
+      content: url(modal_close.png);
+      display: inline-block;
+      font-size: 0;
+      line-height: 0;
+      margin-left: 0;
+      margin-top: 0;
+      transform: scale(.5);
+      transform-origin: 0 0;
+    }
   }
 }

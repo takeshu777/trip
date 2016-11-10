@@ -3,6 +3,15 @@
   width: 100%;
 }
 
+#js-event-dest-map {
+  width: 598px;
+  height: 400px;
+}
+
+#js-event-dest-text {
+
+}
+
 .eventedit__container {
   &-main {
     width: 960px;
@@ -705,7 +714,6 @@
       width: 100%;
       font-size: 20px;
     }
-
     &-label {
       margin-bottom: 20px;
       position: relative;
