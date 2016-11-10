@@ -58,8 +58,9 @@
                 .eventshow__container-columns-item
                   %h4.eventshow__container-columns-title
                     %span.eventshow__container-columns-span 行き先
-                  %span.eventshow__container-columns-content
+                  %span.eventshow__container-columns-content#js-event-dest-text
                     = @event.dest
+              #js-event-dest-map
               %h4.eventshow__container-columns-title
                 %span.eventshow__container-columns-span 予定金額
               %span.eventshow__container-columns-content
