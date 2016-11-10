@@ -69,3 +69,5 @@ gem 'redcarpet'
 gem 'jquery-ui-rails'
 
 gem 'kaminari'
+
+gem 'fog'
