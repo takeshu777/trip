@@ -34,7 +34,7 @@
           %section.eventedit__container-section-basic
             .eventedit__container-section-basic-main
               .eventedit__container-section-basic-main-box
-                .eventedit__container-img{style: "background-image: url(#{@event.image})"}
+                .eventedit__container-img{style: "background-image: image-url(#{@event.image})"}
                   .eventedit__container-img-msgbox
                     .eventedit__container-img-btnbox
                       アップロードする
@@ -42,10 +42,7 @@
                 .eventedit__container-infobar
                   .eventedit__container-producer
                     .eventedit__container-producer-avatar
-                      - if current_user.avatar.present?
-                        = image_tag "#{current_user.avatar}", class: "eventedit__container-producer-avatar-img"
-                      - else
-                        = image_tag "avatar_sample.jpg", class: "eventedit__container-producer-avatar-img"
+                      = image_tag "#{current_user.avatar}", class: "eventedit__container-producer-avatar-img"
                     %span.eventedit__container-producer-avatar-span
                       = current_user.fullname
                   .eventedit__container-info
