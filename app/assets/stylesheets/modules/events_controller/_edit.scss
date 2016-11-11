@@ -522,7 +522,7 @@
       height: 32px;
       display: inline-block;
       &:before {
-        content: image-url(join_icon.png);
+        content: image-url("join_icon.png");
         display: inline-block;
         margin-top: 0;
         transform: scale(.5);
