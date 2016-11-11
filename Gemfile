@@ -71,3 +71,7 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 
 gem 'fog'
+
+group :production do
+	gem 'unicorn'
+end
