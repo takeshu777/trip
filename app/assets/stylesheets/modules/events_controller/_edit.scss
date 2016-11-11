@@ -340,7 +340,7 @@
   }
 
   &-img {
-    background-image: url(events_sample.jpg);
+    background-image: image-url("events_sample.jpg");
     position: relative;
     background-size: cover;
     height: 480px;

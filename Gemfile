@@ -72,6 +72,8 @@ gem 'kaminari'
 
 gem 'fog'
 
+gem 'config'
+
 group :production do
 	gem 'unicorn'
 end

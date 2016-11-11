@@ -7,7 +7,7 @@
   margin-bottom: 40px;
 
   &-logo {
-    background: url(logo_big.png) left no-repeat;
+    background: image-url("logo_big.png") left no-repeat;
     background-size: 200px 57px;
     width: 500px;
     height: 57px;
@@ -225,7 +225,7 @@
       width: 298px;
       height: 200px;
       overflow: hidden;
-      background-image: url(event-man-sample.jpg);
+      background-image: image-url("event-man-sample.jpg");
       background-size: cover;
       background-position: 0;
       background-repeat: no-repeat;

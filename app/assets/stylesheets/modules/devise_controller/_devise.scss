@@ -10,7 +10,7 @@
 /* -- sign_up ------------------------------------ */
 .signup__container {
   &-bg {
-    background: url(world_map.png) center 0 no-repeat;
+    background: image-url("world_map.png") center 0 no-repeat;
     background-size: 120% auto;
     min-height: 740px;
   }
@@ -23,7 +23,7 @@
 
   &-logo {
     display: block;
-    background: url(logo_big.png) center no-repeat;
+    background: image-url("logo_big.png") center no-repeat;
     background-size: 340px 96px;
     margin-bottom: 40px;
     height: 96px;
@@ -77,7 +77,7 @@
 /* -- sign_up ------------------------------------ */
 .signin__container {
   &-bg {
-    background: url(world_map.png) center 0 no-repeat;
+    background: image-url("world_map.png") center 0 no-repeat;
     background-size: 120% auto;
     min-height: 740px;
   }
@@ -90,7 +90,7 @@
 
   &-logo {
     display: block;
-    background: url(logo_big.png) center no-repeat;
+    background: image-url("logo_big.png") center no-repeat;
     background-size: 340px 96px;
     margin-bottom: 40px;
     height: 96px;
