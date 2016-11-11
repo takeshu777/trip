@@ -10,8 +10,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1',
   }
 
-    config.cache_storage = :fog
-    config.fog_public = true
     case Rails.env
     when 'development'
         config.fog_directory  = 'trip01-development'
