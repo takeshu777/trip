@@ -2,7 +2,6 @@ $(function () {
 
   /* avatar画像のプレビュー */
   $("#avatar_image").on('change', function(ev) {
-    debugger;
     var reader = new FileReader();
     var target = ev.target;
     var file = target.files[0];
