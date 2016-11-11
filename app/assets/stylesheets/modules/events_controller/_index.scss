@@ -33,7 +33,7 @@
     &-box {
       width: 510px;
       height: 158px;
-      background: url(main_copy_index.png) center no-repeat;
+      background: image-url("main_copy_index.png") center no-repeat;
       background-size: 510px 158px;
     }
   }
@@ -321,7 +321,7 @@
           width: 10px;
           height: 14px;
           &:before {
-            content: url(join_icon_bg_black.png);
+            content: image-url("join_icon_bg_black.png");
             display: inline-block;
             font-size: 0;
             transform: scale(.5);

@@ -191,7 +191,7 @@
     top: -20px;
     right: -20px;
     &:before {
-      content: url(modal_close.png);
+      content: image-url("modal_close.png");
       display: inline-block;
       font-size: 0;
       line-height: 0;

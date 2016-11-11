@@ -118,7 +118,7 @@
     top: -20px;
     right: -20px;
     &:before {
-      content: url(modal_close.png);
+      content: image-url("modal_close.png");
       display: inline-block;
       font-size: 0;
       line-height: 0;
@@ -265,7 +265,7 @@
       width: 34px;
       height: 32px;
       &:before {
-        content: url(icon_plans_star.png);
+        content: image-url("icon_plans_star.png");
         display: inline-block;
         font-size: 0;
         line-height: 0;
@@ -296,7 +296,7 @@
       display: inline-block;
 
       &:before {
-        content: url(join_icon.png);
+        content: image-url("join_icon.png");
         display: inline-block;
         margin-top: 0;
         line-height: 0;
@@ -494,7 +494,7 @@
         vertical-align: bottom;
         margin-right: 15px;
         &:before {
-          content: url(fav_icon_on.png);
+          content: image-url("fav_icon_on.png");
           display: inline-block;
           font-size: 0;
           line-height: 0;
@@ -514,7 +514,7 @@
         vertical-align: bottom;
         margin-right: 15px;
         &:before {
-          content: url(fav_icon_off.png);
+          content: image-url("fav_icon_off.png");
           display: inline-block;
           font-size: 0;
           line-height: 0;

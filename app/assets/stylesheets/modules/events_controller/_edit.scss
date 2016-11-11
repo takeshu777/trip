@@ -492,7 +492,7 @@
       width: 34px;
       height: 32px;
       &:before {
-        content: url(icon_plans_star.png);
+        content: image-url(icon_plans_star.png);
         display: inline-block;
         font-size: 0;
         line-height: 0;
@@ -522,7 +522,7 @@
       height: 32px;
       display: inline-block;
       &:before {
-        content: url(join_icon.png);
+        content: image-url(join_icon.png);
         display: inline-block;
         margin-top: 0;
         transform: scale(.5);
