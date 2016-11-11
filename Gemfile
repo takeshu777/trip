@@ -71,3 +71,5 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 
 gem 'fog'
+
+gem 'config'
