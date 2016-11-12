@@ -61,8 +61,8 @@
 #   }
 
 server '52.69.173.89',
-  user: 'ec2-user',
+  user: 'trip_admin',
   roles: %w{web app db},
   ssh_options: {
-    keys: '~/.ssh/trip_AMI_key_par.pem',
+    keys: '~/.ssh/trip_AMI_new_key_rsa',
   }
