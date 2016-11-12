@@ -13,7 +13,7 @@ set :branch, 'master'
 set :deploy_to, '/home/trip_admin/trip'
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -23,7 +23,7 @@ set :deploy_to, '/home/trip_admin/trip'
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
