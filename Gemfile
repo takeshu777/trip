@@ -74,6 +74,13 @@ gem 'fog'
 
 gem 'config'
 
-group :production do
+group :production, :staging do
 	gem 'unicorn'
+end
+
+group :development, :test do
+ gem 'capistrano'
+ gem 'capistrano-bundler'
+ gem 'capistrano-rails'
+ gem 'capistrano-rbenv'
 end
