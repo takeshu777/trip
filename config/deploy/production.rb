@@ -59,3 +59,10 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+server '52.69.173.89',
+  user: 'trip_admin',
+  roles: %w{web app db},
+  ssh_options: {
+    keys: '~/.ssh/trip_AMI_new_key_rsa',
+  }
