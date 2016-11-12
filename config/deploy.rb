@@ -36,10 +36,14 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
+set :aws_access_key_id, ENV['ACCESS_KEY_ID_TRIP']
+
+set :aws_secret_access_key, ENV['SECRET_ACCESS_KEY_TRIP']
+
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-set :rbenv_ruby, '2.1.3'
+set :rbenv_ruby, '2.3.1'
 
 set :log_level, :debug
 
