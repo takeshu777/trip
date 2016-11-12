@@ -33,7 +33,7 @@ function initMap() {
 			  // マップへのマーカーの表示
 
 				var markerImg = new google.maps.MarkerImage(
-				    '/assets/map_pin.png',
+				    '/images/map_pin.png',
 				    new google.maps.Size(25, 25),
 				    new google.maps.Point(0, 0),
 				    new google.maps.Point(0, 0),
