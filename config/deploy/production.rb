@@ -60,8 +60,6 @@
 #     # password: 'please use keys'
 #   }
 
-set :rails_env, :production
-
 server '52.69.173.89',
   user: 'trip_admin',
   roles: %w{web app db},
