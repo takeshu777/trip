@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:/vip-take/trip.git'
 
 set	:ACCESS_KEY_ID_TRIP, ENV['ACCESS_KEY_ID_TRIP']
 set	:SECRET_ACCESS_KEY_TRIP, ENV['SECRET_ACCESS_KEY_TRIP']
-set	:SECRET_KEY_BASE, ENV['SECRET_KEY_BASE']
+set	:secret_key_base, ENV['SECRET_KEY_BASE']
 set	:DEVISE_SECRET_KEY, ENV['DEVISE_SECRET_KEY']
 
 # Default branch is :master
@@ -31,7 +31,7 @@ set :deploy_to, '/home/trip_admin/trip/'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
+# append :linked_files, 'config/database.yml', 'config/secrets.yml'
 # set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 
 # Default value for linked_dirs is []
