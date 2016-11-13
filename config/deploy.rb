@@ -36,12 +36,17 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-set :default_env, {
-	ACCESS_KEY_ID_TRIP: ENV['ACCESS_KEY_ID_TRIP'],
-	SECRET_ACCESS_KEY_TRIP: ENV['SECRET_ACCESS_KEY_TRIP'],
-	SECRET_KEY_BASE: ENV["SECRET_KEY_BASE"],
-	DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"]
-}
+set	:ACCESS_KEY_ID_TRIP, ENV['ACCESS_KEY_ID_TRIP']
+set	:SECRET_ACCESS_KEY_TRIP, ENV['SECRET_ACCESS_KEY_TRIP']
+set	:SECRET_KEY_BASE, ENV['SECRET_KEY_BASE']
+set	:DEVISE_SECRET_KEY, ENV['DEVISE_SECRET_KEY']
+
+# set :default_env, {
+# 	ACCESS_KEY_ID_TRIP: ENV['ACCESS_KEY_ID_TRIP'],
+# 	SECRET_ACCESS_KEY_TRIP: ENV['SECRET_ACCESS_KEY_TRIP'],
+# 	SECRET_KEY_BASE: ENV["SECRET_KEY_BASE"],
+# 	DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"]
+# }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
