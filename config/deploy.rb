@@ -23,11 +23,11 @@ set :deploy_to, '/home/trip_admin/trip/'
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
 # Default value for :pty is false
-set :pty, true
+# set :pty, true
 
 # Default value for :linked_files is []
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+# set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 
 # Default value for linked_dirs is []
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
@@ -39,7 +39,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :default_env, {
 	ACCESS_KEY_ID_TRIP: ENV['ACCESS_KEY_ID_TRIP'],
 	SECRET_ACCESS_KEY_TRIP: ENV['SECRET_ACCESS_KEY_TRIP'],
-	SECRET_KEY_BASE: ENV["SECRET_KEY_BASE"],
 	DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"]
 }
 
