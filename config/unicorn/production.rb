@@ -28,6 +28,7 @@ after_fork do |server, worker|
   defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
 end
 
-before_exec do |server|
+before_exec do |server, worker|
   ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', working_directory)
+	ENV["SECRET_KEY_BASE"] = <%= ENV["SECRET_KEY_BASE"] %>
 end
