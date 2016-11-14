@@ -88,9 +88,9 @@ namespace :deploy do
 	namespace :assets do
 	  task :precompile do
 	  	on roles(:app) do
-	  		# within current_path do
+	  		within current_path do
 	  			execute :bundle, :exec, :rake, 'assets:precompile', 'RAILS_ENV=production'
-	      # end
+	      end
 	    end
 	  end
 	end
