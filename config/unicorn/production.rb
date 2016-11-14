@@ -30,5 +30,4 @@ end
 
 before_exec do |server|
   ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', working_directory)
-	ENV['SECRET_KEY_BASE'] = <%= ENV["SECRET_KEY_BASE"] %>
 end
