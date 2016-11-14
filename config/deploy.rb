@@ -32,6 +32,7 @@ append :linked_files, 'config/database.yml', 'config/secrets.yml'
 # Default value for linked_dirs is []
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+append :linked_dirs, '', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -89,6 +90,7 @@ namespace :deploy do
 	  task :precompile do
 	  	on roles(:app) do
 	  		within current_path do
+					Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
 	  			execute :bundle, :exec, :rake, 'assets:precompile', 'RAILS_ENV=production'
 	      end
 	    end
