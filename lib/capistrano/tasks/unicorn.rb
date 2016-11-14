@@ -3,7 +3,6 @@ namespace :unicorn do
   task :environment do
     set :unicorn_pid,    "#{current_path}/tmp/pids/unicorn.pid"
     set :unicorn_config, "#{current_path}/config/unicorn/production.rb"
-    set :SECRET_KEY_BASE, ENV["SECRET_KEY_BASE"]
   end
 
 #unicornをスタートさせるメソッド
