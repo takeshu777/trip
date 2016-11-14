@@ -4,11 +4,6 @@ lock '3.6.1'
 set :application, 'trip'
 set :repo_url, 'git@github.com:/vip-take/trip.git'
 
-set	:ACCESS_KEY_ID_TRIP, ENV['ACCESS_KEY_ID_TRIP']
-set	:SECRET_ACCESS_KEY_TRIP, ENV['SECRET_ACCESS_KEY_TRIP']
-set	:secret_key_base, ENV['SECRET_KEY_BASE']
-set	:DEVISE_SECRET_KEY, ENV['DEVISE_SECRET_KEY']
-
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, 'master'
@@ -31,7 +26,7 @@ set :deploy_to, '/home/trip_admin/trip/'
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
 # set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 
 # Default value for linked_dirs is []
@@ -41,12 +36,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-# set :default_env, {
-# 	ACCESS_KEY_ID_TRIP: ENV['ACCESS_KEY_ID_TRIP'],
-# 	SECRET_ACCESS_KEY_TRIP: ENV['SECRET_ACCESS_KEY_TRIP'],
-# 	SECRET_KEY_BASE: ENV["SECRET_KEY_BASE"],
-# 	DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"]
-# }
+set :default_env, {
+	ACCESS_KEY_ID_TRIP: ENV['ACCESS_KEY_ID_TRIP'],
+	SECRET_ACCESS_KEY_TRIP: ENV['SECRET_ACCESS_KEY_TRIP'],
+	SECRET_KEY_BASE: ENV["SECRET_KEY_BASE"],
+	DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"]
+}
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
