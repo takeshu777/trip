@@ -4,7 +4,6 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.assets.version = '1.0'
   config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
 
   # Eager load code on boot. This eager loads most of Rails and
