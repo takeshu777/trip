@@ -84,15 +84,16 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
+
+	namespace :assets do
+	  task :precompile do
+	  	on roles(:app) do
+	  		# within current_path do
+	  			execute :bundle, :exec, :rake, 'assets:precompile', 'RAILS_ENV=production'
+	      # end
+	    end
+	  end
+	end
+
 end
 
-namespace :assets do
-	desc 'precompleeeeee'
-  task :precompile do
-  	on roles(:app) do
-  		within current_path do
-  			execute :bundle, :exec, :rake, 'assets:precompile', 'RAILS_ENV=production'
-      end
-    end
-  end
-end
