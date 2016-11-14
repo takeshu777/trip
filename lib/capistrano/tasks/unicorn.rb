@@ -1,5 +1,3 @@
-require 'pry-rails'
-
 #unicornのpidファイル、設定ファイルのディレクトリを指定
 namespace :unicorn do
   task :environment do
@@ -33,7 +31,6 @@ namespace :unicorn do
   desc "Start unicorn server"
   task start: :environment do
     on roles(:app) do
-      binding.pry
       start_unicorn
     end
   end
