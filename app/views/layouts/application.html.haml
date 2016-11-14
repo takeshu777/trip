@@ -9,7 +9,7 @@
     %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCv_vJOYoOt9ovvUxHvCrUx0ZjsVMWwJqY&callback=initMap"}
   %body
     #loading
-      = image_tag("#{ asset_path "gif-load.gif"}", id: "page_load")
+      = image_tag("#{ image_path "gif-load.gif"}", id: "page_load")
     - if user_signed_in?
       = render "layouts/header"
     = yield
