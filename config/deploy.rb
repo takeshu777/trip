@@ -51,6 +51,8 @@ set :rbenv_ruby, '2.3.1'
 
 set :log_level, :debug
 
+Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
@@ -85,17 +87,6 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
-
-	namespace :assets do
-	  task :precompile do
-	  	on roles(:app) do
-	  		within current_path do
-					Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
-	  			execute :bundle, :exec, :rake, 'assets:precompile', 'RAILS_ENV=production'
-	      end
-	    end
-	  end
-	end
 
 end
 
