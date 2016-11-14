@@ -63,3 +63,5 @@ server '52.69.173.89',
   ssh_options: {
     keys: '~/.ssh/trip_AMI_new_key_rsa',
   }
+
+set :rails_env, "production"
