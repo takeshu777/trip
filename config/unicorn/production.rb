@@ -13,8 +13,6 @@ listen  $listen
 pid $pid
 preload_app true
 
-ENV['BUNDLE_GEMFILE'] = working_directory + "/Gemfile"
-
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
   old_pid = "#{server.config[:pid]}.oldbin"
@@ -28,4 +26,8 @@ end
 
 after_fork do |server, worker|
   defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+end
+
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "/home/trip_admin/trip/current/Gemfile"
 end
