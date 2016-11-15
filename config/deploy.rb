@@ -12,10 +12,6 @@ set :branch, 'master'
 # set :deploy_to, '/home/trip_admin/trip'
 set :deploy_to, '/home/trip_admin/trip/'
 
-ActionView::Helpers::SprocketsHelper
-Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
-# Rails.application.assets.precompile(*assets)
-
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -89,6 +85,21 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
+
+	# namespace :assets do
+	#   desc "As if production env"
+	#   task :precompile do
+	#     # Set global to compress and fingerprint assets
+	#     $precompile_assets = true
+
+	#     # Load rails
+	#     Rake::Task['production'].invoke
+
+	# 		assets = Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
+
+	#     Rails.application.assets.precompile(*assets)
+	#   end
+	# end
 
 end
 
