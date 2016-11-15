@@ -1,4 +1,3 @@
-#unicornのpidファイル、設定ファイルのディレクトリを指定
 namespace :nginx do
 
 	#ngixを停止させるtask
@@ -10,10 +9,10 @@ namespace :nginx do
 	  end
 
 	#ngixを起動させるtask
-	  desc "Stop ngix server"
-	  task stop: :environment do
+	  desc "Start ngix server"
+	  task start: :environment do
 	    on roles(:app) do
-	    	execute :serivice, :nginx, :stop
+	    	execute :serivice, :nginx, :start
 	    end
 	  end
 
