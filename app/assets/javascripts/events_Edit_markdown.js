@@ -1,4 +1,4 @@
-$(function() {
+$(function eventsEditMarkdown() {
   /*Realtime markdown display*/
   $(".eventedit__container-details-body-text").on('keyup', function(ev){
     var inputText = $(".eventedit__container-details-body-text").val();
@@ -32,7 +32,7 @@ $(function() {
   });
 
   /*insert img string */
-  $(".eventedit__container-details-md-file-btn-insert-text").on('click', function(){
+  $(".eventedit__container-details-md-file-btn-insert-text").on('click', function mdInsertImgString(){
     // 挿入画像情報の取得
     var imgObj = $(this).parent().parent().find("img");
 
