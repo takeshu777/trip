@@ -7,10 +7,13 @@
         = simple_format(@search_condition)
       %h2.eventsearch__container-condition
         【検索結果】
-      %span マークの場所が企画の開催地です。マーククリックで企画名が表示されます。
-      #js-event-search-map
-      %h2.eventsearch__container-condition
-        【イベント詳細】
-      = render partial: 'layouts/event_rectangle', collection: @events, as: :event
-      .eventsearch__container-pagenate
-        = paginate @events
+      - if @events.present?
+        %span マークの場所が企画の開催地です。マーククリックで企画名が表示されます。
+        #js-event-search-map
+        %h2.eventsearch__container-condition
+          【イベント詳細】
+        = render partial: 'layouts/event_rectangle', collection: @events, as: :event
+        .eventsearch__container-pagenate
+          = paginate @events
+      - else
+        %span 企画が見つかりませんでした。検索条件を変更して探してみてね。
