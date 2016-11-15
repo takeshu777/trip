@@ -12,6 +12,7 @@ set :branch, 'master'
 # set :deploy_to, '/home/trip_admin/trip'
 set :deploy_to, '/home/trip_admin/trip/'
 
+
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -32,7 +33,6 @@ append :linked_files, 'config/database.yml', 'config/secrets.yml'
 # Default value for linked_dirs is []
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
-append :linked_dirs, '', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -86,20 +86,4 @@ namespace :deploy do
     end
   end
 
-	# namespace :assets do
-	#   desc "As if production env"
-	#   task :precompile do
-	#     # Set global to compress and fingerprint assets
-	#     $precompile_assets = true
-
-	#     # Load rails
-	#     Rake::Task['production'].invoke
-
-	# 		assets = Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
-
-	#     Rails.application.assets.precompile(*assets)
-	#   end
-	# end
-
 end
-
