@@ -4,7 +4,8 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
+  config.assets.paths << "/home/trip_admin/trip/app/assets/*"
+  config.assets.paths << "/home/trip_admin/trip/vendor/assets/*"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

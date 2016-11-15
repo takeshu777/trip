@@ -12,10 +12,6 @@ set :branch, 'master'
 # set :deploy_to, '/home/trip_admin/trip'
 set :deploy_to, '/home/trip_admin/trip/'
 
-# ActionView::Helpers::SprocketsHelper
-config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
-# Rails.application.assets.precompile(*assets)
-
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -90,3 +86,4 @@ namespace :deploy do
   end
 
 end
+
