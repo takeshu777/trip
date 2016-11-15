@@ -12,6 +12,9 @@ set :branch, 'master'
 # set :deploy_to, '/home/trip_admin/trip'
 set :deploy_to, '/home/trip_admin/trip/'
 
+# Rails.application.config.assets.version = '1.0'
+Rails.application.config.assets.precompile += %w( *.eot *.woff *.ttf *.svg *.otf *.png *.jpg *.jpeg *.gif vendor.css vendor.js )
+
 # Default value for :scm is :git
 # set :scm, :git
 
