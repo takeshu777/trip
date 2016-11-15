@@ -26,6 +26,7 @@ $(function() {
 
       // markdown用jsの再読み込み
       eventsEditMarkdown();
+
       swal({
           title: "画像アップロード完了",
           type: "success",

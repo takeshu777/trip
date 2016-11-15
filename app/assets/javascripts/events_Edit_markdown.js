@@ -1,4 +1,9 @@
-$(function eventsEditMarkdown() {
+$(function () {
+  eventsEditMarkdown();
+});
+
+// events_editページで利用する関数群
+function eventsEditMarkdown(){
   /*Realtime markdown display*/
   $(".eventedit__container-details-body-text").on('keyup', function(ev){
     var inputText = $(".eventedit__container-details-body-text").val();
@@ -89,7 +94,6 @@ $(function eventsEditMarkdown() {
     $(".eventedit__container-details-body-text").val(newText);
   });
 
-
   /*switch view between edit and preview */
   $(".eventedit__container-details-headline-switch-prev").on('click', function(){
     $(".eventedit__container-details-body").addClass("display-none");
@@ -100,5 +104,4 @@ $(function eventsEditMarkdown() {
     $(".eventedit__container-details-markdown").addClass("display-none");
     $(".eventedit__container-details-body").removeClass("display-none");
   });
-
-});
+}
