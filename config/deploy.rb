@@ -84,6 +84,16 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
-
 end
 
+
+namespace :nginx do
+
+	  desc "restart nginx server"
+	  task :restart: :environment do
+	    on roles(:app) do
+	    	execute :serivice, :nginx, :restart
+	    end
+	  end
+
+end
