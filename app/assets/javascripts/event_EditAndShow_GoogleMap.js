@@ -100,9 +100,6 @@ function initMap() {
 				"address": address
 			},function(results, status){
 
-				// レスポンスjsonデータのコンソール出力
-				console.log(results);
-				console.log(status);
 
 				// 位置情報が取得できたら処理を行う
 				if (status == google.maps.GeocoderStatus.OK) {
@@ -144,6 +141,8 @@ function initMap() {
 			    // マーカーが地図の中に収まるように表示
 			    bounds.extend(latLng);
         	map.fitBounds(bounds);
+
+        	if(eventInfoList.length === 1) map.setZoom(7);
 
 				} else {
 		      swal({
