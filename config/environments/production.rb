@@ -6,7 +6,7 @@ Rails.application.configure do
 
   config.assets.paths << "/home/trip_admin/trip/app/assets/images"
   config.assets.paths << "/home/trip_admin/trip/app/assets/javascripts"
-  config.assets.paths << "/home/trip_admin/trip/app/assets/stylesheets"
+  config.assets.paths << "/home/trip_admin/trip/app/assets/javascripts/modules"
   config.assets.paths << "/home/trip_admin/trip/app/assets/stylesheets"
 
   config.assets.paths << "/home/trip_admin/trip/app/vendor/assets/javascripts"
