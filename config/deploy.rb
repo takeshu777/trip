@@ -88,7 +88,7 @@ namespace :deploy do
   desc "restart nginx server"
   task :restart do
     on roles(:app) do
-    	execute "#{sudo}", :service, :nginx, :restart
+    	execute! :sudo, :service, :nginx, :restart
     end
   end
 

@@ -1,3 +1,4 @@
+require 'sshkit/sudo'
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/rbenv'

@@ -84,4 +84,5 @@ group :development, :test do
  gem 'capistrano-rails'
  gem 'capistrano-rbenv'
  gem "rails-observers"
+ gem 'sshkit-sudo'
 end
