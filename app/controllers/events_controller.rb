@@ -15,7 +15,7 @@ class EventsController < ApplicationController
           @events = Event.order('start_date').open.page(params[:page])
           @sort_now = "開催日"
         end
-        @nav_event_list = Event.apply_end_date_between(Time.now,"").order(:apply_end_date).limit(5)
+        @nav_event_list = Event.apply_end_date_between(Time.now,"").order(:apply_end_date).open.limit(5)
       }
       format.js {
         if params[:new].present?
