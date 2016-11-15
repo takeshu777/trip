@@ -20,10 +20,7 @@
             .eventshow__container-infobar
               .eventshow__container-producer
                 .eventshow__container-producer-avatar
-                  - if @event.user.avatar.present?
-                    = image_tag "#{@event.user.avatar}", class: "eventshow__container-producer-avatar-img"
-                  - else
-                    = image_tag "avatar_sample.jpg", class: "eventshow__container-producer-avatar-img"
+                  = image_tag "#{@event.user.avatar}", class: "eventshow__container-producer-avatar-img"
                 %span.eventshow__container-producer-avatar-span
                   = @event.user.fullname
               .eventshow__container-info
