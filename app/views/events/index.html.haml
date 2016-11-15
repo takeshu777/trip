@@ -41,3 +41,5 @@
   .top__container-events
     .event__container
       = render partial: "layouts/event_tile", collection: @events, as: :event
+    .event__container-event-more
+      = link_to_next_page @events, 'もっとみる', :param_name => :new , :remote => true, class: "event__container-event-more-btn"
