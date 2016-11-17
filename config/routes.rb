@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   resources :places, only: [:index]
 
+  post 'line_callback', to: "line#callback"
+
 end
