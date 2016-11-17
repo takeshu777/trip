@@ -264,6 +264,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.10.0)
+    line-bot-api (1.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -403,6 +404,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   kaminari
+  line-bot-api
   mysql2 (>= 0.3.13, < 0.5)
   pry-rails
   rails (= 4.2.6)

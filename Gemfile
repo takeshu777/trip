@@ -86,3 +86,5 @@ group :development, :test do
  gem "rails-observers"
  gem 'sshkit-sudo'
 end
+
+gem 'line-bot-api'
