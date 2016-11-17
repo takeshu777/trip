@@ -7,6 +7,7 @@ set :repo_url, 'git@github.com:/vip-take/trip.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # set :branch, 'master'
+set :branch, ENV["BRANCH"]
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/home/trip_admin/trip'
