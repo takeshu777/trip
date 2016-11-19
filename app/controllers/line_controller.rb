@@ -21,10 +21,10 @@ class LineController < ApplicationController
 		#replyTokenの取得
 	  events = client.parse_events_from(body)
 	  events.each { |event|
-	  	replyToken = event['replyToken']
+	  	@replyToken = event['replyToken']
 	  }
 
-	  puts replyToken
+	  puts @replyToken
 
     # APIとの通信に必要な認証情報
     channel_access_token = ENV['LINE_ACCESS_TOKEN']
