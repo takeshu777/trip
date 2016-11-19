@@ -23,9 +23,6 @@ class LineController < ApplicationController
 	        client.reply_message(event['replyToken'], message)
 	    end
 	  }
-
-	  "OK"
-
 	end
 
 private
