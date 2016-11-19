@@ -12,7 +12,7 @@ class LineController < ApplicationController
 	end
 
 	def callback
-    reply_base_url = "https://api.line.me/v2/bot/message/reply"
+    base_url = "https://api.line.me/v2/bot/message/reply"
 
 		#リクエストの内容を取得
 		body = request.body.read
