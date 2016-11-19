@@ -6,6 +6,7 @@ class LineController < ApplicationController
 
   # メインプログラム
 	def callback
+		binding.remote_pry
 		reply_near_apply_date
 	end
 
