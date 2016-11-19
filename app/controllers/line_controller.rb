@@ -12,10 +12,10 @@ class LineController < ApplicationController
 		@body = request.body.read
 
 		#リクエストボディの取り出し
-	  @events = client.parse_events_from(body)
+	  @events = client.parse_events_from(@body)
 
 	  # bodyの出力。array型
-		@log.info(events)
+		@log.info(@events)
 
 	  events.each { |event|
 	  	@log.info(event)
