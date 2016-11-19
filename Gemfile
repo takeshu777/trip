@@ -88,5 +88,3 @@ group :development, :test do
 end
 
 gem 'line-bot-api'
-
-gem 'pry-byebug'
