@@ -1,6 +1,15 @@
+require 'line/bot'
+
 class LineController < ApplicationController
 
   protect_from_forgery with: :null_session
+
+	def client
+	  @client ||= Line::Bot::Client.new { |config|
+	    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
+	    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+	  }
+	end
 
 	def callback
 		# リクエストの内容を取得
@@ -11,13 +20,5 @@ class LineController < ApplicationController
 	  unless client.validate_signature(body, signature)
 	    error 400 do 'Bad Request' end
 	  end
-	end
-
-private
-	def client
-	  @client ||= Line::Bot::Client.new { |config|
-	    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-	    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-	  }
 	end
 end
