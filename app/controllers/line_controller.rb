@@ -1,5 +1,7 @@
 class LineController < ApplicationController
 
+  protect_from_forgery with: :null_session
+
 	def callback
 		# リクエストの内容を取得
 	  body = request.body.read
