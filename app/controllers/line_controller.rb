@@ -13,7 +13,7 @@ class LineController < ApplicationController
 
 	# 申込日が近い規格の表示
 	def reply_near_apply_date
-		Logger.new('/log/hogehoge.log')
+		Logger.new('log/hogehoge.log')
 
     base_url = "https://api.line.me/v2/bot/message/reply"
 
