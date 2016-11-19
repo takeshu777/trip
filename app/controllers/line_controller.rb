@@ -8,6 +8,10 @@ class LineController < ApplicationController
 	def callback
 		@log = Logger.new('log/hogehoge.log')
 
+    # APIとの通信に必要な認証情報
+    @channel_access_token = ENV['LINE_ACCESS_TOKEN']
+    @channel_secret = ENV['LINE_CHANNEL_SECRET']
+
 		#リクエストの内容を取得。
 		body = request.body.read
 
@@ -27,20 +31,58 @@ class LineController < ApplicationController
 	  when "message"
 			reply_near_apply_date
 			@log.info("okay")
+		when "follow"
+			reply_welcome
 		end
+
+
 	end
 
 	private
 
-	# 申込日が近い規格の表示
+	def reply_welcome
+		#push通知用URL
+    base_url = "https://api.line.me/v2/bot/message/reply"
+
+    # リクエストURIを解析
+    uri = URI.parse(base_url)
+
+    # リクエスト生成
+    http = Net::HTTP.new(uri.host, uri.port)
+
+    # 通信はSSL(HTTPS)
+    http.use_ssl = true
+
+    # ポストで投げる
+    req = Net::HTTP::Post.new(uri.path)
+
+    # ヘッダーの定義
+    req["Content-Type"] = "application/json; charser=UTF-8"
+    req["Authorization"] = "Bearer " + @channel_access_token
+
+    # 投げるデータの定義
+    data = {
+    "type": "text",
+    "text": "TripPieceです！楽しい企画が沢山あるよーん(^^)/"
+    }
+
+    data_array = [data]
+
+    payload = { "replyToken" => @replyToken, "messages"  => data_array }.to_json
+
+    req.body = payload
+
+    res = http.request(req)
+
+    render :nothing => true, status: :ok
+	end
+
+
+	# 申込日が近い企画のpush
 	def reply_near_apply_date
 
 		#push通知用URL
     base_url = "https://api.line.me/v2/bot/message/reply"
-
-    # APIとの通信に必要な認証情報
-    channel_access_token = ENV['LINE_ACCESS_TOKEN']
-    channel_secret = ENV['LINE_CHANNEL_SECRET']
 
     # リクエストURIを解析
     uri = URI.parse(base_url)
@@ -58,7 +100,7 @@ class LineController < ApplicationController
 
     # ヘッダーの定義
     req["Content-Type"] = "application/json; charser=UTF-8"
-    req["Authorization"] = "Bearer " + channel_access_token
+    req["Authorization"] = "Bearer " + @channel_access_token
 
     # carouselデータ配列の作成
     @carousel_data_list = []
