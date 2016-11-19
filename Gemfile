@@ -89,4 +89,4 @@ end
 
 gem 'line-bot-api'
 
-gem "pry-remote"
+gem 'pry-byebug'
