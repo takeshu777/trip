@@ -6,33 +6,36 @@ class LineController < ApplicationController
 
   # メインプログラム
 	def callback
-		reply_near_apply_date
+		@log = Logger.new('log/hogehoge.log')
+
+		#リクエストの内容を取得。
+		@body = request.body.read
+
+		#リクエストボディの取り出し
+	  @events = client.parse_events_from(body)
+
+	  # bodyの出力。array型
+		@log.info(events)
+
+	  events.each { |event|
+	  	@log.info(event)
+	  	@replyToken = event['replyToken']
+	  	@callback_type = event['type']
+	  }
+
+	  if @callback_type == message
+			reply_near_apply_date
+			@log.info("okay")
+		end
 	end
 
 	private
 
 	# 申込日が近い規格の表示
 	def reply_near_apply_date
-		log = Logger.new('log/hogehoge.log')
 
+		#push通知用URL
     base_url = "https://api.line.me/v2/bot/message/reply"
-
-		#リクエストの内容を取得
-		body = request.body.read
-
-		log.info(body)
-		log.info(request)
-		log.info(request.body)
-
-		#replyTokenの取得
-	  events = client.parse_events_from(body)
-
-		log.info(events)
-
-	  events.each { |event|
-	  	log.info(event)
-	  	@replyToken = event['replyToken']
-	  }
 
     # APIとの通信に必要な認証情報
     channel_access_token = ENV['LINE_ACCESS_TOKEN']
@@ -108,8 +111,6 @@ class LineController < ApplicationController
     req.body = payload
 
     res = http.request(req)
-
-    puts res
 
     render :nothing => true, status: :ok
 	end
