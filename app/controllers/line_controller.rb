@@ -1,6 +1,6 @@
 class LineController < ApplicationController
 
-  protect_from_forgery with: :null_session
+	skip_before_action :verify_authenticity_token
 
 	def callback
 		# リクエストの内容を取得
