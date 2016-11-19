@@ -4,14 +4,15 @@ class LineController < ApplicationController
 
   protect_from_forgery with: :null_session
 
-	def client
-	  @client ||= Line::Bot::Client.new { |config|
-	    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-	    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-	  }
+  # メインプログラム
+	def callback
+		reply_near_apply_date
 	end
 
-	def callback
+	private
+
+	# 申込日が近い規格の表示
+	def reply_near_apply_date
     base_url = "https://api.line.me/v2/bot/message/reply"
 
 		#リクエストの内容を取得
@@ -42,7 +43,7 @@ class LineController < ApplicationController
     # ポストで投げる
     req = Net::HTTP::Post.new(uri.path)
 
-    @event_list = Event.all.limit(5)
+    @event_list = Event.apply_end_date_between(Time.now,"").order(:apply_end_date).open.limit(5)
 
     # ヘッダーの定義
     req["Content-Type"] = "application/json; charser=UTF-8"
@@ -103,6 +104,14 @@ class LineController < ApplicationController
 
     puts res
 
-    head :ok
+    render :nothing => true, status: :ok
 	end
+
+	def client
+	  @client ||= Line::Bot::Client.new { |config|
+	    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
+	    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
+	  }
+	end
+
 end
