@@ -23,7 +23,8 @@ class LineController < ApplicationController
 	  	@callback_type = event['type']
 	  }
 
-	  if @callback_type == "message"
+	  case @callback_type
+	  when "message"
 			reply_near_apply_date
 			@log.info("okay")
 		end
