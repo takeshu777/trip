@@ -9,13 +9,13 @@ class LineController < ApplicationController
 		@log = Logger.new('log/hogehoge.log')
 
 		#リクエストの内容を取得。
-		@body = request.body.read
+		body = request.body.read
 
 		#リクエストボディの取り出し
-	  @events = client.parse_events_from(@body)
+	  events = client.parse_events_from(body)
 
 	  # bodyの出力。array型
-		@log.info(@events)
+		@log.info(events)
 
 	  events.each { |event|
 	  	@log.info(event)
@@ -23,7 +23,7 @@ class LineController < ApplicationController
 	  	@callback_type = event['type']
 	  }
 
-	  if @callback_type == message
+	  if @callback_type == "message"
 			reply_near_apply_date
 			@log.info("okay")
 		end
