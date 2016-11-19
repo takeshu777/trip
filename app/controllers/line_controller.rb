@@ -62,11 +62,16 @@ class LineController < ApplicationController
 
     # 投げるデータの定義
     data = {
-    "type": "text",
-    "text": "TripPieceです！楽しい企画が沢山あるよーん(^^)/"
+	    "type": "text",
+	    "text": "初めましてTripPieceです！楽しい企画が沢山あるよーん(^^)/"
     }
 
-    data_array = [data]
+    data2 = {
+	    "type": "text",
+	    "text": "何かお探し？"
+    }
+
+    data_array = [data,data2]
 
     payload = { "replyToken" => @replyToken, "messages"  => data_array }.to_json
 
