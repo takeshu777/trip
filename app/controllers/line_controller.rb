@@ -16,12 +16,15 @@ class LineController < ApplicationController
 
 		#リクエストの内容を取得
 		body = request.body.read
+		puts body
 
 		#replyTokenの取得
 	  events = client.parse_events_from(body)
 	  events.each { |event|
 	  	replyToken = event['replyToken']
 	  }
+
+	  puts replyToken
 
     # APIとの通信に必要な認証情報
     channel_access_token = ENV['LINE_ACCESS_TOKEN']
@@ -97,5 +100,9 @@ class LineController < ApplicationController
     req.body = payload
 
     res = http.request(req)
+
+    puts res
+
+    head :ok
 	end
 end
