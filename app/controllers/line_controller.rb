@@ -21,6 +21,8 @@ class LineController < ApplicationController
 	  # bodyの出力。array型
 		@log.info(events)
 
+		@log.info(postback.data)
+
 	  events.each { |event|
 	  	@log.info(event)
 	  	@replyToken = event['replyToken']
