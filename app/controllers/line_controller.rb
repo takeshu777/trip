@@ -111,7 +111,6 @@ class LineController < ApplicationController
 	end
 
 	def view_postback_events(postback_data)
-		@lig.info('view_postback_events')
 	  @log.info(postback_data)
 
 		if postback_data == 'action=view&name=near'
@@ -168,7 +167,6 @@ class LineController < ApplicationController
 	end
 
 	def view_search_events(message_data)
-		@lig.info('view_search_events')
 		@log.info(message_data)
     event_list = Event.text_like(message_data).apply_end_date_between(Time.now,"").order(:apply_end_date).open.limit(5)
 
