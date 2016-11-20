@@ -95,14 +95,12 @@ class LineController < ApplicationController
 		          {
 		            "type": "postback",
 		            "label": "急げ！締め切り間近！",
-		            "data": "action=view&name=near",
-		            "text": "締め切り間近の企画を検索"
+		            "data": "action=view&name=near"
 		          },
 		          {
 		            "type": "postback",
 		            "label": "新着企画",
-		            "data": "action=view&name=new",
-		            "text": "新着企画を検索"
+		            "data": "action=view&name=new"
 		          },
 		      ]
 		  }
