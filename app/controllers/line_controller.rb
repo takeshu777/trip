@@ -168,7 +168,7 @@ class LineController < ApplicationController
 
 	def view_search_events(message_data)
 		@log.info(message_data)
-    event_list = Event.text_like(message_data.text).apply_end_date_between(Time.now,"").order(:apply_end_date).open.limit(5)
+    event_list = Event.text_like(message_data['text']).apply_end_date_between(Time.now,"").order(:apply_end_date).open.limit(5)
 
     # carouselデータ配列の作成
     carousel_data_list = []
@@ -218,7 +218,7 @@ class LineController < ApplicationController
 	  else
 	    data = {
 	    "type": "text",
-	    "text": "ごめんなさい。ヒットしませんでした。検索ワード変えてみてね。"
+	    "text": "ごめんなさい。ヒットしませんでした。検索ワードを変えてみてね。"
 	    }
 	  end
     return data
