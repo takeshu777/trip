@@ -128,7 +128,7 @@ class LineController < ApplicationController
         carousel_data = {
           "thumbnailImageUrl": "#{event.image}",
           "title": "#{event.title}",
-          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\\n[概要]#{event.summary}",
+          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\n[概要]#{event.summary}",
           "actions": [
               {
                   "type": "uri",
@@ -141,7 +141,7 @@ class LineController < ApplicationController
         carousel_data = {
           "thumbnailImageUrl": "https://training-not-trippiece.ienikki.com#{event.image}",
           "title": "#{event.title}",
-          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\\n[概要]#{event.summary}",
+          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\n[概要]#{event.summary}",
           "actions": [
               {
                   "type": "uri",
@@ -179,7 +179,7 @@ class LineController < ApplicationController
         carousel_data = {
           "thumbnailImageUrl": "#{event.image}",
           "title": "#{event.title}",
-          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\\n[概要]#{event.summary}",
+          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\n[概要]#{event.summary}",
           "actions": [
               {
                   "type": "uri",
@@ -192,7 +192,7 @@ class LineController < ApplicationController
         carousel_data = {
           "thumbnailImageUrl": "https://training-not-trippiece.ienikki.com#{event.image}",
           "title": "#{event.title}",
-          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\\n[概要]#{event.summary}",
+          "text": "[受付]#{event.apply_start_date}から#{event.apply_end_date}\n[概要]#{event.summary}",
           "actions": [
               {
                   "type": "uri",
