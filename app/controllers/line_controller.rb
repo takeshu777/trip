@@ -31,7 +31,7 @@ class LineController < ApplicationController
 	  when "message"
 			reply_near_apply_date
 			@log.info("okay")
-		when "follow"
+		when "follow", "join"
 			reply_welcome
 		end
 
@@ -67,9 +67,27 @@ class LineController < ApplicationController
     }
 
     data2 = {
-	    "type": "text",
-	    "text": "何かお探し？"
-    }
+		  "type": "template",
+		  "altText": "this is a buttons template",
+		  "template": {
+		      "type": "buttons",
+		      "text": "どんな企画があるか調べるね。ボタンを押すか、キーワードを打ってね。",
+		      "actions": [
+		          {
+		            "type": "postback",
+		            "label": "急げ！締め切り間近！",
+		            "data": "action=view&name=near",
+		            "text": "締め切り間近の企画を検索"
+		          },
+		          {
+		            "type": "postback",
+		            "label": "新着企画",
+		            "data": "action=view&name=new",
+		            "text": "新着企画を検索"
+		          },
+		      ]
+		  }
+		}
 
     data_array = [data,data2]
 
