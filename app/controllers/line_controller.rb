@@ -8,6 +8,12 @@ class LineController < ApplicationController
 	def callback
 		@log = Logger.new('log/hogehoge.log')
 
+		# LINE API送信元チェック
+	  signature = request.env['HTTP_X_LINE_SIGNATURE']
+	  unless client.validate_signature(body, signature)
+	    error 400 do 'Bad Request' end
+	  end
+
     # APIとの通信に必要な認証情報
     channel_access_token = ENV['LINE_ACCESS_TOKEN']
     channel_secret = ENV['LINE_CHANNEL_SECRET']
