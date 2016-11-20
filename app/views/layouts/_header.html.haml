@@ -28,4 +28,5 @@
             = link_to image_tag(current_user.avatar, class: "header-nav-avatar-img")," javascript:void(0)", id: "js-navbar-dropdown"
           %span.header-nav-avatar-span ▼
       = link_to "企画を作成", new_event_path, class: "header-nav-event"
+      = link_to image_tag("https://scdn.line-apps.com/n/line_add_friends/btn/ja.png", height: "36px", border: "0", alt: "友達追加"), "https://line.me/R/ti/p/%40fjd4227a"
   = render 'layouts/messages'
