@@ -40,9 +40,9 @@ class Event < ActiveRecord::Base
   end
 
   # --- クエリ スコープ ---
-  # titleとsummaryカラムの部分検索
+  # title、summary、destカラムの部分検索
   scope :text_like, -> text {
-    where('title like ? or summary like ?', "%#{text}%", "%#{text}%") if text.present?
+    where('title like ? or summary like ? or dest like ?', "%#{text}%", "%#{text}%", "%#{text}%") if text.present?
   }
   # 開催日の検索
   scope :date_between, -> from, to {
