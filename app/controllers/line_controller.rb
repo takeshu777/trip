@@ -53,17 +53,17 @@ class LineController < ApplicationController
     @data_array = []
 
 	  #リクエスト別のアクション定義
-	  case @callback_type
-		when "follow", "join"
+		if @callback_type == "follow" || @callback_type == "join"
 			@data_array << follow_join_msg
 			@data_array << default_msg
-		when "postback"
+		elsif @callback_type == "postback"
 			@data_array << view_postback_events(@postback_data)
 			@data_array << default_msg
-	  when "message"
+	  elsif @callback_type == "message"
 			@data_array << view_search_events(@message_data)
 			@data_array << default_msg
 		end
+
 
     payload = { "replyToken" => @replyToken, "messages"  => @data_array }.to_json
 
@@ -111,6 +111,7 @@ class LineController < ApplicationController
 	end
 
 	def view_postback_events(postback_data)
+		@lig.info('view_postback_events')
 	  @log.info(postback_data)
 
 		if postback_data == 'action=view&name=near'
@@ -166,10 +167,10 @@ class LineController < ApplicationController
     return data
 	end
 
-
 	def view_search_events(message_data)
+		@lig.info('view_search_events')
 		@log.info(message_data)
-	  event_list = Event.text_like(params[:text]).date_between(params[:start_date],params[:end_date]).open.limit(5)
+    event_list = Event.text_like(message_data).apply_end_date_between(Time.now,"").order(:apply_end_date).open.limit(5)
 
     # carouselデータ配列の作成
     carousel_data_list = []
