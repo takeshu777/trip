@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(create_params)
     if @event.save
-      redirect_to controller: 'events', action: 'edit', id: @event.id
+      redirect_to(edit_event_url(@event.id))
     else
       flash[:error] = @event.errors.full_messages
       redirect_to :back and return
