@@ -459,7 +459,6 @@
     &-fav {
       &-btn {
         display: inline-block;
-        cursor: pointer;
         background-color: transparent;
         color: #bbb;
         padding: 9px 0;
@@ -475,6 +474,10 @@
         font-weight: 400;
         text-align: center;
         white-space: nowrap;
+        &:hover{
+          color: black;
+          text-decoration: none;
+        }
       }
 
       &-span {

@@ -182,6 +182,10 @@
         width: 170px;
         margin: 0 auto 10px;
         text-align: center;
+        &:hover{
+          color: #ccc;
+          text-decoration: none;
+        }
       }
 
       &-back {
@@ -197,6 +201,10 @@
         width: 170px;
         margin: 0 auto 10px;
         text-align: center;
+        &:hover{
+          color: #ccc;
+          text-decoration: none;
+        }
       }
     }
   }

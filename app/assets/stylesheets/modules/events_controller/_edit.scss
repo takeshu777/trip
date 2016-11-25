@@ -88,6 +88,10 @@
           display: block;
           width: 140px;
           text-align: center;
+          &:hover{
+            color: #ccc;
+            text-decoration: none;
+          }
         }
 
         &-close {
@@ -105,6 +109,10 @@
           display: block;
           width: 140px;
           text-align: center;
+          &:hover{
+            color: #ccc;
+            text-decoration: none;
+          }
         }
 
         &-delete {
@@ -169,6 +177,10 @@
         margin: 0 auto 10px;
         text-align: center;
         font-weight: 400;
+        &:hover{
+          color: #ccc;
+          text-decoration: none;
+        }
       }
 
       &-btn-draft {
@@ -185,6 +197,10 @@
         margin: 0 auto 10px;
         text-align: center;
         font-weight: 400;
+        &:hover{
+          color: #ccc;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -382,6 +398,10 @@
       width: 100%;
       opacity: 0;
       position: absolute;
+      &:hover{
+        color: #ccc;
+        text-decoration: none;
+      }
     }
 
     &-label {

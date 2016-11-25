@@ -163,6 +163,10 @@
           margin: 0 auto 10px;
           display: block;
           width: 170px;
+          &:hover{
+            color: #ccc;
+            text-decoration: none;
+          }
         }
       }
     }
