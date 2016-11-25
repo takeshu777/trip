@@ -127,6 +127,6 @@
                   = render partial: "layouts/favorite", locals: { event: @event }
               - else
                 .eventshow__container-side-regist
-                  = link_to("javascript:void(0)", class: "eventshow__container-side-regist-btn") do
+                  = link_to(new_user_registration_path, class: "eventshow__container-side-regist-btn") do
                     %span.eventshow__container-side-regist-span
                       参加するにはこちら（無料登録）
